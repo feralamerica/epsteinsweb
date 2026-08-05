@@ -9,7 +9,7 @@
     --bg:#0d1017; --panel:#141924; --panel2:#1b2230; --line:#2a3346;
     --ink:#e8edf6; --mut:#93a0b5; --dim:#63708a;
     --person:#6ea8fe; --bank:#f4a259; --org:#b088f9; --university:#4dd0a7; --trust:#ffe14d;
-    --accused:#ff5c5c; --accused2:#b3243b;
+    --accused:#ff5c5c; --accused2:#b3243b; --doc:#3fb6c9;
     --hub:#ffd166; --accent:#7cc4ff;
     --danger:#ff6b6b;
   }
@@ -141,6 +141,7 @@
       <span class="chip col" data-col="CR">Court records</span>
       <span class="chip col" data-col="EM">2025 emails</span>
       <span class="chip col" data-col="FIN">Financial</span>
+      <span class="chip" id="docchip" data-docs="1"><span class="dot" style="background:var(--doc)"></span>Documents</span>
       <button class="ghost" id="reset">Reset</button>
     </div>
   </header>
@@ -170,6 +171,7 @@
       <div class="legrow"><span class="dot" style="background:var(--trust)"></span>Trust / entity</div>
       <div class="legrow"><span class="dot" style="background:var(--accused)"></span>Accused of involvement</div>
       <div class="legrow" style="margin-top:8px"><span class="sq" style="background:var(--hub)"></span>Document collection</div>
+      <div class="legrow"><span class="dot" style="background:var(--doc);width:10px;height:10px;border-radius:2px;transform:rotate(45deg)"></span>Primary document</div>
       <div style="margin-top:7px;font-size:10px;color:var(--dim);line-height:1.4">Red marks people accused of involvement in the abuse (denials are noted in each profile) and overrides the type color.</div>
     </div>
 
@@ -337,7 +339,38 @@ const E=[
 {n:"Southern Trust Company",t:"trust",w:2,s:["FIN"],nat:"Epstein entity · fraud findings",ctx:"Epstein VI company the USVI said made 'fraudulent misrepresentations' to obtain tax benefits; over $80M was clawed back in the settlement.",links:[["USVI DOJ — settlement","https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"]]},
 {n:"Zorro Trust",t:"trust",w:1,s:["FIN"],nat:"Epstein-controlled trust",ctx:"A Nevada trust Epstein controlled, figuring in property/asset transfers connected to Wexner.",links:[["Wikipedia — Wexner & Epstein","https://en.wikipedia.org/wiki/Relationship_of_Les_Wexner_and_Jeffrey_Epstein"]]},
 {n:"Jeffrey Epstein VI Foundation",t:"org",w:1,s:["FIN"],nat:"Epstein charity · overstated giving",ctx:"Epstein's main charitable vehicle; pledged far more than it delivered and misrepresented several donations, per reporting.",links:[["Wikipedia — VI Foundation","https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"]]},
-{n:"J. Epstein & Co.",t:"org",w:1,s:["FIN"],nat:"Epstein's money-management firm",ctx:"Epstein's advisory firm (later Financial Trust Company), claiming only billionaire clients; central to questions about the source of his wealth.",links:[["Fortune","https://fortune.com/2019/07/08/jeffrey-epstein-hedge-fund-manager-accused-sex-trafficking"]]}
+{n:"J. Epstein & Co.",t:"org",w:1,s:["FIN"],nat:"Epstein's money-management firm",ctx:"Epstein's advisory firm (later Financial Trust Company), claiming only billionaire clients; central to questions about the source of his wealth.",links:[["Fortune","https://fortune.com/2019/07/08/jeffrey-epstein-hedge-fund-manager-accused-sex-trafficking"]]},
+
+/* --- Expansion v3: verified additions (EpsteinWiki-led, independently sourced) --- */
+{n:"Steven Hoffenberg",t:"person",w:2,s:["FIN","CR"],nat:"Early business partner",ctx:"Epstein's 1980s–90s mentor and partner at Towers Financial, which later collapsed as a ~$460M Ponzi scheme; Hoffenberg claimed Epstein was involved but Epstein was never charged in it. Died 2022.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-worked-at-towers-financial-with-stephen-hoffenberg-who-committed-ponzi-scheme-crimes/"]]},
+{n:"John Paulson",t:"person",w:2,s:["BB","FIN"],nat:"Contact-book entry · financial",ctx:"Hedge-fund billionaire listed in Epstein's contact book; reporting indicates Epstein's estate later realized roughly $130M from an investment tied to Paulson. Not accused of wrongdoing.",links:[["Newsweek","https://www.newsweek.com/trump-jeffrey-epstein-little-black-book-thomas-massie-john-paulson-2125070"]]},
+{n:"Mortimer Zuckerman",t:"person",w:2,s:["FIN","EM"],nat:"Money-management client",ctx:"Media and real-estate billionaire documented as an Epstein money-management client; released emails show Epstein pressing him over media coverage. Not accused of wrongdoing.",links:[["Forbes","https://www.forbes.com/sites/giacomotognini/2026/02/04/how-jeffrey-epstein-got-so-rich-two-more-billionaire-clients-mortimer-zuckerman-ariane-de-rothschild/"]]},
+{n:"Harvey Weinstein",t:"person",w:2,s:["BB","CR"],nat:"Contact / court-record mention · denies relationship",ctx:"Appears in Epstein's contacts and in unsealed court documents (including a logged phone call). A convicted sex offender in unrelated cases; denies any meaningful relationship with Epstein.",links:[["The Daily Beast","https://www.thedailybeast.com/jeffrey-epsteins-hollywood-pipeline-ran-straight-to-harvey-weinstein/"]]},
+{n:"Sergey Brin",t:"person",w:2,s:["CR","EM"],nat:"Named in documents",ctx:"Google co-founder; released documents indicate he corresponded with Maxwell about dinners and is referenced among Epstein's tech contacts. Not accused of wrongdoing.",links:[["NBC News","https://www.nbcnews.com/tech/tech-news/jeffrey-epstein-files-reveal-deep-tech-ties-musk-gates-rcna257092"]]},
+{n:"Nathan Myhrvold",t:"person",w:2,s:["EM","FIN"],nat:"Correspondent",ctx:"Former Microsoft CTO documented meeting and emailing Epstein (2010–2018) and contributing images to Epstein's 'birthday book.' Not accused of wrongdoing.",links:[["KUOW (AP)","https://www.kuow.org/2026-02-10/former-microsoft-executive-s-relationship-with-jeffrey-epstein-comes-under-scrutiny"]]},
+{n:"Douglas Band",t:"person",w:2,s:["FL","EM"],nat:"Named in flight logs / emails",ctx:"Former Bill Clinton aide documented on Epstein's jet and in correspondence; told a House panel he could not recall his interactions with Epstein.",links:[["ABC News","https://abcnews.com/US/doug-band-former-aide-bill-clinton-questioned-clintons/story?id=134313410"]]},
+{n:"Marc Rowan",t:"person",w:2,s:["CR","FIN"],nat:"Apollo co-founder · shareholder suits",ctx:"Apollo Global Management co-founder and CEO named alongside Leon Black in shareholder litigation over the firm's Epstein-related dealings; not accused of involvement in the abuse. Apollo has sought to reassure clients.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2026-02-18/apollo-seeks-to-reassure-clients-about-executives-epstein-ties"]]},
+{n:"William J. Burns",t:"person",w:2,s:["CR"],nat:"Named in calendar · regrets meetings",ctx:"CIA director; Epstein's records show meetings in 2014 while Burns was deputy secretary of state. The CIA said he had no relationship with Epstein and Burns said he regretted the meetings.",links:[["Slate","https://slate.com/news-and-politics/2023/05/noam-chomsky-jeffrey-epstein-cia-director.html"]]},
+{n:"Andrés Pastrana",t:"person",w:2,s:["BB","CR"],nat:"Named in files · denies knowledge",ctx:"Former president of Colombia named in released case files; U.S. records confirm ties. He denies any wrongdoing or knowledge of Epstein's crimes.",links:[["Colombia Reports","https://colombiareports.com/us-confirms-ties-between-colombias-ex-president-and-jeffrey-epstein/"]]},
+{n:"Jamie Dimon",t:"person",w:2,s:["EM"],nat:"Referenced in emails · denies knowing Epstein",ctx:"JPMorgan CEO referenced in released emails (an associate allegedly floated having him lobby UK officials). JPMorgan maintains Dimon did not know Epstein; a Senate inquiry is examining the bank's ties.",links:[["Forbes","https://www.forbes.com/sites/alisondurkee/2026/07/13/jpmorgan-maintains-jamie-dimon-didnt-know-epstein-as-sen-warren-investigates/"]]},
+{n:"Tom Barrack",t:"person",w:2,s:["EM","FIN"],nat:"Correspondent · business ties",ctx:"Trump ally and U.S. diplomat; released files show he kept in contact with Epstein for years, including business and Middle East introductions. Not accused of involvement in the abuse.",links:[["CBS News","https://www.cbsnews.com/news/tom-barrack-jeffrey-epstein-files/"]]},
+{n:"Al Gore",t:"person",w:2,s:["CR"],nat:"Incidental mention",ctx:"Former U.S. vice president named by a witness as present at a dinner in unsealed documents; not accused of any wrongdoing.",links:[["NBC News","https://www.nbcnews.com/news/us-news/last-batch-unsealed-jeffrey-epstein-documents-released-rcna132936"]]},
+{n:"Landon Thomas Jr.",t:"person",w:1,s:["EM"],nat:"Correspondent (journalist)",ctx:"Former New York Times reporter whose emails with Epstein were released; he solicited a charitable donation from Epstein, breaching Times policy.",links:[["TIME","https://time.com/7333585/epstein-files-people-named-emails-house-oversight-committee/"]]},
+{n:"Peggy Siegal",t:"person",w:1,s:["EM"],nat:"Correspondent (publicist)",ctx:"Film publicist documented in released emails; asked to help push back on media coverage of allegations.",links:[["TIME","https://time.com/7333585/epstein-files-people-named-emails-house-oversight-committee/"]]},
+{n:"David Blaine",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Magician documented as having years-long correspondence and recurring dinners with Epstein (2012–2016). Not accused of wrongdoing.",links:[["WION","https://www.wionews.com/photos/from-tom-barrack-and-david-blaine-to-michael-wolff-8-key-names-in-the-new-epstein-email-release-1763202194281"]]},
+{n:"UBS",t:"bank",w:2,s:["FIN"],nat:"Banked Ghislaine Maxwell",ctx:"Reporting states UBS banked Ghislaine Maxwell for years and moved her funds after Epstein's 2019 arrest, drawing regulatory scrutiny; UBS has not been charged.",links:[["U.S. News","https://www.usnews.com/news/top-news/articles/2026-02-08/ubs-banked-ghislaine-maxwell-for-years-moving-her-money-after-epsteins-arrest"]]},
+{n:"Bank of America",t:"bank",w:2,s:["FIN","EM"],nat:"Named in Senate report · disputes it",ctx:"A 2026 Senate Finance Committee report named Bank of America among institutions that processed Epstein-linked transactions; the bank disputes the characterization and was not charged.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2026-08-04/deutsche-bank-jpmorgan-bofa-enabled-epstein-wyden-report-says"]]},
+{n:"HSBC",t:"bank",w:2,s:["FIN","CR"],nat:"Held Epstein accounts",ctx:"Filings unsealed in November 2025 show Epstein held accounts at HSBC (and Goldman Sachs); no allegation of wrongdoing by the bank.",links:[["U.S. News","https://www.usnews.com/news/top-news/articles/2025-11-04/jeffrey-epstein-had-accounts-with-goldman-sachs-and-hsbc-documents-show"]]},
+{n:"Wells Fargo",t:"bank",w:1,s:["FIN"],nat:"Asked for records (2020)",ctx:"In 2020, U.S. regulators asked Wells Fargo — one of seven banks — for details on Epstein-related money movements; no charges resulted.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2020-07-24/wells-fargo-leumi-5-others-asked-for-details-on-epstein-money"]]},
+{n:"Bank Leumi",t:"bank",w:1,s:["FIN"],nat:"Asked for records (2020)",ctx:"Named alongside Wells Fargo among banks asked by regulators in 2020 for information on Epstein-linked funds; no charges resulted.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2020-07-24/wells-fargo-leumi-5-others-asked-for-details-on-epstein-money"]]},
+{n:"Liquid Funding Ltd.",t:"trust",w:1,s:["FIN"],nat:"Offshore vehicle (Paradise Papers)",ctx:"Bermuda-based structured-finance vehicle tied to Bear Stearns/JPMorgan in which Epstein held a stake, surfaced in the ICIJ Paradise Papers.",links:[["ICIJ","https://www.icij.org/investigations/paradise-papers/jeffrey-epsteins-offshore-fortune-traced-to-paradise-papers/"]]},
+{n:"Plan D LLC",t:"org",w:1,s:["FIN"],nat:"Aircraft holding entity",ctx:"Epstein holding company used to hold his Gulfstream aircraft, mapped in Bloomberg's investigation of his offshore structure.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2019-07-19/the-shell-game-untangling-jeffrey-epstein-s-offshore-money-web"]]},
+{n:"Maple Inc.",t:"org",w:1,s:["FIN"],nat:"Townhouse holding entity",ctx:"Holding entity used for Epstein's Manhattan townhouse, identified in Bloomberg's mapping of his shell structure.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2019-07-19/the-shell-game-untangling-jeffrey-epstein-s-offshore-money-web"]]},
+{n:"Great St. Jim LLC",t:"org",w:1,s:["FIN","CR"],nat:"Island holding entity",ctx:"USVI-linked holding entity for Epstein's Great St. James island purchase, named in the U.S. Virgin Islands enforcement matter.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2019-07-19/the-shell-game-untangling-jeffrey-epstein-s-offshore-money-web"]]},
+{n:"The 1953 Trust",t:"trust",w:2,s:["FIN","CR"],nat:"Estate trust",ctx:"Trust into which Epstein moved assets via a will signed two days before his August 2019 death; central to the estate litigation later settled with the USVI.",links:[["Rolling Stone","https://www.rollingstone.com/culture/culture-news/jeffrey-epstein-estate-virgin-islands-settlement-1234639327"]]},
+{n:"HBRK Associates",t:"org",w:1,s:["FIN","CR"],nat:"Management entity · named in lawsuits",ctx:"Epstein-linked management/accounting entity named in civil trafficking lawsuits alleging his network of companies facilitated operations; allegations, not proven.",links:[["Financial Advisor Mag","https://www.fa-mag.com/news/epstein-s-sex-ring-employed-his-network-of-shell-companies--lawsuits-claim-51252.html"]]},
+{n:"C.O.U.Q. Foundation",t:"org",w:1,s:["FIN"],nat:"Epstein private foundation",ctx:"Epstein's private foundation (IRS Form 990s on ProPublica) that routed donations, including to science and academic recipients.",links:[["ProPublica","https://projects.propublica.org/nonprofits/organizations/943357645"]]},
+{n:"Gratitude America Ltd.",t:"org",w:1,s:["FIN"],nat:"Epstein charity",ctx:"Reported as an Epstein 'secret charity' that operated through Deutsche Bank and made donations after his conviction.",links:[["The Daily Beast","https://www.thedailybeast.com/jeffrey-epsteins-secret-charity-gratitude-america-operated-via-deutsche-bank-and-benefited-himself-report/"]]}
 ];
 
 /* documented entity-entity links (person -> institution) */
@@ -346,7 +379,26 @@ const REL=[
  ["Glenn Dubin","Highbridge Capital"],["Eva Andersson-Dubin","Glenn Dubin"],["Alan Greenberg","Bear Stearns"],
  ["Joi Ito","MIT Media Lab"],["Martin Nowak","Harvard University"],["Darren Indyke","Southern Trust Company"],
  ["Richard Kahn","Southern Trust Company"],["Lawrence Summers","Harvard University"],["Lawrence Summers","OpenAI"],
- ["Kathryn Ruemmler","Goldman Sachs"],["Leslie Wexner","Zorro Trust"]
+ ["Kathryn Ruemmler","Goldman Sachs"],["Leslie Wexner","Zorro Trust"],
+ ["Marc Rowan","Apollo Global Management"],["Liquid Funding Ltd.","Bear Stearns"],
+ ["Great St. Jim LLC","U.S. Virgin Islands"],["The 1953 Trust","U.S. Virgin Islands"]
+];
+
+/* specific primary-source documents (their own linkable layer) */
+const DOCS=[
+ {t:"Giuffre v. Maxwell — federal docket",col:"CR",ctx:"Master docket for the civil case whose exhibits were unsealed in Jan 2024 (the 'Doe' documents). SDNY 1:15-cv-07433.",url:"https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/"},
+ {t:"Preska unsealing order (Jan 2024)",col:"CR",ctx:"Judge Preska's order governing the January 2024 release of the sealed Doe documents (court-hosted PDF).",url:"https://www.nysd.uscourts.gov/sites/default/files/2024-01/15cv7433%2001032023%20115pm%20(1).pdf"},
+ {t:"Ghislaine Maxwell 2016 deposition",col:"CR",ctx:"Full transcript of Maxwell's April 22, 2016 videotaped deposition in Giuffre v. Maxwell.",url:"https://www.courthousenews.com/wp-content/uploads/2020/10/Maxwell-deposition-2016.pdf"},
+ {t:"Epstein flight logs (USA v. Maxwell)",col:"FL",ctx:"Pilot flight logs admitted as trial exhibits in the criminal case USA v. Maxwell.",url:"https://www.documentcloud.org/documents/21165424-epstein-flight-logs-released-in-usa-vs-maxwell/"},
+ {t:"Epstein 'black book' (redacted)",col:"BB",ctx:"Redacted copy of Epstein's contact directory ('little black book').",url:"https://www.documentcloud.org/documents/1508273-jeffrey-epsteins-little-black-book-redacted/"},
+ {t:"DOJ Epstein Library",col:"CR",ctx:"DOJ's official portal for all Epstein Files Transparency Act disclosures (age-gated).",url:"https://www.justice.gov/epstein"},
+ {t:"DOJ disclosure sets (1–12)",col:"CR",ctx:"Index of the 12 numbered DOJ data sets plus FOIA sets (CBP, FBI, BOP) and court-record collections.",url:"https://www.justice.gov/epstein/doj-disclosures"},
+ {t:"FBI Vault — Epstein file",col:"CR",ctx:"FBI's FOIA reading-room release of its Epstein investigative file (22 parts).",url:"https://vault.fbi.gov/jeffrey-epstein"},
+ {t:"House Oversight — email release (Nov 2025)",col:"EM",ctx:"Committee release highlighting Epstein emails, including ones referencing Trump.",url:"https://oversightdemocrats.house.gov/news/press-releases/house-oversight-committee-releases-jeffrey-epstein-email-correspondence-raising"},
+ {t:"House Oversight — estate documents (~20k pages)",col:"EM",ctx:"Release of roughly 20,000 additional pages from the Epstein estate (Nov 12, 2025).",url:"https://oversight.house.gov/release/oversight-committee-releases-additional-epstein-estate-documents/"},
+ {t:"House Oversight — DOJ records (33,295 pages)",col:"CR",ctx:"33,295 pages of Epstein records DOJ produced to the Committee under subpoena (Sept 2, 2025).",url:"https://oversight.house.gov/release/oversight-committee-releases-epstein-records-provided-by-the-department-of-justice/"},
+ {t:"USVI v. Epstein estate — $105M settlement",col:"FIN",ctx:"U.S. Virgin Islands AG announcement of the sex-trafficking settlement with the estate (Nov 2022).",url:"https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"},
+ {t:"Epstein Files Transparency Act (PL 119-38)",col:"CR",ctx:"The statute mandating the DOJ disclosures — the legal basis for the 2025–26 release program.",url:"https://www.congress.gov/119/plaws/publ38/PLAW-119publ38.pdf"}
 ];
 
 /* ============================ APP ============================ */
@@ -355,7 +407,7 @@ const canvas=document.getElementById('cv'), ctx2=canvas.getContext('2d');
 let DPR=Math.min(window.devicePixelRatio||1,2), W=0, H=0;
 const typeColor={};for(const k in TYPEC)typeColor[k]=css(TYPEC[k]);
 const HUBCOL=css('--hub');
-const ACCUSEDCOL=css('--accused'), CONVCOL=css('--accused2');
+const ACCUSEDCOL=css('--accused'), CONVCOL=css('--accused2'), DOCCOL=css('--doc');
 function nodeColor(n){return n.ac?ACCUSEDCOL:(typeColor[n.t]||'#8aa');}
 
 // build node/edge model
@@ -363,24 +415,29 @@ const hubs=Object.keys(COLNAMES).map(k=>({id:'HUB_'+k,hub:true,key:k,label:COLNA
 const hubById={};hubs.forEach(h=>hubById[h.key]=h);
 const nameToNode={};
 const nodes=E.map((e,i)=>{const r=e.w===3?26:e.w===2?17:11;const n={...e,id:e.n,x:0,y:0,vx:0,vy:0,r,base:r};nameToNode[e.n]=n;return n;});
-const allNodes=[...hubs,...nodes];
+const docNodes=DOCS.map((d,i)=>({id:'DOC_'+i,doc:true,title:d.t,col:d.col,ctx:d.ctx,url:d.url,x:0,y:0,vx:0,vy:0,r:8,base:8}));
+const allNodes=[...hubs,...nodes,...docNodes];
 // initial layout: hubs on a ring, entities scattered near their hubs
 hubs.forEach((h,i)=>{const a=i/hubs.length*Math.PI*2;h.x=Math.cos(a)*260;h.y=Math.sin(a)*200;});
 nodes.forEach(n=>{const h=hubById[n.s[0]]||{x:0,y:0};n.x=h.x+(Math.random()*2-1)*180;n.y=h.y+(Math.random()*2-1)*180;});
+docNodes.forEach(n=>{const h=hubById[n.col]||{x:0,y:0};n.x=h.x+(Math.random()*2-1)*90;n.y=h.y+(Math.random()*2-1)*90;});
 
 const edges=[];
 nodes.forEach(n=>n.s.forEach(k=>{if(hubById[k])edges.push([n,hubById[k],'hub']);}));
 REL.forEach(([a,b])=>{if(nameToNode[a]&&nameToNode[b])edges.push([nameToNode[a],nameToNode[b],'rel']);});
+docNodes.forEach(n=>{if(hubById[n.col])edges.push([n,hubById[n.col],'doc']);});
 
 // view transform
 let scale=1, ox=0, oy=0;
 let filterTypes=new Set(Object.keys(TYPEC));
 let filterCols=new Set(Object.keys(COLNAMES));
+let filterDocs=true;
 let searchTerm='';
 let hovered=null, selected=null, view='network';
 
 function visible(n){
   if(n.hub) return filterCols.has(n.key);
+  if(n.doc) return filterDocs && filterCols.has(n.col);
   if(!filterTypes.has(n.t)) return false;
   if(!n.s.some(k=>filterCols.has(k))) return false;
   return true;
@@ -463,6 +520,13 @@ function draw(){
       ctx2.fillStyle=HUBCOL;ctx2.font=`600 ${13}px -apple-system,system-ui,sans-serif`;
       ctx2.textAlign='center';ctx2.textBaseline='middle';
       ctx2.fillText(n.label,n.x,n.y);
+    }else if(n.doc){
+      const s=n.r;
+      ctx2.beginPath();ctx2.moveTo(n.x,n.y-s);ctx2.lineTo(n.x+s,n.y);ctx2.lineTo(n.x,n.y+s);ctx2.lineTo(n.x-s,n.y);ctx2.closePath();
+      ctx2.fillStyle=DOCCOL;ctx2.fill();
+      if(n===selected){ctx2.lineWidth=2.5/scale;ctx2.strokeStyle='#fff';ctx2.stroke();}
+      const showD=(!dim&&hasHover&&neigh.has(n))||n===selected;
+      if(showD){ctx2.globalAlpha=1;ctx2.fillStyle='#cfe8ee';ctx2.font='500 10px -apple-system,system-ui,sans-serif';ctx2.textAlign='center';ctx2.textBaseline='top';ctx2.fillText(n.title,n.x,n.y+s+3);}
     }else{
       ctx2.beginPath();ctx2.arc(n.x,n.y,n.r,0,Math.PI*2);
       ctx2.fillStyle=nodeColor(n);ctx2.fill();
@@ -522,6 +586,18 @@ canvas.addEventListener('wheel',e=>{
 /* ---- detail panel ---- */
 const detail=document.getElementById('detail');
 function openDetail(n){
+  if(n.doc){
+    selected=n;
+    document.getElementById('dtypelabel').textContent='Primary document';
+    document.querySelector('#dtype .dot').style.background=DOCCOL;
+    document.getElementById('dname').textContent=n.title;
+    document.getElementById('dnat').textContent=COLNAMES[n.col]||'';
+    document.getElementById('dctx').textContent=n.ctx||'';
+    document.getElementById('dcolls').innerHTML='<span class="coll"><span class="sq"></span>'+(COLNAMES[n.col]||'')+'</span>';
+    const dl=document.getElementById('dlinks');dl.innerHTML='';
+    const a=document.createElement('a');a.href=n.url;a.target='_blank';a.rel='noopener';a.innerHTML='<span>Open document</span><span class="arr">↗</span>';dl.appendChild(a);
+    detail.classList.add('open');return;
+  }
   selected=n;
   document.getElementById('dtypelabel').textContent = n.hub?'Collection':(n.t.charAt(0).toUpperCase()+n.t.slice(1));
   document.querySelector('#dtype .dot').style.background = n.hub?HUBCOL:nodeColor(n);
@@ -556,7 +632,7 @@ function buildCloud(){
 /* ---- controls ---- */
 function updateCount(){
   const p=nodes.filter(visible).length;
-  document.getElementById('count').textContent=`${p} entities · ${hubs.filter(visible).length} collections`;
+  document.getElementById('count').textContent=`${p} entities · ${hubs.filter(visible).length} collections · ${docNodes.filter(visible).length} documents`;
 }
 document.querySelectorAll('#viewseg button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#viewseg button').forEach(x=>x.classList.remove('on'));
@@ -576,11 +652,12 @@ document.querySelectorAll('.chip[data-col]').forEach(c=>c.onclick=()=>{
 });
 document.getElementById('search').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();if(view==='cloud')buildCloud();});
 document.getElementById('reset').onclick=()=>{
-  filterTypes=new Set(Object.keys(TYPEC));filterCols=new Set(Object.keys(COLNAMES));
+  filterTypes=new Set(Object.keys(TYPEC));filterCols=new Set(Object.keys(COLNAMES));filterDocs=true;
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('off'));
   document.getElementById('search').value='';searchTerm='';
   scale=1;ox=0;oy=0;alpha=1;refresh();
 };
+document.getElementById('docchip').onclick=()=>{filterDocs=!filterDocs;document.getElementById('docchip').classList.toggle('off',!filterDocs);refresh();};
 function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();}
 
 document.getElementById('zin').onclick=()=>{scale=Math.min(3.2,scale*1.2);};
