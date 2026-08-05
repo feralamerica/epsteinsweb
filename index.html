@@ -58,6 +58,29 @@
   .word:hover{transform:scale(1.06)}
   .cloudhint{text-align:center;color:var(--dim);font-size:12px;margin:0 auto 20px;max-width:640px}
 
+  /* Rolodex */
+  #rolodex{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);padding:20px}
+  #rolodex.show{display:flex}
+  .rolo-controls{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+  .rolo-controls button{height:42px;border-radius:11px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:16px;cursor:pointer;padding:0 16px}
+  .rolo-controls button:hover{border-color:var(--dim)}
+  .spin-btn{font-weight:700 !important;background:linear-gradient(135deg,#7cc4ff,#b088f9) !important;color:#0a0f1a !important;border:0 !important;font-size:15px !important;padding:0 22px !important;box-shadow:0 6px 18px rgba(124,196,255,.25)}
+  .rolo-pos{color:var(--mut);font-size:13px;min-width:78px;text-align:center;font-variant-numeric:tabular-nums}
+  .rolo-card{width:440px;max-width:92vw;height:322px;perspective:1500px;cursor:pointer;outline:none}
+  .rolo-card:focus-visible .rolo-inner{box-shadow:0 0 0 2px var(--accent)}
+  .rolo-inner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+  .rolo-card.flipped .rolo-inner{transform:rotateY(180deg)}
+  .rolo-card.spinning .rolo-inner{filter:blur(.4px)}
+  .rolo-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,var(--panel2),var(--panel));padding:24px 26px;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .rolo-back{transform:rotateY(180deg);overflow-y:auto}
+  .rolo-type{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--mut)}
+  .rolo-type .dot{width:11px;height:11px;border-radius:50%}
+  .rolo-name{font-size:27px;font-weight:700;line-height:1.12;margin:10px 0 12px}
+  .rolo-hint{margin-top:auto;color:var(--dim);font-size:11px;padding-top:12px}
+  .rolo-back h5{margin:0 0 6px;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--dim)}
+  .rolo-searchhint{margin-top:22px;color:var(--dim);font-size:12px;text-align:center;max-width:560px}
+  @media (prefers-reduced-motion: reduce){ .rolo-inner{transition:none} .rolo-card.spinning .rolo-inner{filter:none} }
+
   .zoomctl{position:absolute;left:14px;bottom:14px;display:flex;gap:6px}
   .zoomctl button{width:34px;height:34px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-size:17px;cursor:pointer}
   .zoomctl button:hover{border-color:var(--dim)}
@@ -114,6 +137,62 @@
     .legend{display:none}
     #detail{width:100%}
   }
+
+  /* Onboarding / standards / help / list / threads */
+  .overlay{position:fixed;inset:0;background:rgba(4,7,12,.82);display:flex;align-items:center;justify-content:center;z-index:60;padding:24px;backdrop-filter:blur(3px)}
+  .overlay.hide{display:none}
+  .welcome{background:linear-gradient(160deg,#141b2b,#0d1017);border:1px solid var(--line);border-radius:18px;max-width:680px;width:100%;max-height:90vh;overflow:auto;padding:32px 34px}
+  .welcome .kicker{color:var(--accent);font-size:12px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}
+  .welcome h1{font-size:26px;margin:8px 0 8px;line-height:1.15}
+  .welcome .thesis{font-size:15px;color:#cdd6e4;line-height:1.55;margin:0 0 16px}
+  .welcome .principle{background:#241318;border:1px solid #46242b;color:#ffd7d7;border-radius:11px;padding:12px 15px;font-size:13px;line-height:1.5;margin-bottom:18px}
+  .welcome .principle b{color:#ffb3b3}
+  .wstats{display:flex;gap:10px;margin:0 0 20px;flex-wrap:wrap}
+  .wstat{flex:1;min-width:110px;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+  .wstat .n{font-size:21px;font-weight:700;color:var(--ink)}
+  .wstat .l{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+  .wread{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+  .wread div{display:flex;gap:10px;font-size:13px;color:#c7d0de;line-height:1.45;align-items:flex-start}
+  .wread .num{flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent);color:#06101c;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .wbtns{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-primary{background:var(--accent);color:#06101c;border:0;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn-ghost2{background:transparent;color:var(--mut);border:1px solid var(--line);border-radius:10px;padding:11px 18px;font-size:14px;cursor:pointer}
+  .btn-ghost2:hover{color:var(--ink);border-color:var(--dim)}
+
+  #help{position:fixed;inset:0;background:rgba(4,7,12,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+  #help.show{display:flex}
+
+  .fbtn{background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:7px;padding:5px 11px;cursor:pointer;font-size:11.5px}
+  .fbtn:hover{color:var(--ink);border-color:var(--dim)}
+
+  #threadSel{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:7px 10px;font-size:12.5px;cursor:pointer}
+  #threadbar{display:none;background:#101725;border-bottom:1px solid var(--line);color:#c7d0de;font-size:12.5px;padding:8px 16px;align-items:center;gap:12px}
+  #threadbar.show{display:flex}
+  #threadbar b{color:var(--accent)}
+  #threadbar button{margin-left:auto;background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:7px;padding:4px 10px;font-size:11.5px;cursor:pointer;white-space:nowrap}
+
+  #listview{position:absolute;inset:0;display:none;overflow:auto;background:var(--bg);padding:0 0 60px}
+  #listview.show{display:block}
+  .ltable{width:100%;border-collapse:collapse;font-size:13px}
+  .ltable th{position:sticky;top:0;background:#0f1420;color:var(--mut);text-align:left;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;user-select:none;z-index:1}
+  .ltable th:hover{color:var(--ink)}
+  .ltable td{padding:10px 14px;border-bottom:1px solid #1a2130;vertical-align:top}
+  .ltable tr:hover td{background:#121826}
+  .ltable .nm{font-weight:600;color:var(--ink);cursor:pointer}
+  .ltable .nm:hover{color:var(--accent)}
+  .ltag{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:20px;border:1px solid var(--line);color:var(--mut);text-transform:capitalize}
+  .ltable .src a{color:var(--accent);text-decoration:none;margin-right:10px;white-space:nowrap;font-size:12px}
+  .lcap{color:var(--dim);font-size:12px;padding:11px 16px}
+
+  .copybtn{background:var(--panel2);border:1px solid var(--line);color:var(--accent);border-radius:8px;padding:8px 11px;font-size:12.5px;cursor:pointer}
+  .copybtn:hover{border-color:var(--accent)}
+  .darow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+
+  @media (max-width:720px){
+    .welcome{padding:22px 18px}
+    .wstat{min-width:82px}
+    .ltable .src{display:none}
+  }
 </style>
 </head>
 <body>
@@ -127,6 +206,8 @@
       <div class="seg" id="viewseg">
         <button data-view="network" class="on">Network</button>
         <button data-view="cloud">Word cloud</button>
+        <button data-view="rolodex">Rolodex</button>
+        <button data-view="list">List</button>
       </div>
       <input id="search" placeholder="Search a name…" autocomplete="off">
       <span class="filtlabel">Type</span>
@@ -142,6 +223,13 @@
       <span class="chip col" data-col="EM">2025 emails</span>
       <span class="chip col" data-col="FIN">Financial</span>
       <span class="chip" id="docchip" data-docs="1"><span class="dot" style="background:var(--doc)"></span>Documents</span>
+      <select id="threadSel" aria-label="Guided threads">
+        <option value="">Guided threads…</option>
+        <option value="money">Follow the money</option>
+        <option value="postconv">After the conviction</option>
+        <option value="science">The science pipeline</option>
+        <option value="accused">The accused</option>
+      </select>
       <button class="ghost" id="reset">Reset</button>
     </div>
   </header>
@@ -151,11 +239,55 @@
     <button id="bannerx">Got it</button>
   </div>
 
+  <div id="threadbar"><span id="threadtext"></span><button id="threadclear">Clear thread ✕</button></div>
+
   <main>
     <canvas id="cv"></canvas>
     <div id="cloud">
       <p class="cloudhint">Sized by how prominently each name features across the released material. Click any name for its documented record and sources.</p>
       <div class="cloudwrap" id="cloudwrap"></div>
+    </div>
+
+    <div id="rolodex">
+      <div class="rolo-controls">
+        <button id="roloPrev" aria-label="Previous card">◀</button>
+        <button id="roloSpin" class="spin-btn" aria-label="Spin to a random profile">🎲 Spin</button>
+        <button id="roloNext" aria-label="Next card">▶</button>
+        <span class="rolo-pos" id="roloPos"></span>
+      </div>
+      <div class="rolo-card" id="roloCard" tabindex="0" role="button" aria-label="Profile card — activate to flip for details">
+        <div class="rolo-inner">
+          <div class="rolo-face rolo-front">
+            <div class="rolo-type" id="roloType"></div>
+            <div class="rolo-name" id="roloName"></div>
+            <span class="natchip" id="roloNat"></span>
+            <div style="margin-top:14px"><div class="colls" id="roloColls"></div></div>
+            <div class="rolo-hint">Click / press Enter to flip for details ↻</div>
+          </div>
+          <div class="rolo-face rolo-back">
+            <div class="rolo-type" id="roloType2"></div>
+            <p id="roloCtx" style="font-size:13.5px;line-height:1.55;color:#dbe3f0;margin:12px 0 14px"></p>
+            <div id="roloEftaWrap" style="display:none;margin-bottom:12px"><h5>In the released files (EFTA)</h5><div class="links" id="roloEfta"></div></div>
+            <div class="links" id="roloLinks"></div>
+            <div class="rolo-hint">Click to flip back ↻</div>
+          </div>
+        </div>
+      </div>
+      <div class="rolo-searchhint">Type in the search box to jump to a name, or hit <b>Spin</b> for a random profile. Use ← → to browse, Enter to flip, S to spin.</div>
+    </div>
+
+    <div id="listview">
+      <div class="lcap" id="lcap"></div>
+      <table class="ltable">
+        <thead><tr>
+          <th data-sort="n">Name</th>
+          <th data-sort="t">Type</th>
+          <th data-sort="nat">How documented</th>
+          <th>Appears in</th>
+          <th>Sources</th>
+        </tr></thead>
+        <tbody id="lbody"></tbody>
+      </table>
     </div>
 
     <div class="zoomctl" id="zoomctl">
@@ -185,7 +317,9 @@
       <div class="dbody">
         <div class="dsec"><h5>How they're documented</h5><p id="dctx"></p></div>
         <div class="dsec"><h5>Appears in</h5><div class="colls" id="dcolls"></div></div>
+        <div class="dsec" id="deftawrap" style="display:none"><h5>In the released files (EFTA)</h5><div class="links" id="defta"></div></div>
         <div class="dsec"><h5>Sources</h5><div class="links" id="dlinks"></div></div>
+        <div class="darow" id="dactions" style="display:none"><button class="copybtn" id="copyCite">⧉ Copy citation</button><button class="copybtn" id="copyLink">🔗 Copy link</button></div>
         <div class="disc">Context and sources are drawn from reputable reporting and court/DOJ records. Inclusion reflects documented association only; where individuals have denied allegations or been cleared, that is noted above.</div>
       </div>
     </aside>
@@ -196,14 +330,56 @@
     <a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">DOJ disclosures ↗</a>
     <a href="https://oversightdemocrats.house.gov/news/press-releases/house-oversight-committee-releases-jeffrey-epstein-email-correspondence-raising" target="_blank" rel="noopener">House Oversight emails ↗</a>
     <a href="https://www.justice.gov/opa/pr/department-justice-publishes-35-million-responsive-pages-compliance-epstein-files" target="_blank" rel="noopener">3.5M-page release ↗</a>
-    <button class="methodbtn" id="methodbtn">Methodology &amp; caveats</button>
+    <span style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="fbtn" id="helpbtn">How to use</button>
+      <button class="fbtn" id="methodbtn">Standards &amp; methodology</button>
+      <button class="fbtn" id="exportCsv">Export CSV</button>
+      <button class="fbtn" id="exportJson">JSON</button>
+    </span>
   </footer>
+</div>
+
+<div class="overlay" id="welcome">
+  <div class="welcome">
+    <div class="kicker">A sourced public record</div>
+    <h1>The Epstein Files, mapped — with receipts</h1>
+    <p class="thesis">A plain-language, interactive map of the people, institutions, banks and documents that appear in the public Epstein record — with every entry linked to its primary source or established reporting.</p>
+    <div class="principle"><b>Appearing here is not proof of wrongdoing.</b> These files mix associates, business and social contacts, correspondents, staff and people named only in passing. This project exists to keep that distinction visible — and to make the underlying documents easy to check for yourself.</div>
+    <div class="wstats" id="wstats"></div>
+    <div class="wread">
+      <div><span class="num">1</span><span><b>Explore</b> four ways — a connection map, a word cloud of who features most, a flip-through rolodex you can search or spin, or a sortable list.</span></div>
+      <div><span class="num">2</span><span><b>Click anyone</b> to read how they're documented, which collections they appear in, and links straight to the sources.</span></div>
+      <div><span class="num">3</span><span><b>Red</b> marks people accused of involvement (with denials noted); every other color is a documented contact, not an accusation. Victims are never listed.</span></div>
+    </div>
+    <div class="wbtns">
+      <button class="btn-primary" id="welcomeGo">Explore the map</button>
+      <button class="btn-ghost2" id="welcomeStd">How we source this</button>
+    </div>
+  </div>
+</div>
+
+<div id="help">
+  <div class="mcard">
+    <button class="mclose" id="helpclose">×</button>
+    <h2>How to use this map</h2>
+    <h3>Four ways to explore</h3>
+    <p><b>Network</b> — see how people and institutions cluster around the five document collections. Drag to pan, scroll to zoom, click a node for details.<br>
+    <b>Word cloud</b> — names sized by how prominently they feature; click any name.<br>
+    <b>Rolodex</b> — flip through profiles one at a time, jump to a name with the search box, or hit <b>Spin</b> for a random one.<br>
+    <b>List</b> — a searchable, sortable table with every source link; the fastest view for journalists and screen-reader users.</p>
+    <h3>Reading the colors</h3>
+    <p>Blue = person, orange = bank, purple = organization, green = university, yellow = trust/entity. <b>Red overrides all of these</b> and marks someone accused of involvement in the abuse (each profile notes denials). Amber squares are the five document collections; cyan diamonds are individual primary documents you can open.</p>
+    <h3>Filters, threads &amp; search</h3>
+    <p>Toggle the Type and Collection chips to narrow the view; pick a <b>Guided thread</b> to follow a storyline; type in the search box to find or jump to a name; press <b>Reset</b> to clear everything.</p>
+    <h3>Sharing responsibly</h3>
+    <p>Open any profile and use <b>Copy link</b> to share a direct link that carries the person's sources and the "not evidence of wrongdoing" framing with it, or <b>Copy citation</b> for a ready-to-paste, sourced reference. Keyboard: in Rolodex, ← → browse, Enter flips, S spins.</p>
+  </div>
 </div>
 
 <div id="modal">
   <div class="mcard">
     <button class="mclose" id="mclose">×</button>
-    <h2>Methodology &amp; caveats</h2>
+    <h2>Standards &amp; methodology</h2>
     <p>This is a research-navigation tool, not an accusation index. It maps <b>documented associations</b> between named people/institutions and the major public collections of Epstein-related material, so you can jump to primary reporting and records. Node size reflects how prominently a name features in reporting — not any measure of culpability.</p>
 
     <h3>The five collections</h3>
@@ -223,6 +399,18 @@
 
     <h3>Sourcing</h3>
     <p>Entries are anchored to major outlets (CNN, CBS, NPR, PBS, TIME, BBC, Al Jazeera, Bloomberg, CNBC), court/DOJ/USVI records, and official releases. For a public-facing site, cite the underlying primary documents where possible. This dataset is a curated starting roster — not the full 3.5M-page corpus — and is meant to be expanded.</p>
+
+    <h3>How we verify</h3>
+    <p>Aggregator sites (community wikis and trackers) are used only as <i>leads</i> — never as a citation. Every entry must be confirmed against a reputable independent source: a court or government record, an official release, or established investigative journalism. Where a claim rests on a single, uncorroborated source, it is held back rather than published.</p>
+
+    <h3>What we exclude, and why</h3>
+    <p>Victims, survivors and accusers are <b>not listed</b> on this map. They appear throughout the underlying files, but naming them here would serve no public-interest purpose and risks compounding harm. This is a deliberate editorial line, stated plainly so readers know what they are and are not seeing.</p>
+
+    <h3>Allegations vs. facts — what the colors mean</h3>
+    <p>Most people here are documented <i>contacts</i> — social, business, academic, financial or correspondence ties — and are shown in their category color. <b>Red</b> is reserved for the narrow set accused of involvement in the abuse or trafficking itself: named by an accuser as an alleged participant, criminally charged, or convicted. Even then, denials and outcomes are noted on the profile. Red means "accused," never "guilty."</p>
+
+    <h3>Corrections &amp; contact</h3>
+    <p>This is a living document. If you can show an entry is wrong, mischaracterized, or missing context — or that someone has been cleared — it will be corrected or removed. Corrections are treated as a feature, not an embarrassment: accuracy is the entire point.</p>
   </div>
 </div>
 
@@ -370,7 +558,49 @@ const E=[
 {n:"The 1953 Trust",t:"trust",w:2,s:["FIN","CR"],nat:"Estate trust",ctx:"Trust into which Epstein moved assets via a will signed two days before his August 2019 death; central to the estate litigation later settled with the USVI.",links:[["Rolling Stone","https://www.rollingstone.com/culture/culture-news/jeffrey-epstein-estate-virgin-islands-settlement-1234639327"]]},
 {n:"HBRK Associates",t:"org",w:1,s:["FIN","CR"],nat:"Management entity · named in lawsuits",ctx:"Epstein-linked management/accounting entity named in civil trafficking lawsuits alleging his network of companies facilitated operations; allegations, not proven.",links:[["Financial Advisor Mag","https://www.fa-mag.com/news/epstein-s-sex-ring-employed-his-network-of-shell-companies--lawsuits-claim-51252.html"]]},
 {n:"C.O.U.Q. Foundation",t:"org",w:1,s:["FIN"],nat:"Epstein private foundation",ctx:"Epstein's private foundation (IRS Form 990s on ProPublica) that routed donations, including to science and academic recipients.",links:[["ProPublica","https://projects.propublica.org/nonprofits/organizations/943357645"]]},
-{n:"Gratitude America Ltd.",t:"org",w:1,s:["FIN"],nat:"Epstein charity",ctx:"Reported as an Epstein 'secret charity' that operated through Deutsche Bank and made donations after his conviction.",links:[["The Daily Beast","https://www.thedailybeast.com/jeffrey-epsteins-secret-charity-gratitude-america-operated-via-deutsche-bank-and-benefited-himself-report/"]]}
+{n:"Gratitude America Ltd.",t:"org",w:1,s:["FIN"],nat:"Epstein charity",ctx:"Reported as an Epstein 'secret charity' that operated through Deutsche Bank and made donations after his conviction.",links:[["The Daily Beast","https://www.thedailybeast.com/jeffrey-epsteins-secret-charity-gratitude-america-operated-via-deutsche-bank-and-benefited-himself-report/"]]},
+
+/* --- Expansion v5: Wikipedia list + epsteinexposed cross-reference (independently verified) --- */
+{n:"Ronald Lauder",t:"person",w:2,s:["EM","FIN"],nat:"Named in files · joint art LLC",ctx:"Estée Lauder heir; files show Epstein set up an LLC for Lauder and Leon Black to jointly hold a ~$25M artwork; his name appears hundreds of times. Not accused of wrongdoing.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2026-02-06/epstein-set-up-llc-for-lauder-black-to-hold-25-million-artwork"]]},
+{n:"Leonard Blavatnik",t:"person",w:2,s:["EM"],nat:"Correspondent",ctx:"British-American billionaire (Access Industries); files show messages with Epstein, which representatives have downplayed. Not accused of wrongdoing.",links:[["Middle East Eye","https://www.middleeasteye.net/news/epstein-files-reveal-messages-uk-billionaire-blavatnik"]]},
+{n:"Gordon Getty",t:"person",w:2,s:["EM","FIN"],nat:"Correspondent",ctx:"Getty oil heir; exchanged emails (2013–2018) and helped fund a scientist he connected to Epstein. Not accused of wrongdoing.",links:[["Forbes","https://www.forbes.com/sites/monicahunter-hart/2026/01/30/billionaire-gordon-getty-allegedly-said-of-epstein-we-all-have-similar-kinds-of-problems/"]]},
+{n:"Mohammed bin Salman",t:"person",w:2,s:["EM"],nat:"Referenced in an email",ctx:"Saudi Crown Prince referenced in a 2016 Epstein email about gifted items and a framed photo in Epstein's townhouse; Epstein pitched himself as an intermediary. No documented relationship; not accused.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-saudi-arabia"]]},
+{n:"Robert Kraft",t:"person",w:2,s:["EM","CR"],nat:"Named in documents",ctx:"New England Patriots owner named in the DOJ release; files show Epstein and a lawyer discussed arranging legal help for him in 2019. No Epstein-abuse allegation.",links:[["Boston Globe","https://www.bostonglobe.com/2026/02/02/metro/robert-kraft-jeffrey-epstein-documents-justice-department/"]]},
+{n:"Deepak Chopra",t:"person",w:2,s:["EM"],nat:"Met Epstein (2016–2019)",ctx:"Wellness author who met Epstein several times; UC San Diego moved to end his professor affiliation after the files. Not accused of wrongdoing.",links:[["KPBS","https://www.kpbs.org/podcasts/kpbs-midday-edition/ucsd-to-cut-ties-with-deepak-chopra-over-epstein-connection"]]},
+{n:"Bobby Kotick",t:"person",w:2,s:["EM","FIN"],nat:"Correspondent",ctx:"Former Activision Blizzard CEO who appears ~300 times in the emails; Epstein reportedly explored an Activision stake. Not accused of wrongdoing.",links:[["GameSpot","https://www.gamespot.com/articles/epstein-files-reveal-gaming-connections-plans-to-buy-activision-stock/1100-6537858/"]]},
+{n:"Todd Boehly",t:"person",w:2,s:["EM"],nat:"Business meetings",ctx:"Chelsea FC chairman and Dodgers/Lakers co-owner; emails show Epstein arranged two 2011 business meetings, with no suggestion of involvement beyond business.",links:[["Forbes","https://www.forbes.com/sites/peterchawaga/2026/02/01/dodgers-owner-linked-to-jeffrey-epstein-in-new-files-release/"]]},
+{n:"Josh Harris",t:"person",w:2,s:["EM","FIN"],nat:"Correspondent",ctx:"Apollo co-founder and owner of the Washington Commanders and 76ers; files show years of email exchanges, which he has acknowledged. Not accused of wrongdoing.",links:[["The Philadelphia Inquirer","https://www.inquirer.com/news/josh-harris-jeffery-epstein-latest-emails-20260130.html"]]},
+{n:"Dean Kamen",t:"person",w:2,s:["EM"],nat:"Island visit (2013)",ctx:"Segway inventor who visited Epstein's island in 2013; resigned from two boards after the files (a review reportedly cleared him). Not accused of wrongdoing.",links:[["Boston Globe","https://www.bostonglobe.com/2026/03/12/metro/nh-kamen-resigns-first-nonprofit-armi/"]]},
+{n:"Børge Brende",t:"person",w:2,s:["EM"],nat:"Correspondent · resigned",ctx:"World Economic Forum president; exchanged 120+ messages and attended dinners; stepped down after a WEF review of his Epstein ties. Not accused of wrongdoing.",links:[["CNN","https://www.cnn.com/2026/02/26/business/borge-brende-wef-epstein-files-intl"]]},
+{n:"Jack Lang",t:"person",w:2,s:["EM","FIN"],nat:"Named extensively · under probe",ctx:"Former French culture minister whose name appears 600+ times; resigned as Arab World Institute head; French prosecutors opened a tax/money-laundering probe. Not accused of abuse.",links:[["CNN","https://www.cnn.com/2026/02/07/europe/france-jack-lang-epstein-ties-latam-intl"]]},
+{n:"Thorbjørn Jagland",t:"person",w:2,s:["EM"],nat:"Charged (corruption, not abuse)",ctx:"Former Norwegian PM and ex-Council of Europe chief charged with 'gross corruption' over alleged Epstein ties; the charge concerns corruption, not trafficking.",links:[["CNN","https://www.cnn.com/2026/02/13/europe/norway-pm-jagland-charged-epstein-ties-intl-hnk"]]},
+{n:"Mette-Marit",t:"person",w:2,s:["EM"],nat:"Social/correspondence contact · apologized",ctx:"Crown Princess of Norway with 2011–2014 contact and a 2013 Palm Beach stay; said she was 'manipulated and deceived' and apologized. Not accused.",links:[["NBC News","https://www.nbcnews.com/world/europe/norways-crown-princess-says-was-manipulated-deceived-epstein-rcna264409"]]},
+{n:"Anil Ambani",t:"person",w:2,s:["EM"],nat:"Sought business advice",ctx:"Indian industrialist (Reliance Group) who exchanged hundreds of messages seeking business advice and 'White House' insights from Epstein. Not accused of wrongdoing.",links:[["Business Today","https://www.businesstoday.in/world/us/story/jeffrey-epstein-pitched-himself-as-trump-white-house-insider-to-anil-ambani-documents-524050-2026-04-04"]]},
+{n:"Nicolas Sarkozy",t:"person",w:2,s:["EM"],nat:"Cultivated by Epstein",ctx:"Former French President; an investigation documents Epstein's efforts to cultivate him while at the Élysée, with no evidence Sarkozy reciprocated. Not accused.",links:[["Franceinfo","https://www.franceinfo.fr/monde/usa/affaire-jeffrey-epstein/enquete-comment-jeffrey-epstein-a-tente-de-se-rapprocher-de-nicolas-sarkozy-lorsqu-il-etait-a-l-elysee_7801694.html"]]},
+{n:"Mona Juul",t:"person",w:1,s:["EM"],nat:"Diplomat · resigned",ctx:"Norwegian diplomat and UN envoy who resigned as ambassador over Epstein contacts and is under a Norwegian inquiry. Not accused of wrongdoing.",links:[["Times of Israel","https://www.timesofisrael.com/prominent-norwegian-diplomat-who-mediated-oslo-accords-quits-over-epstein-ties/"]]},
+{n:"Miroslav Lajčák",t:"person",w:1,s:["EM"],nat:"Official · resigned, denies",ctx:"Former UN General Assembly president and Slovak foreign minister who resigned as national security adviser after being named; denies wrongdoing.",links:[["U.S. News","https://www.usnews.com/news/world/articles/2026-02-01/slovakia-national-security-adviser-resigns-over-epstein-files-denies-wrongdoing"]]},
+{n:"Andrew Farkas",t:"person",w:2,s:["EM","FIN"],nat:"Business partner",ctx:"Real-estate billionaire who co-owned a St. Thomas marina with Epstein; emails were warmer than his 'purely business' characterization. Not accused of wrongdoing.",links:[["Boston Globe","https://www.bostonglobe.com/2026/02/12/opinion/jeffrey-epstein-hasty-pudding-harvard-andrew-farkas/"]]},
+{n:"Brad Karp",t:"person",w:2,s:["EM"],nat:"Correspondent · resigned as chair",ctx:"Chair of law firm Paul, Weiss; emails show dinners and a request for a job for his son; resigned as chair amid the fallout. Not accused of wrongdoing.",links:[["NBC News","https://www.nbcnews.com/news/us-news/brad-karp-resigns-paul-weiss-chair-epstein-files-fallout-rcna257517"]]},
+{n:"Paul Morris",t:"person",w:1,s:["FIN"],nat:"Private banker",ctx:"Longtime Epstein private banker (Deutsche Bank, later Bank of America/Merrill) who courted him for years and later departed Merrill. Not accused of wrongdoing.",links:[["Bloomberg","https://www.bloomberg.com/news/articles/2026-05-28/epstein-files-reveal-ongoing-ties-with-this-one-wealth-manager"]]},
+{n:"Nicole Junkermann",t:"person",w:1,s:["EM"],nat:"Correspondent · resigned roles",ctx:"German-born investor and regular correspondent who called Epstein 'Mr Wonderful'; resigned from UK charity/advisory roles. Not accused of wrongdoing.",links:[["Yahoo News","https://www.yahoo.com/news/articles/german-countess-advised-nhs-called-130000074.html"]]},
+{n:"Flavio Briatore",t:"person",w:1,s:["BB","EM"],nat:"Contact · introductions",ctx:"Italian businessman and ex-F1 boss in Epstein's contacts/emails; reportedly helped introduce Naomi Campbell to Epstein. Not accused of wrongdoing.",links:[["Yahoo Sports","https://sports.yahoo.com/articles/epstein-files-expose-deep-ties-200517014.html"]]},
+{n:"Nick Candy",t:"person",w:1,s:["EM"],nat:"Contact",ctx:"British luxury-property developer and Reform UK treasurer; files show he dined with an Epstein associate and contacted Ghislaine Maxwell. Not accused of wrongdoing.",links:[["Middle East Eye","https://www.middleeasteye.net/news/reform-uks-treasurer-dined-epstein-associate-contacted-us-ghislaine-maxwell"]]},
+{n:"Adam Back",t:"person",w:1,s:["EM","FIN"],nat:"Investment recipient",ctx:"Blockstream co-founder (cryptographer); Epstein invested ~$500K and invited him to the island. Not accused of wrongdoing.",links:[["Yahoo Finance","https://finance.yahoo.com/news/jeffrey-epstein-invested-bitcoin-firm-200734419.html"]]},
+{n:"Kimbal Musk",t:"person",w:1,s:["EM"],nat:"Referenced · resigned board",ctx:"Restaurateur/investor and Elon Musk's brother, referenced ~140 times; resigned from the Burning Man board; says he met Epstein once. Not accused of wrongdoing.",links:[["The San Francisco Standard","https://sfstandard.com/2026/02/04/kimbal-musk-burning-man-board-of-directors/"]]},
+{n:"Richard Axel",t:"person",w:2,s:["EM"],nat:"Correspondent · stepped down",ctx:"Columbia Nobel laureate who corresponded (2010–2019) and visited the island; stepped down as co-director of Columbia's Zuckerman Institute. Not accused of wrongdoing.",links:[["CNBC","https://www.cnbc.com/2026/02/25/epstein-files-richard-axel-quits-columbia-university-brain-institute.html"]]},
+{n:"George Church",t:"person",w:2,s:["EM","FIN"],nat:"Took donations · apologized",ctx:"Harvard geneticist who took Epstein donations and had lab dealings; apologized, citing 'nerd tunnel vision.' Not accused of wrongdoing.",links:[["STAT","https://www.statnews.com/2026/02/24/epstein-cell-line-george-church-harvard-personal-genome-project/"]]},
+{n:"Dan Ariely",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Duke behavioral economist with a years-long friendship and correspondence with Epstein documented in the files. Not accused of wrongdoing.",links:[["ABC11","https://abc11.com/post/jeffrey-epstein-duke-university-professor-appears-newest-release-files/18531358/"]]},
+{n:"David Gelernter",t:"person",w:1,s:["EM"],nat:"Emails · under review",ctx:"Yale computer scientist barred from teaching during a Yale review over emails to Epstein. Not accused of wrongdoing.",links:[["CNBC","https://www.cnbc.com/2026/02/11/epstein-files-yale-david-gelernter-classeds.html"]]},
+{n:"Leon Botstein",t:"person",w:2,s:["EM","FIN"],nat:"Solicited donations · retiring",ctx:"Bard College president who solicited Epstein donations post-conviction; announced retirement after an investigation found he 'minimized' the ties. Not accused of wrongdoing.",links:[["NPR","https://www.npr.org/2026/05/02/nx-s1-5808942/bard-college-president-leon-botstein-retire-jeffrey-epstein"]]},
+{n:"Jack Horner",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Paleontologist and 'Jurassic Park' consultant who exchanged emails and discussed funding; left Chapman University after appearing in the files. Not accused of wrongdoing.",links:[["The Hill","https://thehill.com/homenews/education/5766930-jurassic-park-jack-horner-chapman-epstein-files/"]]},
+{n:"Elisa New",t:"person",w:1,s:["EM","FIN"],nat:"Received funding",ctx:"Former Harvard professor (and Lawrence Summers' wife); Epstein helped fund her 'Poetry in America' project; PBS and ASU later cut ties. Not accused of wrongdoing.",links:[["Boston Globe","https://www.bostonglobe.com/2025/12/18/metro/epstein-summers-harvard-asu-poetry/"]]},
+{n:"Peter Attia",t:"person",w:1,s:["EM"],nat:"Correspondent · resigned CBS role",ctx:"Longevity physician and podcaster who resigned as a CBS News contributor after friendly emails with Epstein surfaced. Not accused of wrongdoing.",links:[["The Washington Post","https://www.washingtonpost.com/business/2026/02/23/peter-attia-exits-cbs-epstein/"]]},
+{n:"Ben Goertzel",t:"person",w:1,s:["EM","FIN"],nat:"Grant recipient",ctx:"AI researcher who received Epstein grants; Epstein reportedly helped secure Hong Kong government funding for his work. Not accused of wrongdoing.",links:[["South China Morning Post","https://www.scmp.com/news/hong-kong/society/article/3343645/epstein-funded-ai-pioneer-helped-him-get-hk89-million-hong-kong-government-grants"]]},
+{n:"John Brockman",t:"person",w:2,s:["EM","FIN"],nat:"Literary agent · Epstein-funded salon",ctx:"Literary agent whose intellectual salon, the Edge Foundation, Epstein funded heavily, channeling his access to scientists. Not accused of wrongdoing.",links:[["BuzzFeed News","https://www.buzzfeednews.com/article/peteraldhous/jeffrey-epstein-john-brockman-edge-foundation"]]},
+{n:"Edge Foundation",t:"org",w:1,s:["FIN","EM"],nat:"Epstein-funded salon",ctx:"John Brockman's intellectual salon; Epstein was its biggest funder and a conduit for his access to scientists.",links:[["BuzzFeed News","https://www.buzzfeednews.com/article/peteraldhous/jeffrey-epstein-john-brockman-edge-foundation"]]},
+{n:"Paul, Weiss",t:"org",w:1,s:["EM"],nat:"Law firm · chair named",ctx:"Law firm named via chairman Brad Karp's Epstein correspondence; the firm says it never represented Epstein.",links:[["NBC News","https://www.nbcnews.com/news/us-news/brad-karp-resigns-paul-weiss-chair-epstein-files-fallout-rcna257517"]]},
+{n:"Bard College",t:"university",w:1,s:["FIN"],nat:"Received donations",ctx:"Received Epstein donations including post-conviction; board compensation to its president was reportedly funded via Epstein's foundation.",links:[["NPR","https://www.npr.org/2026/05/02/nx-s1-5808942/bard-college-president-leon-botstein-retire-jeffrey-epstein"]]},
+{n:"Hanson Robotics",t:"org",w:1,s:["FIN"],nat:"Epstein funding",ctx:"Maker of the 'Sophia' robot; received Epstein funding via researcher Ben Goertzel and founder David Hanson.",links:[["South China Morning Post","https://www.scmp.com/news/hong-kong/society/article/3343645/epstein-funded-ai-pioneer-helped-him-get-hk89-million-hong-kong-government-grants"]]}
 ];
 
 /* documented entity-entity links (person -> institution) */
@@ -381,7 +611,10 @@ const REL=[
  ["Richard Kahn","Southern Trust Company"],["Lawrence Summers","Harvard University"],["Lawrence Summers","OpenAI"],
  ["Kathryn Ruemmler","Goldman Sachs"],["Leslie Wexner","Zorro Trust"],
  ["Marc Rowan","Apollo Global Management"],["Liquid Funding Ltd.","Bear Stearns"],
- ["Great St. Jim LLC","U.S. Virgin Islands"],["The 1953 Trust","U.S. Virgin Islands"]
+ ["Great St. Jim LLC","U.S. Virgin Islands"],["The 1953 Trust","U.S. Virgin Islands"],
+ ["Ronald Lauder","Leon Black"],["Josh Harris","Apollo Global Management"],["Brad Karp","Paul, Weiss"],
+ ["John Brockman","Edge Foundation"],["Leon Botstein","Bard College"],["Ben Goertzel","Hanson Robotics"],
+ ["George Church","Harvard University"],["Elisa New","Lawrence Summers"],["Paul Morris","Deutsche Bank"]
 ];
 
 /* specific primary-source documents (their own linkable layer) */
@@ -432,6 +665,8 @@ let scale=1, ox=0, oy=0;
 let filterTypes=new Set(Object.keys(TYPEC));
 let filterCols=new Set(Object.keys(COLNAMES));
 let filterDocs=true;
+let threadTest=null;
+let currentEntity=null;
 let searchTerm='';
 let hovered=null, selected=null, view='network';
 
@@ -440,6 +675,7 @@ function visible(n){
   if(n.doc) return filterDocs && filterCols.has(n.col);
   if(!filterTypes.has(n.t)) return false;
   if(!n.s.some(k=>filterCols.has(k))) return false;
+  if(threadTest&&!threadTest(n)) return false;
   return true;
 }
 function searchMatch(n){return searchTerm && n.n && n.n.toLowerCase().includes(searchTerm);}
@@ -596,6 +832,9 @@ function openDetail(n){
     document.getElementById('dcolls').innerHTML='<span class="coll"><span class="sq"></span>'+(COLNAMES[n.col]||'')+'</span>';
     const dl=document.getElementById('dlinks');dl.innerHTML='';
     const a=document.createElement('a');a.href=n.url;a.target='_blank';a.rel='noopener';a.innerHTML='<span>Open document</span><span class="arr">↗</span>';dl.appendChild(a);
+    document.getElementById('deftawrap').style.display='none';
+    currentEntity=n;document.getElementById('dactions').style.display='flex';
+    try{history.replaceState(null,'','#e='+encodeURIComponent(n.title));}catch(_){}
     detail.classList.add('open');return;
   }
   selected=n;
@@ -608,6 +847,15 @@ function openDetail(n){
   (n.s||[]).forEach(k=>{const d=document.createElement('span');d.className='coll';d.innerHTML=`<span class="sq"></span>${COLNAMES[k]}`;colls.appendChild(d);});
   const links=document.getElementById('dlinks');links.innerHTML='';
   (n.links||[]).forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.innerHTML=`<span>${label}</span><span class="arr">↗</span>`;links.appendChild(a);});
+  const ew=document.getElementById('deftawrap'), ef=document.getElementById('defta');
+  if(n.efta){const arr=Array.isArray(n.efta)?n.efta:[n.efta];ew.style.display='';
+    ef.innerHTML=arr.map(x=>x.url
+      ? `<a href="${x.url}" target="_blank" rel="noopener"><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px">${x.ref}</span><span class="arr">↗</span></a>`
+      : `<div class="coll" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace">${x.ref}</div>`).join('');
+  } else { ew.style.display='none'; }
+  currentEntity=n;
+  document.getElementById('dactions').style.display=n.hub?'none':'flex';
+  if(!n.hub){try{history.replaceState(null,'','#e='+encodeURIComponent(n.n));}catch(_){}}
   detail.classList.add('open');
 }
 function closeDetail(){detail.classList.remove('open');selected=null;}
@@ -632,14 +880,22 @@ function buildCloud(){
 /* ---- controls ---- */
 function updateCount(){
   const p=nodes.filter(visible).length;
-  document.getElementById('count').textContent=`${p} entities · ${hubs.filter(visible).length} collections · ${docNodes.filter(visible).length} documents`;
+  document.getElementById('count').textContent=`${p} entities · ${docNodes.filter(visible).length} documents · Updated Aug 2026`;
 }
 document.querySelectorAll('#viewseg button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#viewseg button').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');view=b.dataset.view;
-  const cloud=document.getElementById('cloud');
-  if(view==='cloud'){cloud.classList.add('show');buildCloud();document.getElementById('zoomctl').style.display='none';document.getElementById('legend').style.display='none';}
-  else{cloud.classList.remove('show');document.getElementById('zoomctl').style.display='flex';document.getElementById('legend').style.display='';alpha=Math.max(alpha,0.6);}
+  const cloud=document.getElementById('cloud'), rolo=document.getElementById('rolodex'), list=document.getElementById('listview');
+  cloud.classList.toggle('show',view==='cloud');
+  rolo.classList.toggle('show',view==='rolodex');
+  list.classList.toggle('show',view==='list');
+  const net=view==='network';
+  document.getElementById('zoomctl').style.display=net?'flex':'none';
+  document.getElementById('legend').style.display=net?'':'none';
+  if(view==='cloud')buildCloud();
+  if(view==='rolodex')buildRolo();
+  if(view==='list')buildList();
+  if(net)alpha=Math.max(alpha,0.6);
 });
 document.querySelectorAll('.chip[data-type]').forEach(c=>c.onclick=()=>{
   const t=c.dataset.type;if(filterTypes.has(t)&&filterTypes.size>=1){if(filterTypes.has(t)){filterTypes.delete(t);c.classList.add('off');}else{filterTypes.add(t);c.classList.remove('off');}}
@@ -650,15 +906,72 @@ document.querySelectorAll('.chip[data-col]').forEach(c=>c.onclick=()=>{
   const k=c.dataset.col;if(filterCols.has(k)){filterCols.delete(k);c.classList.add('off');}else{filterCols.add(k);c.classList.remove('off');}
   refresh();
 });
-document.getElementById('search').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();if(view==='cloud')buildCloud();});
+document.getElementById('search').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();if(view==='cloud')buildCloud();if(view==='rolodex')buildRolo();if(view==='list')buildList();});
 document.getElementById('reset').onclick=()=>{
   filterTypes=new Set(Object.keys(TYPEC));filterCols=new Set(Object.keys(COLNAMES));filterDocs=true;
+  threadTest=null;document.getElementById('threadSel').value='';document.getElementById('threadbar').classList.remove('show');
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('off'));
   document.getElementById('search').value='';searchTerm='';
   scale=1;ox=0;oy=0;alpha=1;refresh();
 };
 document.getElementById('docchip').onclick=()=>{filterDocs=!filterDocs;document.getElementById('docchip').classList.toggle('off',!filterDocs);refresh();};
-function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();}
+function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();if(view==='rolodex')buildRolo();if(view==='list')buildList();}
+
+/* ---- rolodex ---- */
+let roloList=[], roloIdx=0, spinning=false;
+function buildRolo(){
+  roloList=nodes.filter(visible).filter(n=>!searchTerm||(n.n&&n.n.toLowerCase().includes(searchTerm)));
+  if(roloIdx>=roloList.length)roloIdx=0;
+  renderRolo();
+}
+function renderRolo(){
+  const card=document.getElementById('roloCard');card.classList.remove('flipped');
+  if(!roloList.length){document.getElementById('roloName').textContent='No matches';document.getElementById('roloType').innerHTML='';document.getElementById('roloNat').textContent='';document.getElementById('roloColls').innerHTML='';document.getElementById('roloPos').textContent='0 / 0';return;}
+  const n=roloList[roloIdx], color=nodeColor(n);
+  const typeHTML=`<span class="dot" style="background:${color}"></span>${n.t.charAt(0).toUpperCase()+n.t.slice(1)}${n.ac?' · accused of involvement':''}`;
+  card.querySelector('.rolo-front').style.borderTop=`4px solid ${color}`;
+  document.getElementById('roloType').innerHTML=typeHTML;
+  document.getElementById('roloType2').innerHTML=typeHTML;
+  document.getElementById('roloName').textContent=n.n;
+  document.getElementById('roloNat').textContent=n.nat||'';
+  const colls=document.getElementById('roloColls');colls.innerHTML='';
+  (n.s||[]).forEach(k=>{const d=document.createElement('span');d.className='coll';d.innerHTML=`<span class="sq"></span>${COLNAMES[k]}`;colls.appendChild(d);});
+  document.getElementById('roloCtx').textContent=n.ctx||'';
+  const ew=document.getElementById('roloEftaWrap'), ef=document.getElementById('roloEfta');
+  if(n.efta){const arr=Array.isArray(n.efta)?n.efta:[n.efta];ew.style.display='';
+    ef.innerHTML=arr.map(x=>x.url?`<a href="${x.url}" target="_blank" rel="noopener"><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px">${x.ref}</span><span class="arr">↗</span></a>`:`<div class="coll" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace">${x.ref}</div>`).join('');
+  } else { ew.style.display='none'; }
+  const links=document.getElementById('roloLinks');links.innerHTML='';
+  (n.links||[]).forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.innerHTML=`<span>${label}</span><span class="arr">↗</span>`;links.appendChild(a);});
+  document.getElementById('roloPos').textContent=`${roloIdx+1} / ${roloList.length}`;
+}
+function roloNext(){if(!roloList.length)return;roloIdx=(roloIdx+1)%roloList.length;renderRolo();}
+function roloPrev(){if(!roloList.length)return;roloIdx=(roloIdx-1+roloList.length)%roloList.length;renderRolo();}
+function roloSpin(){
+  if(spinning||roloList.length<2)return;spinning=true;
+  const card=document.getElementById('roloCard');card.classList.remove('flipped');
+  const target=Math.floor(Math.random()*roloList.length);
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){roloIdx=target;renderRolo();spinning=false;return;}
+  card.classList.add('spinning');
+  const total=13+Math.floor(Math.random()*4);let ticks=0;
+  (function tick(){
+    roloIdx=Math.floor(Math.random()*roloList.length);renderRolo();ticks++;
+    if(ticks>=total){roloIdx=target;renderRolo();card.classList.remove('spinning');spinning=false;return;}
+    setTimeout(tick,40+ticks*14);
+  })();
+}
+document.getElementById('roloNext').onclick=roloNext;
+document.getElementById('roloPrev').onclick=roloPrev;
+document.getElementById('roloSpin').onclick=roloSpin;
+document.getElementById('roloCard').addEventListener('click',e=>{if(e.target.closest('a'))return;e.currentTarget.classList.toggle('flipped');});
+document.getElementById('roloCard').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.currentTarget.classList.toggle('flipped');}});
+window.addEventListener('keydown',e=>{
+  if(view!=='rolodex'||e.target.id==='search')return;
+  if(e.key==='ArrowRight')roloNext();
+  else if(e.key==='ArrowLeft')roloPrev();
+  else if(e.key.toLowerCase()==='s')roloSpin();
+});
 
 document.getElementById('zin').onclick=()=>{scale=Math.min(3.2,scale*1.2);};
 document.getElementById('zout').onclick=()=>{scale=Math.max(0.3,scale*0.83);};
@@ -669,8 +982,93 @@ document.getElementById('methodbtn').onclick=()=>document.getElementById('modal'
 document.getElementById('mclose').onclick=()=>document.getElementById('modal').classList.remove('show');
 document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('show');};
 
+/* ---- list view ---- */
+let listSort={key:'w',dir:-1};
+function buildList(){
+  const rows=nodes.filter(visible).slice();
+  const k=listSort.key,d=listSort.dir;
+  rows.sort((a,b)=>{
+    let va=k==='w'?a.w:(a[k]||'').toString().toLowerCase();
+    let vb=k==='w'?b.w:(b[k]||'').toString().toLowerCase();
+    if(va<vb)return -1*d; if(va>vb)return 1*d; return a.n.localeCompare(b.n);
+  });
+  const tb=document.getElementById('lbody');tb.innerHTML='';
+  const frag=document.createDocumentFragment();
+  rows.forEach(n=>{
+    const tr=document.createElement('tr');
+    const colls=(n.s||[]).map(x=>COLNAMES[x]).join(', ');
+    const srcs=(n.links||[]).map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`).join('');
+    tr.innerHTML=`<td><span class="nm" style="border-left:3px solid ${nodeColor(n)};padding-left:8px">${n.n}</span></td>`+
+      `<td><span class="ltag">${n.ac?'accused':n.t}</span></td>`+
+      `<td style="color:var(--mut);max-width:300px">${n.nat||''}</td>`+
+      `<td style="color:var(--dim);font-size:11.5px">${colls}</td>`+
+      `<td class="src">${srcs}</td>`;
+    tr.querySelector('.nm').onclick=()=>openDetail(n);
+    frag.appendChild(tr);
+  });
+  tb.appendChild(frag);
+  document.getElementById('lcap').textContent=`${rows.length} entities${searchTerm?' matching "'+searchTerm+'"':''}${threadTest?' in this thread':''} — click a name for its profile, or a source to open it. Click a column header to sort.`;
+}
+document.querySelectorAll('.ltable th[data-sort]').forEach(th=>th.onclick=()=>{
+  const k=th.dataset.sort;
+  if(listSort.key===k)listSort.dir*=-1; else {listSort.key=k;listSort.dir=(k==='w'?-1:1);}
+  buildList();
+});
+
+/* ---- guided threads ---- */
+const THREADS={
+  money:{label:'Follow the money',blurb:'The banks, trusts, shell entities and financiers that moved and managed Epstein’s money.',test:n=>n.s&&n.s.includes('FIN')},
+  postconv:{label:'After the conviction',blurb:'People and institutions that kept dealing with Epstein after his 2008 sex-offender conviction.',test:(function(){const s=new Set(['Bill Gates','Elon Musk','Lawrence Summers','Joi Ito','MIT Media Lab','Harvard University','Bard College','Leon Botstein','Martin Nowak','Gratitude America Ltd.','Jeffrey Epstein VI Foundation','Peter Mandelson','Kathryn Ruemmler','Steve Bannon','Noam Chomsky','Leon Black','Apollo Global Management','George Church','Richard Axel','Nathan Myhrvold','Elisa New','Deepak Chopra','Peter Attia','Reid Hoffman','Peter Thiel']);return n=>s.has(n.n);})()},
+  science:{label:'The science pipeline',blurb:'The scientists, universities and Epstein-funded salons through which he bought access to research and prestige.',test:(function(){const s=new Set(['John Brockman','Edge Foundation','George Church','Richard Axel','Marvin Minsky','Nathan Myhrvold','Lawrence Krauss','Stephen Hawking','MIT Media Lab','Harvard University','Joi Ito','Martin Nowak','Ben Goertzel','Hanson Robotics','Dan Ariely','David Gelernter','Jack Horner','Elisa New','Bard College','Leon Botstein']);return n=>s.has(n.n);})()},
+  accused:{label:'The accused',blurb:'People accused of involvement in the abuse or trafficking — named by an accuser, charged, or convicted. Denials are noted in each profile.',test:n=>!!n.ac}
+};
+function applyThread(id){
+  const t=THREADS[id];
+  threadTest=t?t.test:null;
+  const bar=document.getElementById('threadbar');
+  if(t){document.getElementById('threadtext').innerHTML='<b>'+t.label+'</b> — '+t.blurb;bar.classList.add('show');}
+  else{bar.classList.remove('show');}
+  refresh();
+}
+document.getElementById('threadSel').addEventListener('change',e=>applyThread(e.target.value));
+document.getElementById('threadclear').onclick=()=>{document.getElementById('threadSel').value='';applyThread('');};
+
+/* ---- citations & permalinks ---- */
+function flash(id,msg){const b=document.getElementById(id);if(!b)return;const t=b.textContent;b.textContent=msg;setTimeout(()=>{b.textContent=t;},1400);}
+function copyText(txt){try{navigator.clipboard&&navigator.clipboard.writeText(txt);}catch(_){}}
+document.getElementById('copyLink').onclick=()=>{if(!currentEntity)return;const base=location.href.split('#')[0];copyText(base+'#e='+encodeURIComponent(currentEntity.n||currentEntity.title));flash('copyLink','Link copied ✓');};
+document.getElementById('copyCite').onclick=()=>{if(!currentEntity)return;const n=currentEntity;const src=(n.links&&n.links[0]&&n.links[0][1])||n.url||'';const cite=`${n.n||n.title} — ${(n.nat?n.nat+'. ':'')}${n.ctx||''} [Documented connection; not evidence of wrongdoing.] Source: ${src}. Via the Epstein Files map, retrieved 2026.`;copyText(cite);flash('copyCite','Citation copied ✓');};
+
+/* ---- data export ---- */
+function download(name,type,content){const blob=new Blob([content],{type});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);}
+document.getElementById('exportJson').onclick=()=>download('epstein-map-entities.json','application/json',JSON.stringify(E,null,2));
+document.getElementById('exportCsv').onclick=()=>{
+  const esc=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+  const rows=[['name','type','prominence','accused','status','collections','context','sources']];
+  E.forEach(e=>rows.push([e.n,e.t,e.w,e.ac?'yes':'no',e.nat||'',(e.s||[]).map(k=>COLNAMES[k]).join('; '),e.ctx||'',(e.links||[]).map(l=>l[1]).join(' ; ')]));
+  download('epstein-map-entities.csv','text/csv',rows.map(r=>r.map(esc).join(',')).join('\n'));
+};
+
+/* ---- help + welcome + stat wiring ---- */
+const SRC=E.reduce((a,e)=>a+((e.links&&e.links.length)||0),0)+DOCS.length;
+document.getElementById('wstats').innerHTML=[[E.length,'entities'],[SRC+'+','linked sources'],[DOCS.length,'primary documents'],[E.filter(e=>e.ac).length,'accused (denials noted)']].map(([n,l])=>`<div class="wstat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+document.getElementById('welcomeGo').onclick=()=>document.getElementById('welcome').classList.add('hide');
+document.getElementById('welcomeStd').onclick=()=>{document.getElementById('welcome').classList.add('hide');document.getElementById('modal').classList.add('show');};
+document.getElementById('helpbtn').onclick=()=>document.getElementById('help').classList.add('show');
+document.getElementById('helpclose').onclick=()=>document.getElementById('help').classList.remove('show');
+document.getElementById('help').onclick=e=>{if(e.target.id==='help')document.getElementById('help').classList.remove('show');};
+
+/* ---- open from permalink ---- */
+function openFromHash(){
+  if(!location.hash.startsWith('#e='))return false;
+  const nm=decodeURIComponent(location.hash.slice(3));
+  const n=nodes.find(x=>x.n===nm)||docNodes.find(x=>x.title===nm);
+  if(n){openDetail(n);document.getElementById('welcome').classList.add('hide');return true;}
+  return false;
+}
+
 /* boot */
-resize();updateCount();loop();
+resize();updateCount();loop();openFromHash();
 </script>
 </body>
 </html>
