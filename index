@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epstein Files — Documented Connections</title>
+<style>
+  :root{
+    --bg:#0d1017; --panel:#141924; --panel2:#1b2230; --line:#2a3346;
+    --ink:#e8edf6; --mut:#93a0b5; --dim:#63708a;
+    --person:#6ea8fe; --bank:#f4a259; --org:#b088f9; --university:#4dd0a7; --trust:#e5738a;
+    --hub:#ffd166; --accent:#7cc4ff;
+    --danger:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow:hidden}
+  #app{display:flex;flex-direction:column;height:100vh}
+
+  header{padding:12px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#121824,#0d1017);flex:0 0 auto}
+  .titlerow{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h1{font-size:18px;margin:0;letter-spacing:.2px}
+  h1 .sub{color:var(--mut);font-weight:500;font-size:12.5px;margin-left:2px}
+  .count{color:var(--dim);font-size:12px;margin-left:auto}
+
+  .controls{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}
+  .seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .seg button{background:transparent;border:0;color:var(--mut);padding:7px 14px;font-size:13px;cursor:pointer}
+  .seg button.on{background:var(--accent);color:#06101c;font-weight:600}
+  input#search{background:var(--panel2);border:1px solid var(--line);border-radius:9px;color:var(--ink);
+    padding:8px 12px;font-size:13px;width:210px;outline:none}
+  input#search:focus{border-color:var(--accent)}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:20px;color:var(--mut);
+    padding:5px 11px;font-size:12px;cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:6px}
+  .chip .dot{width:9px;height:9px;border-radius:50%}
+  .chip.off{opacity:.38;text-decoration:line-through}
+  .chip:hover{border-color:var(--dim)}
+  .filtlabel{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.7px;margin:0 2px}
+  .ghost{background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer}
+  .ghost:hover{color:var(--ink);border-color:var(--dim)}
+
+  #banner{background:#241318;border:1px solid #46242b;color:#ffd7d7;font-size:12.5px;
+    padding:8px 14px;display:flex;gap:10px;align-items:center;flex:0 0 auto}
+  #banner b{color:#ffb3b3}
+  #banner button{margin-left:auto;background:transparent;border:1px solid #5a2d34;color:#ffb3b3;border-radius:7px;padding:4px 10px;font-size:12px;cursor:pointer}
+
+  main{flex:1 1 auto;position:relative;overflow:hidden}
+  canvas{display:block;width:100%;height:100%;cursor:grab}
+  canvas.grabbing{cursor:grabbing}
+
+  /* Word cloud */
+  #cloud{position:absolute;inset:0;display:none;overflow:auto;padding:34px 40px 90px;background:var(--bg)}
+  #cloud.show{display:block}
+  .cloudwrap{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:center;max-width:1100px;margin:0 auto}
+  .word{cursor:pointer;line-height:1.05;transition:transform .08s;white-space:nowrap;font-weight:600}
+  .word:hover{transform:scale(1.06)}
+  .cloudhint{text-align:center;color:var(--dim);font-size:12px;margin:0 auto 20px;max-width:640px}
+
+  .zoomctl{position:absolute;left:14px;bottom:14px;display:flex;gap:6px}
+  .zoomctl button{width:34px;height:34px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-size:17px;cursor:pointer}
+  .zoomctl button:hover{border-color:var(--dim)}
+
+  .legend{position:absolute;right:14px;bottom:14px;background:rgba(20,25,36,.9);border:1px solid var(--line);
+    border-radius:11px;padding:11px 13px;font-size:11.5px;color:var(--mut);backdrop-filter:blur(6px);max-width:220px}
+  .legend h4{margin:0 0 7px;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--dim)}
+  .legrow{display:flex;align-items:center;gap:8px;margin:3px 0}
+  .legrow .dot{width:11px;height:11px;border-radius:50%}
+  .legrow .sq{width:11px;height:11px;border-radius:3px}
+
+  /* Detail panel */
+  #detail{position:absolute;top:0;right:0;height:100%;width:380px;max-width:88vw;background:var(--panel);
+    border-left:1px solid var(--line);transform:translateX(102%);transition:transform .22s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;z-index:30;box-shadow:-16px 0 40px rgba(0,0,0,.35)}
+  #detail.open{transform:translateX(0)}
+  .dhead{padding:18px 20px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
+  .dclose{position:absolute;top:14px;right:14px;background:transparent;border:0;color:var(--mut);font-size:22px;cursor:pointer;line-height:1}
+  .dclose:hover{color:var(--ink)}
+  .dtype{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--mut)}
+  .dtype .dot{width:10px;height:10px;border-radius:50%}
+  #dname{font-size:21px;margin:8px 0 10px;line-height:1.15}
+  .natchip{display:inline-block;font-size:11.5px;padding:4px 10px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);color:var(--ink)}
+  .dbody{padding:16px 20px 40px}
+  .dsec{margin-bottom:18px}
+  .dsec h5{margin:0 0 7px;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--dim)}
+  #dctx{font-size:14px;line-height:1.55;color:#dbe3f0;margin:0}
+  .colls{display:flex;flex-wrap:wrap;gap:7px}
+  .coll{font-size:12px;padding:5px 10px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);display:inline-flex;gap:7px;align-items:center}
+  .coll .sq{width:9px;height:9px;border-radius:2px;background:var(--hub)}
+  .links a{display:flex;gap:9px;align-items:center;color:var(--accent);text-decoration:none;font-size:13px;
+    padding:9px 11px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px;background:var(--panel2)}
+  .links a:hover{border-color:var(--accent);background:#182231}
+  .links a .arr{margin-left:auto;color:var(--dim)}
+  .disc{font-size:11.5px;color:var(--dim);line-height:1.5;border-top:1px solid var(--line);padding-top:14px}
+
+  footer{flex:0 0 auto;border-top:1px solid var(--line);background:#0b0e14;color:var(--dim);font-size:11.5px;padding:9px 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  footer a{color:var(--mut);text-decoration:none}
+  footer a:hover{color:var(--accent)}
+  .methodbtn{margin-left:auto;background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:7px;padding:5px 11px;cursor:pointer;font-size:11.5px}
+
+  #modal{position:fixed;inset:0;background:rgba(4,7,12,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+  #modal.show{display:flex}
+  .mcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:660px;width:100%;max-height:84vh;overflow:auto;padding:26px 28px}
+  .mcard h2{margin:0 0 6px;font-size:19px}
+  .mcard h3{font-size:13px;color:var(--accent);margin:18px 0 6px;letter-spacing:.3px}
+  .mcard p{font-size:13.5px;line-height:1.62;color:#cdd6e4;margin:0 0 10px}
+  .mcard code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:12.5px}
+  .mclose{float:right;background:transparent;border:0;color:var(--mut);font-size:24px;cursor:pointer}
+  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);color:var(--mut);margin:0 4px 4px 0}
+
+  @media (max-width:720px){
+    input#search{width:150px}
+    .legend{display:none}
+    #detail{width:100%}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="titlerow">
+      <h1>Epstein Files <span class="sub">— an interactive map of documented people, institutions &amp; money</span></h1>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="controls">
+      <div class="seg" id="viewseg">
+        <button data-view="network" class="on">Network</button>
+        <button data-view="cloud">Word cloud</button>
+      </div>
+      <input id="search" placeholder="Search a name…" autocomplete="off">
+      <span class="filtlabel">Type</span>
+      <span class="chip" data-type="person"><span class="dot" style="background:var(--person)"></span>People</span>
+      <span class="chip" data-type="bank"><span class="dot" style="background:var(--bank)"></span>Banks</span>
+      <span class="chip" data-type="org"><span class="dot" style="background:var(--org)"></span>Orgs</span>
+      <span class="chip" data-type="university"><span class="dot" style="background:var(--university)"></span>Universities</span>
+      <span class="chip" data-type="trust"><span class="dot" style="background:var(--trust)"></span>Trusts</span>
+      <span class="filtlabel">Collection</span>
+      <span class="chip col" data-col="FL">Flight logs</span>
+      <span class="chip col" data-col="BB">Black book</span>
+      <span class="chip col" data-col="CR">Court records</span>
+      <span class="chip col" data-col="EM">2025 emails</span>
+      <span class="chip col" data-col="FIN">Financial</span>
+      <button class="ghost" id="reset">Reset</button>
+    </div>
+  </header>
+
+  <div id="banner">
+    <span>⚠️ <b>Appearing here is not evidence of wrongdoing.</b> These files mix associates, business contacts, correspondents, victims, witnesses, staff and people named only in passing. Each entry states <i>how</i> the person is documented — read it before drawing conclusions.</span>
+    <button id="bannerx">Got it</button>
+  </div>
+
+  <main>
+    <canvas id="cv"></canvas>
+    <div id="cloud">
+      <p class="cloudhint">Sized by how prominently each name features across the released material. Click any name for its documented record and sources.</p>
+      <div class="cloudwrap" id="cloudwrap"></div>
+    </div>
+
+    <div class="zoomctl" id="zoomctl">
+      <button id="zin">+</button><button id="zout">−</button><button id="zfit" title="Fit">⤢</button>
+    </div>
+
+    <div class="legend" id="legend">
+      <h4>Entity type</h4>
+      <div class="legrow"><span class="dot" style="background:var(--person)"></span>Person</div>
+      <div class="legrow"><span class="dot" style="background:var(--bank)"></span>Bank</div>
+      <div class="legrow"><span class="dot" style="background:var(--org)"></span>Organization</div>
+      <div class="legrow"><span class="dot" style="background:var(--university)"></span>University</div>
+      <div class="legrow"><span class="dot" style="background:var(--trust)"></span>Trust / entity</div>
+      <div class="legrow" style="margin-top:8px"><span class="sq" style="background:var(--hub)"></span>Document collection</div>
+    </div>
+
+    <aside id="detail">
+      <div class="dhead">
+        <button class="dclose" id="dclose">×</button>
+        <span class="dtype" id="dtype"><span class="dot"></span><span id="dtypelabel"></span></span>
+        <div id="dname"></div>
+        <span class="natchip" id="dnat"></span>
+      </div>
+      <div class="dbody">
+        <div class="dsec"><h5>How they're documented</h5><p id="dctx"></p></div>
+        <div class="dsec"><h5>Appears in</h5><div class="colls" id="dcolls"></div></div>
+        <div class="dsec"><h5>Sources</h5><div class="links" id="dlinks"></div></div>
+        <div class="disc">Context and sources are drawn from reputable reporting and court/DOJ records. Inclusion reflects documented association only; where individuals have denied allegations or been cleared, that is noted above.</div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Primary portals:</span>
+    <a href="https://www.justice.gov/epstein/doj-disclosures" target="_blank" rel="noopener">DOJ disclosures ↗</a>
+    <a href="https://oversightdemocrats.house.gov/news/press-releases/house-oversight-committee-releases-jeffrey-epstein-email-correspondence-raising" target="_blank" rel="noopener">House Oversight emails ↗</a>
+    <a href="https://www.justice.gov/opa/pr/department-justice-publishes-35-million-responsive-pages-compliance-epstein-files" target="_blank" rel="noopener">3.5M-page release ↗</a>
+    <button class="methodbtn" id="methodbtn">Methodology &amp; caveats</button>
+  </footer>
+</div>
+
+<div id="modal">
+  <div class="mcard">
+    <button class="mclose" id="mclose">×</button>
+    <h2>Methodology &amp; caveats</h2>
+    <p>This is a research-navigation tool, not an accusation index. It maps <b>documented associations</b> between named people/institutions and the major public collections of Epstein-related material, so you can jump to primary reporting and records. Node size reflects how prominently a name features in reporting — not any measure of culpability.</p>
+
+    <h3>The five collections</h3>
+    <p>
+      <span class="tag">Flight logs</span> Passenger records from Epstein's aircraft entered as court evidence.
+      <span class="tag">Black book</span> Epstein's contact directory (multiple versions leaked/auctioned).
+      <span class="tag">Court records</span> Unsealed <i>Giuffre v. Maxwell</i> filings, depositions and exhibits (Jan 2024 and prior).
+      <span class="tag">2025 emails</span> The House Oversight estate-email releases (Nov 2025) and DOJ Transparency Act disclosures.
+      <span class="tag">Financial</span> Bank suits/settlements, donations, trusts and Epstein's own entities.
+    </p>
+
+    <h3>What "documented" does and doesn't mean</h3>
+    <p>A flight-log or black-book entry means only that a person traveled on the plane or that Epstein held their contact details. A name in an unsealed filing may be an allegation by an accuser, deposition testimony, a passing reference, or a person the witness said they <i>never</i> met. A name in the emails shows correspondence, not complicity. The July 2025 DOJ/FBI review concluded there is no incriminating master "client list." Settlements were made without admissions of liability.</p>
+
+    <h3>Notable verification note</h3>
+    <p>A widely-shared claim that Epstein spelled Jean-Luc Brunel's name phonetically as <code>john look</code> in an email <b>could not be verified</b> in reputable sources and is therefore <b>not</b> represented here as fact. (There is a separate, verified "phonetic nickname" email — the unrelated <code>Bubba</code> message between Epstein and his brother.) Several allegations in the record were later recanted (e.g., Sarah Ransome's claims about Trump, Branson and Clinton). Deceased individuals could not respond to material unsealed after their deaths.</p>
+
+    <h3>Sourcing</h3>
+    <p>Entries are anchored to major outlets (CNN, CBS, NPR, PBS, TIME, BBC, Al Jazeera, Bloomberg, CNBC), court/DOJ/USVI records, and official releases. For a public-facing site, cite the underlying primary documents where possible. This dataset is a curated starting roster — not the full 3.5M-page corpus — and is meant to be expanded.</p>
+  </div>
+</div>
+
+<script>
+/* ============================ DATA ============================ */
+/* w = prominence (1-3, drives size). s = collections. nat = neutral status.
+   ctx = neutral one-line record. rel = documented entity-entity links.
+   links = [label,url]. */
+const COLNAMES={FL:"Flight logs",BB:"Black book",CR:"Court records",EM:"2025 emails",FIN:"Financial / institutional"};
+const TYPEC={person:"--person",bank:"--bank",org:"--org",university:"--university",trust:"--trust"};
+
+const E=[
+/* central */
+{n:"Jeffrey Epstein",t:"person",w:3,s:["FL","BB","CR","EM","FIN"],nat:"Central subject · convicted sex offender",ctx:"Financier and convicted sex offender at the center of every collection; died in federal custody in 2019 awaiting a sex-trafficking trial.",links:[["TIME — unsealed documents overview","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Ghislaine Maxwell",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Convicted",ctx:"Epstein's former partner and associate; convicted in 2021 on federal sex-trafficking and conspiracy charges and sentenced to 20 years. Maintains her innocence.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Virginia Giuffre",t:"person",w:3,s:["CR"],nat:"Accuser / advocate",ctx:"Central accuser whose lawsuits (incl. Giuffre v. Maxwell) drove much of the document disclosure; named many individuals in depositions. Died in April 2025.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Jean-Luc Brunel",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Charged in France · died before trial (2022)",ctx:"French modeling agent and close Epstein associate; charged in France with rape of minors and detained in 2020. Denied all allegations; found dead in a Paris cell in 2022 before trial, so the claims were never adjudicated. (A claimed 'john look' email spelling is unverified and omitted.)",links:[["NBC News","https://www.nbcnews.com/news/world/modeling-agent-linked-jeffrey-epstein-found-dead-prison-cell-rcna16945"]]},
+
+/* named high-flyers */
+{n:"Donald Trump",t:"person",w:3,s:["FL","BB","EM"],nat:"Social acquaintance · denies wrongdoing",ctx:"Documented mid-1990s social acquaintance via flight logs (with family), a black-book entry, and 2025-released emails. Says the relationship ended around 2004; denies wrongdoing and denies authoring a disputed 2003 birthday note (which he has litigated).",links:[["TIME — Trump/Epstein timeline","https://time.com/7333365/trump-epstein-relationship-timeline/"],["NPR — Trump named in emails","https://www.npr.org/2025/11/12/nx-s1-5605582/epstein-files-release-trump-email-grijalva-massie"]]},
+{n:"Bill Clinton",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Association · denies knowledge",ctx:"Documented on multiple flights (incl. a 2002 Africa trip tied to Clinton Foundation work) and referenced in filings/emails. His office says he knew nothing of Epstein's crimes and never visited the island.",links:[["CBS News — unsealed names","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Prince Andrew",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Named by accuser · settled, denies",ctx:"Named by Virginia Giuffre as someone she was directed to; appears in flight logs, the black book and photos. Denied all allegations and settled her civil suit in 2022 with no admission of liability; later stripped of royal titles.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Alan Dershowitz",t:"person",w:3,s:["FL","BB","CR"],nat:"Named by accuser · denies",ctx:"Attorney who helped negotiate Epstein's 2008 plea deal; appears in flight logs and the black book and was named in Giuffre-related filings. Has consistently and vehemently denied wrongdoing.",links:[["Al Jazeera — unsealed names","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
+{n:"Bill Gates",t:"person",w:3,s:["EM"],nat:"Post-conviction meetings · denies wrongdoing",ctx:"Met Epstein multiple times beginning 2011 — after Epstein's conviction — in what Gates calls a misjudged belief Epstein could mobilize philanthropic donors. Told the House Oversight Committee he 'never victimized anyone' and called the association a 'huge mistake.'",links:[["CBS News — Gates & Musk","https://www.cbsnews.com/news/bill-gates-elon-musk-epstein-files-what-documents-show/"],["TIME — Gates before Congress","https://time.com/article/2026/06/09/bill-gates-jeffrey-epstein-house-oversight-committee-congress/"]]},
+{n:"Ehud Barak",t:"person",w:3,s:["BB","EM"],nat:"Business / social · denies wrongdoing",ctx:"Former Israeli PM with an acknowledged business and social relationship with Epstein, incl. a 2015 investment in a tech firm partly funded by Epstein and visits to his homes. Denies attending any parties or seeing young women; faces no allegations.",links:[["Times of Israel","https://www.timesofisrael.com/barak-says-he-visited-epstein-at-home-but-didnt-attend-sex-parties"]]},
+{n:"Woody Allen",t:"person",w:2,s:["BB","EM"],nat:"Social · not accused in Epstein matter",ctx:"Filmmaker and NY neighbor who, per 2025-released emails, dined with Epstein often; emails show Epstein helped arrange a 2015 White House visit for Allen's wife. Reporting notes he is not accused of any involvement in Epstein's abuse.",links:[["Hollywood Reporter","https://www.hollywoodreporter.com/news/general-news/woody-allen-compared-jeffrey-epstein-to-dracula-1236338646/"]]},
+{n:"Soon-Yi Previn",t:"person",w:2,s:["EM"],nat:"Social · no allegations",ctx:"Wife of Woody Allen; her only documented link is the Allen–Epstein social circle and a 2015 White House visit Epstein helped arrange. No allegations of any involvement or knowledge.",links:[["NBC New York","https://www.nbcnewyork.com/news/national-international/epstein-emails-show-helped-arrange-white-house-visit-for-woody-allen/6456116/"]]},
+
+/* email-release correspondents */
+{n:"Lawrence Summers",t:"person",w:3,s:["FL","EM"],nat:"Correspondent · expressed regret",ctx:"Economist and former Treasury Secretary; extensive friendly correspondence in the released emails. Called it a 'major error of judgement,' stepped back from public roles; Harvard opened a review.",links:[["NPR — Chomsky, Bannon, Summers","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"Steve Bannon",t:"person",w:2,s:["EM"],nat:"Correspondent",ctx:"Named in 2018 emails and a released interview video; Epstein advised him on a European political tour. Not accused of involvement in Epstein's crimes.",links:[["NPR — Chomsky, Bannon, Summers","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"Peter Mandelson",t:"person",w:2,s:["EM"],nat:"Correspondent · resigned",ctx:"UK politician whose emails show continued contact after Epstein's conviction, incl. urging him to 'fight' his sentence. Resigned from the House of Lords; a police investigation was opened.",links:[["BBC","https://feeds.bbci.co.uk/news/articles/c0jdl8wzvnvo"]]},
+{n:"Noam Chomsky",t:"person",w:2,s:["EM"],nat:"Correspondent",ctx:"Linguist; casual 2015 correspondence about travel and economics; Epstein offered use of residences. Not accused of involvement in Epstein's crimes.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
+{n:"Kathryn Ruemmler",t:"person",w:2,s:["EM"],nat:"Correspondent · expressed regret",ctx:"Former Obama White House counsel, now a Goldman Sachs legal officer; frequent emailer to Epstein. Later said she 'regret[s] ever knowing' him.",links:[["NPR","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"Michael Wolff",t:"person",w:2,s:["EM"],nat:"Correspondent (author)",ctx:"Author who exchanged emails with Epstein about handling media, incl. messages referencing Trump. Not accused of involvement in Epstein's crimes.",links:[["NPR","https://www.npr.org/2025/11/12/nx-s1-5605582/epstein-files-release-trump-email-grijalva-massie"]]},
+{n:"Elon Musk",t:"person",w:3,s:["EM"],nat:"Correspondence · says invitations declined",ctx:"Named in 2012–2014 emails referencing island gatherings; says he had 'very little correspondence,' declined repeated invitations, and that the emails could be misinterpreted.",links:[["CBS News — Gates & Musk","https://www.cbsnews.com/news/bill-gates-elon-musk-epstein-files-what-documents-show/"]]},
+{n:"Peter Thiel",t:"person",w:2,s:["EM"],nat:"Correspondent",ctx:"Investor named in 2014/2018 emails, incl. a Caribbean invitation. Not accused of involvement in Epstein's crimes.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
+{n:"Reid Hoffman",t:"person",w:2,s:["EM"],nat:"Correspondent · apologized",ctx:"LinkedIn co-founder cited among Epstein's post-conviction contacts; had previously apologized for the ties.",links:[["NPR","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"Jeff Bezos",t:"person",w:2,s:["EM"],nat:"Incidental mention",ctx:"Named in a 2009 email noting he attended a Maxwell after-party. No wrongdoing alleged.",links:[["AOL — notable names","https://www.aol.com/articles/notable-names-epstein-files-203952558.html"]]},
+{n:"Howard Lutnick",t:"person",w:2,s:["EM"],nat:"Named · not accused",ctx:"Financier and official; documents reference a 2012 island visit. Says interactions were limited and that he has never been accused of wrongdoing.",links:[["AOL — notable names","https://www.aol.com/articles/notable-names-epstein-files-203952558.html"]]},
+{n:"Steve Tisch",t:"person",w:2,s:["EM"],nat:"Correspondent · expressed regret",ctx:"NY Giants co-owner named in 2013 emails; says it was a brief association he deeply regrets and that he never visited the island.",links:[["AOL — notable names","https://www.aol.com/articles/notable-names-epstein-files-203952558.html"]]},
+{n:"Brett Ratner",t:"person",w:2,s:["EM"],nat:"Appears in photos",ctx:"Filmmaker pictured with Epstein in released photos; has denied earlier, unrelated misconduct allegations.",links:[["AOL — notable names","https://www.aol.com/articles/notable-names-epstein-files-203952558.html"]]},
+{n:"Mehmet Oz",t:"person",w:2,s:["EM"],nat:"Named (travel paid)",ctx:"Epstein paid ~$1,592 for Oz's travel in 2004; a 2016 email from Oz appears with content redacted. No wrongdoing alleged.",links:[["AOL — notable names","https://www.aol.com/articles/notable-names-epstein-files-203952558.html"]]},
+{n:"Lawrence Krauss",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Physicist who sought Epstein's advice on handling allegations; says he never hid the friendship and was shocked at the 2019 arrest.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
+{n:"Stacey Plaskett",t:"person",w:1,s:["EM"],nat:"Texted by Epstein",ctx:"US Virgin Islands delegate whom Epstein texted during a 2019 House hearing. No wrongdoing alleged.",links:[["NPR","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"Boris Nikolic",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Biotech investor named in a 2010 email referencing Davos and meeting Clinton and Prince Andrew. No wrongdoing alleged.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
+
+/* court-record: named by accuser (denied) */
+{n:"Bill Richardson",t:"person",w:2,s:["CR"],nat:"Named by accuser · denied (deceased)",ctx:"Former New Mexico governor named by Giuffre; denied the allegations through a spokesman. Died in 2023.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Glenn Dubin",t:"person",w:2,s:["CR","FIN"],nat:"Named by accuser · denied",ctx:"Hedge-fund billionaire (Highbridge) and longtime Epstein associate named by Giuffre; he and his wife denied the allegations.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Eva Andersson-Dubin",t:"person",w:2,s:["FL","CR"],nat:"Ex-girlfriend · denied allegations",ctx:"Former Miss Sweden and Epstein ex-girlfriend, later married to Glenn Dubin; appears frequently in flight logs. Denied allegations alongside her husband.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Marvin Minsky",t:"person",w:2,s:["CR"],nat:"Named by accuser (deceased) · contested",ctx:"MIT AI pioneer named by Giuffre in a deposition; died in 2016 before the claim was unsealed. His family/estate have contested it.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
+{n:"Thomas Pritzker",t:"person",w:2,s:["CR"],nat:"Named by accuser · denied",ctx:"Hyatt executive chairman named by Giuffre in unsealed documents; issued statements denying the allegations.",links:[["Newsweek","https://www.newsweek.com/hyatt-executive-tom-pritzker-jeffrey-epstein-virginia-giuffre-scandal-denial-1857893"]]},
+{n:"George Mitchell",t:"person",w:2,s:["FL","CR"],nat:"Named by accuser · denied",ctx:"Former US Senate Majority Leader named by Giuffre; appears in flight logs. Has categorically denied any contact with her.",links:[["Portland Press Herald","https://www.pressherald.com/2019/08/09/former-u-s-sen-george-mitchell-denies-allegations-made-by-epstein-victim/"]]},
+
+/* court-record: incidental / recanted */
+{n:"Richard Branson",t:"person",w:2,s:["CR"],nat:"Named in a recanted (false) claim",ctx:"Virgin Group founder named only in a Sarah Ransome claim she later admitted was fabricated; Virgin called the allegations false and baseless.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
+{n:"Robert F. Kennedy Jr.",t:"person",w:2,s:["CR"],nat:"Incidental mention (visitor)",ctx:"Mentioned incidentally in an estate manager's deposition as a visitor; says he flew on Epstein's plane twice with family. Not accused of wrongdoing.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"David Copperfield",t:"person",w:2,s:["CR"],nat:"Incidental mention (dinner guest)",ctx:"Magician mentioned by a witness as a dinner guest. Not accused of wrongdoing in the documents.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Michael Jackson",t:"person",w:2,s:["BB","CR"],nat:"Incidental mention",ctx:"Late singer mentioned by a witness as present at Epstein's Palm Beach home; also a contact-book entry. Not accused of wrongdoing.",links:[["Al Jazeera","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
+{n:"Stephen Hawking",t:"person",w:2,s:["CR"],nat:"Incidental mention",ctx:"Late physicist mentioned in an email referenced in filings; the email speculated about others, not him. Not accused of wrongdoing.",links:[["Al Jazeera","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
+{n:"Kevin Spacey",t:"person",w:2,s:["FL","CR"],nat:"Passenger / incidental",ctx:"Documented as a passenger on the 2002 Africa humanitarian trip; also among names a witness said she never met. No accusation in these documents.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
+{n:"Naomi Campbell",t:"person",w:2,s:["FL","CR"],nat:"Passenger / incidental",ctx:"Supermodel documented as a passenger; among names a witness said she never met. No accusation in these documents.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
+{n:"Chris Tucker",t:"person",w:1,s:["FL"],nat:"Passenger (2002 trip)",ctx:"Comedian documented as a passenger on the 2002 humanitarian trip with Bill Clinton. No accusation.",links:[["Factually — flight logs","https://factually.co/fact-checks/justice/who-is-listed-in-jeffrey-epstein-flight-logs-3e8f05"]]},
+{n:"Itzhak Perlman",t:"person",w:1,s:["FL"],nat:"Passenger (peripheral)",ctx:"Violinist documented on 1992–1993 flights. Peripheral appearance; no accusation.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
+{n:"Sarah Ferguson",t:"person",w:1,s:["FL"],nat:"Peripheral contact",ctx:"Duchess of York referenced as meeting Epstein on the ground in 1998. Peripheral documented contact.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
+
+/* black-book contacts */
+{n:"Bill Cosby",t:"person",w:2,s:["BB"],nat:"Contact-book entry",ctx:"Listed as a contact in Epstein's black book. No documented flight-log appearance.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Henry Kissinger",t:"person",w:2,s:["BB"],nat:"Contact-book entry",ctx:"Former Secretary of State listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"John Kerry",t:"person",w:2,s:["BB"],nat:"Contact-book entry",ctx:"Former Secretary of State and Senator listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Rupert Murdoch",t:"person",w:2,s:["BB"],nat:"Contact-book entry",ctx:"Media magnate listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Tony Blair",t:"person",w:2,s:["BB"],nat:"Contact-book entry",ctx:"Former UK Prime Minister listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Ron Burkle",t:"person",w:1,s:["BB"],nat:"Contact-book entry",ctx:"Investor listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Adnan Khashoggi",t:"person",w:1,s:["BB"],nat:"Contact-book entry",ctx:"Late Saudi arms dealer listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Ivana Trump",t:"person",w:1,s:["BB"],nat:"Contact-book entry",ctx:"Businesswoman and Donald Trump's first wife (d. 2022), listed as a contact in the black book.",links:[["CNBC — black book","https://www.cnbc.com/2019/07/22/jeffrey-epsteins-black-book-trump-clintons-prince-andrew.html"]]},
+{n:"Alec Baldwin",t:"person",w:1,s:["BB"],nat:"Contact-book entry (peripheral)",ctx:"Actor listed as a contact. Peripheral.",links:[["GovFacts — the Epstein files","https://govfacts.org/criminal-justice-public-safety/crime-criminal-law/types-of-crimes/the-epstein-files-what-documents-exist-and-what-they-prove/"]]},
+{n:"Courtney Love",t:"person",w:1,s:["BB"],nat:"Contact-book entry (peripheral)",ctx:"Musician listed as a contact. Peripheral.",links:[["GovFacts — the Epstein files","https://govfacts.org/criminal-justice-public-safety/crime-criminal-law/types-of-crimes/the-epstein-files-what-documents-exist-and-what-they-prove/"]]},
+{n:"Ralph Fiennes",t:"person",w:1,s:["BB"],nat:"Contact-book entry (peripheral)",ctx:"Actor listed as a contact. Peripheral.",links:[["GovFacts — the Epstein files","https://govfacts.org/criminal-justice-public-safety/crime-criminal-law/types-of-crimes/the-epstein-files-what-documents-exist-and-what-they-prove/"]]},
+{n:"Edward Kennedy",t:"person",w:1,s:["BB"],nat:"Contact-book entry",ctx:"Late US Senator listed as a contact in the auctioned 1997 book.",links:[["Scripps News — black book","https://www.scrippsnews.com/us-news/jeffrey-epsteins-little-black-book-just-went-up-for-auction-heres-whose-names-are-listed-in-it"]]},
+{n:"Carl Icahn",t:"person",w:1,s:["BB"],nat:"Contact-book entry",ctx:"Investor listed as a contact in the auctioned 1997 book.",links:[["Scripps News — black book","https://www.scrippsnews.com/us-news/jeffrey-epsteins-little-black-book-just-went-up-for-auction-heres-whose-names-are-listed-in-it"]]},
+
+/* staff / associates */
+{n:"Sarah Kellen",t:"person",w:2,s:["FL","CR"],nat:"Staff · alleged scheduler; denies",ctx:"Former Epstein assistant named by victims as scheduling appointments; never criminally charged and has said she was herself abused by Epstein.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Nadia Marcinkova",t:"person",w:1,s:["CR"],nat:"Associate / staff · never charged",ctx:"Longtime Epstein associate identified in filings; never charged.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"David Rodgers",t:"person",w:1,s:["FL"],nat:"Staff (pilot)",ctx:"Epstein's longtime chief pilot who recorded and signed the flight-log pages later entered as court evidence.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
+{n:"Juan Alessi",t:"person",w:1,s:["CR"],nat:"Witness (former staff)",ctx:"Longtime manager of Epstein's Palm Beach estate who gave deposition testimony about visitors.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Johanna Sjoberg",t:"person",w:1,s:["CR"],nat:"Witness / accuser",ctx:"Former Epstein worker who gave deposition testimony describing his operation and contacts.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Sarah Ransome",t:"person",w:1,s:["CR"],nat:"Accuser (recanted some claims)",ctx:"Gave a deposition as an alleged adult victim; later publicly admitted some allegations (about Trump, Branson, Clinton) were fabricated.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
+
+/* officials */
+{n:"Alexander Acosta",t:"person",w:2,s:["CR"],nat:"Prosecutor (2008 plea deal)",ctx:"Former US Attorney who negotiated Epstein's controversial 2008 non-prosecution agreement.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+
+/* financial people */
+{n:"Leslie Wexner",t:"person",w:3,s:["CR","FIN"],nat:"Primary client/patron · denies knowledge",ctx:"L Brands (Victoria's Secret) founder and Epstein's principal money-management client, who held broad power of attorney. Says Epstein 'misappropriated vast sums' and denies knowledge of his crimes.",links:[["Wikipedia — Wexner & Epstein","https://en.wikipedia.org/wiki/Relationship_of_Les_Wexner_and_Jeffrey_Epstein"]]},
+{n:"Leon Black",t:"person",w:3,s:["FIN"],nat:"$158M in payments · cleared, resigned",ctx:"Apollo co-founder who paid Epstein $158M for tax/estate advice after 2008. An internal review found no wrongdoing, but he resigned as Apollo CEO; a Senate committee later probed the arrangement.",links:[["CNN — Senate probe","https://edition.cnn.com/2023/07/25/business/leon-black-jeffrey-epstein-senate-investigation"]]},
+{n:"Jes Staley",t:"person",w:3,s:["FIN","EM"],nat:"JPMorgan exec · denies knowledge",ctx:"JPMorgan private-banking executive (later Barclays CEO) who championed keeping Epstein as a client; exchanged ~1,200 emails with him. Denies knowledge of the crimes; left Barclays over the ties.",links:[["PBS NewsHour — Jes Staley","https://www.pbs.org/newshour/politics/who-is-jes-staley-former-jpmorgan-executive-interviewed-about-epstein-ties"]]},
+{n:"Alan Greenberg",t:"person",w:1,s:["FIN"],nat:"Bear Stearns chairman (hired Epstein)",ctx:"As Bear Stearns' leader, brought Epstein into Wall Street in the 1970s and promoted him to limited partner. (Deceased 2014.)",links:[["Wikipedia — Alan C. Greenberg","https://en.wikipedia.org/wiki/Alan_C._Greenberg"]]},
+{n:"Darren Indyke",t:"person",w:1,s:["FIN"],nat:"Estate co-executor / lawyer",ctx:"Epstein's longtime lawyer and estate co-executor; a named co-defendant in the USVI settlement over Epstein entities.",links:[["USVI DOJ — $105M settlement","https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"]]},
+{n:"Richard Kahn",t:"person",w:1,s:["FIN"],nat:"Estate co-executor / accountant",ctx:"Co-executor of Epstein's estate and USVI co-defendant over entities alleged to have defrauded a tax-benefit program.",links:[["USVI DOJ — $105M settlement","https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"]]},
+{n:"Joi Ito",t:"person",w:2,s:["FIN"],nat:"MIT Media Lab director · resigned",ctx:"Solicited and accepted Epstein funds after his conviction and directed staff to keep them anonymous; resigned from MIT in 2019.",links:[["MIT Tech Review","https://www.technologyreview.com/2019/09/07/133122/joi-ito-mit-media-lab-resignation-jeffrey-epstein-sex-abuse-donation/"]]},
+{n:"Martin Nowak",t:"person",w:1,s:["FIN"],nat:"Harvard professor · sanctioned",ctx:"Ran an Epstein-funded Harvard program; sanctioned in 2021 after a review found he helped Epstein rehabilitate his image. Denied wrongdoing.",links:[["Harvard Magazine","https://www.harvardmagazine.com/2021/03/martin-nowak-sanctioned-for-jeffrey-epstein-involvement"]]},
+
+/* institutions */
+{n:"JPMorgan Chase",t:"bank",w:3,s:["FIN"],nat:"Settled — no admission of liability",ctx:"Held Epstein 1998–2013; settled a victims' suit for $290M and the USVI's suit for $75M in 2023, without admitting liability. Called any association 'a mistake.'",links:[["NPR — $290M settlement","https://www.npr.org/2023/06/12/1181675580/epstein-jane-doe-1-290-million-settlement-jpmorgan-chase"]]},
+{n:"Deutsche Bank",t:"bank",w:3,s:["FIN"],nat:"Settled + fined",ctx:"Banked Epstein ~2013–2018; fined $150M by NY regulators (2020) for compliance failures and settled a victims' suit for $75M (2023).",links:[["CNN — Deutsche Bank settlement","https://www.cnn.com/2023/10/20/business/deutsche-bank-settlement-epstein-accusers"]]},
+{n:"Bear Stearns",t:"bank",w:2,s:["FIN"],nat:"Epstein's early employer",ctx:"Epstein's employer 1976–1981; the origin of his Wall Street network.",links:[["Wikipedia — Alan C. Greenberg","https://en.wikipedia.org/wiki/Alan_C._Greenberg"]]},
+{n:"Apollo Global Management",t:"org",w:2,s:["FIN"],nat:"Reviewed — no wrongdoing found",ctx:"Firm co-founded by Leon Black; an independent review found no wrongdoing by Apollo or evidence Black was involved in Epstein's crimes, but Black stepped down as CEO.",links:[["Apollo — review conclusion","https://ir.apollo.com/news-events/press-releases/detail/121/apollo-global-management-announces-conclusion-and-release"]]},
+{n:"Highbridge Capital",t:"org",w:1,s:["FIN"],nat:"Dubin's fund (JPMorgan-acquired)",ctx:"Hedge fund co-founded by Epstein associate Glenn Dubin, later majority-acquired by JPMorgan; cited in network reporting. The firm faced no charges.",links:[["Wikipedia — Highbridge","https://en.wikipedia.org/wiki/Highbridge_Capital_Management"]]},
+{n:"L Brands / Victoria's Secret",t:"org",w:2,s:["CR","FIN"],nat:"Wexner's company · referenced as a lure",ctx:"Wexner's company; referenced in filings as used by Epstein to lure victims. The company itself was not charged.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Clinton Foundation",t:"org",w:1,s:["CR"],nat:"Cited re: purpose of jet travel",ctx:"Cited as the stated reason for Bill Clinton's trips on Epstein's aircraft.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"MIT Media Lab",t:"university",w:2,s:["FIN"],nat:"Concealed donations · director resigned",ctx:"Accepted ~$800K in Epstein-linked donations after his conviction, some disguised as anonymous; its director resigned in 2019 and MIT commissioned a review.",links:[["MIT Tech Review","https://www.technologyreview.com/2019/09/07/133122/joi-ito-mit-media-lab-resignation-jeffrey-epstein-sex-abuse-donation/"]]},
+{n:"Harvard University",t:"university",w:2,s:["FIN","EM"],nat:"Received donations · faculty probed",ctx:"Received ~$9.1M from Epstein (mostly pre-2008) and hosted an Epstein-funded program; declined post-2008 gifts and sanctioned a professor. Opened a review of Larry Summers after the 2025 emails.",links:[["Harvard report (PDF)","https://ogc.harvard.edu/file_url/208"]]},
+{n:"Goldman Sachs",t:"bank",w:1,s:["EM"],nat:"Employer of an email correspondent",ctx:"Current employer of Kathryn Ruemmler; a spokesperson declined to comment on her Epstein emails. No institutional wrongdoing alleged.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
+{n:"OpenAI",t:"org",w:1,s:["EM"],nat:"Board member stepped back",ctx:"Larry Summers stepped back from its board following the 2025 email release. No institutional wrongdoing alleged.",links:[["NPR","https://www.npr.org/2025/11/20/nx-s1-5613427/epstein-files-chomsky-bannon-summers-democrats"]]},
+{n:"U.S. Virgin Islands",t:"org",w:2,s:["FIN","CR"],nat:"Government plaintiff",ctx:"Sued JPMorgan (settling for $75M) and Epstein's estate (settling for $105M+) over trafficking in its territory; subpoenaed multiple banks.",links:[["USVI DOJ — $105M settlement","https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"]]},
+{n:"Southern Trust Company",t:"trust",w:2,s:["FIN"],nat:"Epstein entity · fraud findings",ctx:"Epstein VI company the USVI said made 'fraudulent misrepresentations' to obtain tax benefits; over $80M was clawed back in the settlement.",links:[["USVI DOJ — settlement","https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"]]},
+{n:"Zorro Trust",t:"trust",w:1,s:["FIN"],nat:"Epstein-controlled trust",ctx:"A Nevada trust Epstein controlled, figuring in property/asset transfers connected to Wexner.",links:[["Wikipedia — Wexner & Epstein","https://en.wikipedia.org/wiki/Relationship_of_Les_Wexner_and_Jeffrey_Epstein"]]},
+{n:"Jeffrey Epstein VI Foundation",t:"org",w:1,s:["FIN"],nat:"Epstein charity · overstated giving",ctx:"Epstein's main charitable vehicle; pledged far more than it delivered and misrepresented several donations, per reporting.",links:[["Wikipedia — VI Foundation","https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"]]},
+{n:"J. Epstein & Co.",t:"org",w:1,s:["FIN"],nat:"Epstein's money-management firm",ctx:"Epstein's advisory firm (later Financial Trust Company), claiming only billionaire clients; central to questions about the source of his wealth.",links:[["Fortune","https://fortune.com/2019/07/08/jeffrey-epstein-hedge-fund-manager-accused-sex-trafficking"]]}
+];
+
+/* documented entity-entity links (person -> institution) */
+const REL=[
+ ["Jes Staley","JPMorgan Chase"],["Leon Black","Apollo Global Management"],["Leslie Wexner","L Brands / Victoria's Secret"],
+ ["Glenn Dubin","Highbridge Capital"],["Eva Andersson-Dubin","Glenn Dubin"],["Alan Greenberg","Bear Stearns"],
+ ["Joi Ito","MIT Media Lab"],["Martin Nowak","Harvard University"],["Darren Indyke","Southern Trust Company"],
+ ["Richard Kahn","Southern Trust Company"],["Lawrence Summers","Harvard University"],["Lawrence Summers","OpenAI"],
+ ["Kathryn Ruemmler","Goldman Sachs"],["Leslie Wexner","Zorro Trust"]
+];
+
+/* ============================ APP ============================ */
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const canvas=document.getElementById('cv'), ctx2=canvas.getContext('2d');
+let DPR=Math.min(window.devicePixelRatio||1,2), W=0, H=0;
+const typeColor={};for(const k in TYPEC)typeColor[k]=css(TYPEC[k]);
+const HUBCOL=css('--hub');
+
+// build node/edge model
+const hubs=Object.keys(COLNAMES).map(k=>({id:'HUB_'+k,hub:true,key:k,label:COLNAMES[k],x:0,y:0,vx:0,vy:0,r:26}));
+const hubById={};hubs.forEach(h=>hubById[h.key]=h);
+const nameToNode={};
+const nodes=E.map((e,i)=>{const r=e.w===3?26:e.w===2?17:11;const n={...e,id:e.n,x:0,y:0,vx:0,vy:0,r,base:r};nameToNode[e.n]=n;return n;});
+const allNodes=[...hubs,...nodes];
+// initial layout: hubs on a ring, entities scattered near their hubs
+hubs.forEach((h,i)=>{const a=i/hubs.length*Math.PI*2;h.x=Math.cos(a)*260;h.y=Math.sin(a)*200;});
+nodes.forEach(n=>{const h=hubById[n.s[0]]||{x:0,y:0};n.x=h.x+(Math.random()*2-1)*180;n.y=h.y+(Math.random()*2-1)*180;});
+
+const edges=[];
+nodes.forEach(n=>n.s.forEach(k=>{if(hubById[k])edges.push([n,hubById[k],'hub']);}));
+REL.forEach(([a,b])=>{if(nameToNode[a]&&nameToNode[b])edges.push([nameToNode[a],nameToNode[b],'rel']);});
+
+// view transform
+let scale=1, ox=0, oy=0;
+let filterTypes=new Set(Object.keys(TYPEC));
+let filterCols=new Set(Object.keys(COLNAMES));
+let searchTerm='';
+let hovered=null, selected=null, view='network';
+
+function visible(n){
+  if(n.hub) return filterCols.has(n.key);
+  if(!filterTypes.has(n.t)) return false;
+  if(!n.s.some(k=>filterCols.has(k))) return false;
+  return true;
+}
+function searchMatch(n){return searchTerm && n.n && n.n.toLowerCase().includes(searchTerm);}
+
+function resize(){
+  const m=document.querySelector('main');
+  W=m.clientWidth;H=m.clientHeight;
+  canvas.width=W*DPR;canvas.height=H*DPR;canvas.style.width=W+'px';canvas.style.height=H+'px';
+  ctx2.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener('resize',()=>{resize();});
+
+/* ---- force simulation ---- */
+let alpha=1;
+function step(){
+  const vis=allNodes.filter(visible);
+  // repulsion (O(n^2), fine at this size)
+  for(let i=0;i<vis.length;i++){
+    const a=vis[i];
+    for(let j=i+1;j<vis.length;j++){
+      const b=vis[j];
+      let dx=a.x-b.x, dy=a.y-b.y; let d2=dx*dx+dy*dy;
+      if(d2<0.01){dx=Math.random()-0.5;dy=Math.random()-0.5;d2=1;}
+      const d=Math.sqrt(d2);
+      const rep=((a.r+b.r)*(a.r+b.r)*3.4)/d2;
+      const fx=dx/d*rep, fy=dy/d*rep;
+      a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;
+    }
+  }
+  // springs
+  for(const [a,b,kind] of edges){
+    if(!visible(a)||!visible(b))continue;
+    const len=kind==='hub'?110:70;
+    let dx=b.x-a.x, dy=b.y-a.y; const d=Math.sqrt(dx*dx+dy*dy)||1;
+    const k=kind==='hub'?0.015:0.02;
+    const f=(d-len)*k;
+    const fx=dx/d*f, fy=dy/d*f;
+    a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;
+  }
+  // gravity to center + hub anchoring
+  for(const n of vis){
+    n.vx+=(-n.x)*0.0016; n.vy+=(-n.y)*0.0016;
+    if(n.hub){n.vx+=(-n.x)*0.004;n.vy+=(-n.y)*0.004;}
+    n.vx*=0.86; n.vy*=0.86;
+    if(n!==dragNode){n.x+=n.vx*alpha; n.y+=n.vy*alpha;}
+  }
+  alpha=Math.max(alpha*0.995,0.05);
+}
+
+/* ---- draw ---- */
+function draw(){
+  ctx2.clearRect(0,0,W,H);
+  ctx2.save();
+  ctx2.translate(W/2+ox,H/2+oy); ctx2.scale(scale,scale);
+
+  const hasHover=hovered!=null, hasSearch=searchTerm.length>0;
+  const neigh=new Set();
+  if(hovered){neigh.add(hovered);edges.forEach(([a,b])=>{if(a===hovered)neigh.add(b);if(b===hovered)neigh.add(a);});}
+
+  // edges
+  ctx2.lineWidth=1/scale;
+  for(const [a,b,kind] of edges){
+    if(!visible(a)||!visible(b))continue;
+    const active=hasHover?(neigh.has(a)&&neigh.has(b)):true;
+    ctx2.strokeStyle= active? (kind==='rel'?'rgba(176,136,249,.5)':'rgba(255,209,102,.28)') : 'rgba(120,135,160,.07)';
+    ctx2.beginPath();ctx2.moveTo(a.x,a.y);ctx2.lineTo(b.x,b.y);ctx2.stroke();
+  }
+  // nodes
+  for(const n of allNodes){
+    if(!visible(n))continue;
+    const dim = (hasHover&&!neigh.has(n)) || (hasSearch&&!searchMatch(n));
+    ctx2.globalAlpha= dim?0.16:1;
+    if(n.hub){
+      // hub: rounded square
+      const s=n.r;
+      ctx2.fillStyle='rgba(255,209,102,.14)';ctx2.strokeStyle=HUBCOL;ctx2.lineWidth=2/scale;
+      roundRect(n.x-s,n.y-s*0.72,s*2,s*1.44,7);ctx2.fill();ctx2.stroke();
+      ctx2.fillStyle=HUBCOL;ctx2.font=`600 ${13}px -apple-system,system-ui,sans-serif`;
+      ctx2.textAlign='center';ctx2.textBaseline='middle';
+      ctx2.fillText(n.label,n.x,n.y);
+    }else{
+      ctx2.beginPath();ctx2.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx2.fillStyle=typeColor[n.t]||'#8aa';ctx2.fill();
+      if(n===selected){ctx2.lineWidth=3/scale;ctx2.strokeStyle='#fff';ctx2.stroke();}
+      else if(searchMatch(n)){ctx2.lineWidth=3/scale;ctx2.strokeStyle=css('--accent');ctx2.stroke();}
+      // labels: always for w3, for w2 when zoomed or hovered-neighbor, w1 on hover
+      const showLabel = n.w===3 || (n.w===2&&scale>0.9) || (!dim&&hasHover&&neigh.has(n)) || searchMatch(n) || n===selected;
+      if(showLabel){
+        ctx2.globalAlpha=dim?0.2:1;
+        ctx2.fillStyle='#e8edf6';
+        ctx2.font=`${n.w===3?600:500} ${n.w===3?13:11.5}px -apple-system,system-ui,sans-serif`;
+        ctx2.textAlign='center';ctx2.textBaseline='top';
+        ctx2.fillText(n.n,n.x,n.y+n.r+3);
+      }
+    }
+  }
+  ctx2.restore();
+}
+function roundRect(x,y,w,h,r){ctx2.beginPath();ctx2.moveTo(x+r,y);ctx2.arcTo(x+w,y,x+w,y+h,r);ctx2.arcTo(x+w,y+h,x,y+h,r);ctx2.arcTo(x,y+h,x,y,r);ctx2.arcTo(x,y,x+w,y,r);ctx2.closePath();}
+
+function loop(){ if(view==='network'){ step(); draw(); } requestAnimationFrame(loop); }
+
+/* ---- picking / interaction ---- */
+function toWorld(px,py){return {x:(px-W/2-ox)/scale, y:(py-H/2-oy)/scale};}
+function nodeAt(px,py){
+  const p=toWorld(px,py);let best=null,bd=1e9;
+  for(const n of allNodes){if(!visible(n))continue;const dx=p.x-n.x,dy=p.y-n.y;const d=Math.sqrt(dx*dx+dy*dy);const rr=n.hub?n.r:n.r+4;if(d<rr&&d<bd){bd=d;best=n;}}
+  return best;
+}
+let dragNode=null, panning=false, last={x:0,y:0}, moved=false;
+canvas.addEventListener('mousedown',e=>{
+  const n=nodeAt(e.offsetX,e.offsetY);moved=false;
+  if(n&&!n.hub){dragNode=n;} else {panning=true;canvas.classList.add('grabbing');}
+  last={x:e.offsetX,y:e.offsetY};
+});
+canvas.addEventListener('mousemove',e=>{
+  if(dragNode){const p=toWorld(e.offsetX,e.offsetY);dragNode.x=p.x;dragNode.y=p.y;dragNode.vx=0;dragNode.vy=0;alpha=Math.max(alpha,0.5);moved=true;return;}
+  if(panning){ox+=e.offsetX-last.x;oy+=e.offsetY-last.y;last={x:e.offsetX,y:e.offsetY};moved=true;return;}
+  const n=nodeAt(e.offsetX,e.offsetY);
+  hovered = (n&&!n.hub)?n:null;
+  canvas.style.cursor=n?'pointer':'grab';
+});
+window.addEventListener('mouseup',e=>{
+  if(dragNode&&!moved)openDetail(dragNode);
+  else if(panning&&!moved){const n=nodeAt(e.offsetX,e.offsetY);if(n&&!n.hub)openDetail(n);else closeDetail();}
+  dragNode=null;panning=false;canvas.classList.remove('grabbing');
+});
+canvas.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const f=e.deltaY<0?1.12:0.89;
+  const mx=e.offsetX-W/2, my=e.offsetY-H/2;
+  ox=mx-(mx-ox)*f; oy=my-(my-oy)*f;
+  scale=Math.min(3.2,Math.max(0.3,scale*f));
+},{passive:false});
+
+/* ---- detail panel ---- */
+const detail=document.getElementById('detail');
+function openDetail(n){
+  selected=n;
+  document.getElementById('dtypelabel').textContent = n.hub?'Collection':(n.t.charAt(0).toUpperCase()+n.t.slice(1));
+  document.querySelector('#dtype .dot').style.background = n.hub?HUBCOL:(typeColor[n.t]||'#8aa');
+  document.getElementById('dname').textContent=n.n;
+  document.getElementById('dnat').textContent=n.nat||'';
+  document.getElementById('dctx').textContent=n.ctx||'';
+  const colls=document.getElementById('dcolls');colls.innerHTML='';
+  (n.s||[]).forEach(k=>{const d=document.createElement('span');d.className='coll';d.innerHTML=`<span class="sq"></span>${COLNAMES[k]}`;colls.appendChild(d);});
+  const links=document.getElementById('dlinks');links.innerHTML='';
+  (n.links||[]).forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.innerHTML=`<span>${label}</span><span class="arr">↗</span>`;links.appendChild(a);});
+  detail.classList.add('open');
+}
+function closeDetail(){detail.classList.remove('open');selected=null;}
+document.getElementById('dclose').onclick=closeDetail;
+
+/* ---- word cloud ---- */
+function buildCloud(){
+  const wrap=document.getElementById('cloudwrap');wrap.innerHTML='';
+  const list=nodes.filter(visible).slice().sort((a,b)=>b.w-a.w || a.n.localeCompare(b.n));
+  for(const n of list){
+    const sz = n.w===3?40:n.w===2?24:15;
+    const el=document.createElement('span');el.className='word';
+    el.textContent=n.n;
+    el.style.fontSize=sz+'px';
+    el.style.color=typeColor[n.t]||'#8aa';
+    el.style.opacity = searchTerm? (searchMatch(n)?1:0.2):1;
+    el.onclick=()=>openDetail(n);
+    wrap.appendChild(el);
+  }
+}
+
+/* ---- controls ---- */
+function updateCount(){
+  const p=nodes.filter(visible).length;
+  document.getElementById('count').textContent=`${p} entities · ${hubs.filter(visible).length} collections`;
+}
+document.querySelectorAll('#viewseg button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#viewseg button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');view=b.dataset.view;
+  const cloud=document.getElementById('cloud');
+  if(view==='cloud'){cloud.classList.add('show');buildCloud();document.getElementById('zoomctl').style.display='none';document.getElementById('legend').style.display='none';}
+  else{cloud.classList.remove('show');document.getElementById('zoomctl').style.display='flex';document.getElementById('legend').style.display='';alpha=Math.max(alpha,0.6);}
+});
+document.querySelectorAll('.chip[data-type]').forEach(c=>c.onclick=()=>{
+  const t=c.dataset.type;if(filterTypes.has(t)&&filterTypes.size>=1){if(filterTypes.has(t)){filterTypes.delete(t);c.classList.add('off');}else{filterTypes.add(t);c.classList.remove('off');}}
+  if(!filterTypes.has(t)){c.classList.add('off');}else{c.classList.remove('off');}
+  refresh();
+});
+document.querySelectorAll('.chip[data-col]').forEach(c=>c.onclick=()=>{
+  const k=c.dataset.col;if(filterCols.has(k)){filterCols.delete(k);c.classList.add('off');}else{filterCols.add(k);c.classList.remove('off');}
+  refresh();
+});
+document.getElementById('search').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();if(view==='cloud')buildCloud();});
+document.getElementById('reset').onclick=()=>{
+  filterTypes=new Set(Object.keys(TYPEC));filterCols=new Set(Object.keys(COLNAMES));
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('off'));
+  document.getElementById('search').value='';searchTerm='';
+  scale=1;ox=0;oy=0;alpha=1;refresh();
+};
+function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();}
+
+document.getElementById('zin').onclick=()=>{scale=Math.min(3.2,scale*1.2);};
+document.getElementById('zout').onclick=()=>{scale=Math.max(0.3,scale*0.83);};
+document.getElementById('zfit').onclick=()=>{scale=1;ox=0;oy=0;};
+
+document.getElementById('bannerx').onclick=()=>document.getElementById('banner').style.display='none';
+document.getElementById('methodbtn').onclick=()=>document.getElementById('modal').classList.add('show');
+document.getElementById('mclose').onclick=()=>document.getElementById('modal').classList.remove('show');
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('show');};
+
+/* boot */
+resize();updateCount();loop();
+</script>
+</body>
+</html>
