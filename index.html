@@ -8,7 +8,8 @@
   :root{
     --bg:#0d1017; --panel:#141924; --panel2:#1b2230; --line:#2a3346;
     --ink:#e8edf6; --mut:#93a0b5; --dim:#63708a;
-    --person:#6ea8fe; --bank:#f4a259; --org:#b088f9; --university:#4dd0a7; --trust:#e5738a;
+    --person:#6ea8fe; --bank:#f4a259; --org:#b088f9; --university:#4dd0a7; --trust:#ffe14d;
+    --accused:#ff5c5c; --accused2:#b3243b;
     --hub:#ffd166; --accent:#7cc4ff;
     --danger:#ff6b6b;
   }
@@ -167,7 +168,9 @@
       <div class="legrow"><span class="dot" style="background:var(--org)"></span>Organization</div>
       <div class="legrow"><span class="dot" style="background:var(--university)"></span>University</div>
       <div class="legrow"><span class="dot" style="background:var(--trust)"></span>Trust / entity</div>
+      <div class="legrow"><span class="dot" style="background:var(--accused)"></span>Accused of involvement</div>
       <div class="legrow" style="margin-top:8px"><span class="sq" style="background:var(--hub)"></span>Document collection</div>
+      <div style="margin-top:7px;font-size:10px;color:var(--dim);line-height:1.4">Red marks people accused of involvement in the abuse (denials are noted in each profile) and overrides the type color.</div>
     </div>
 
     <aside id="detail">
@@ -214,7 +217,7 @@
     <p>A flight-log or black-book entry means only that a person traveled on the plane or that Epstein held their contact details. A name in an unsealed filing may be an allegation by an accuser, deposition testimony, a passing reference, or a person the witness said they <i>never</i> met. A name in the emails shows correspondence, not complicity. The July 2025 DOJ/FBI review concluded there is no incriminating master "client list." Settlements were made without admissions of liability.</p>
 
     <h3>Notable verification note</h3>
-    <p>A widely-shared claim that Epstein spelled Jean-Luc Brunel's name phonetically as <code>john look</code> in an email <b>could not be verified</b> in reputable sources and is therefore <b>not</b> represented here as fact. (There is a separate, verified "phonetic nickname" email — the unrelated <code>Bubba</code> message between Epstein and his brother.) Several allegations in the record were later recanted (e.g., Sarah Ransome's claims about Trump, Branson and Clinton). Deceased individuals could not respond to material unsealed after their deaths.</p>
+    <p>A widely-shared claim that Epstein spelled Jean-Luc Brunel's name phonetically as <code>john look</code> in an email <b>could not be verified</b> in reputable sources and is therefore <b>not</b> represented here as fact. (There is a separate, verified "phonetic nickname" email — the unrelated <code>Bubba</code> message between Epstein and his brother.) Some allegations in the record were later recanted by the accuser who made them. Deceased individuals could not respond to material unsealed after their deaths.</p>
 
     <h3>Sourcing</h3>
     <p>Entries are anchored to major outlets (CNN, CBS, NPR, PBS, TIME, BBC, Al Jazeera, Bloomberg, CNBC), court/DOJ/USVI records, and official releases. For a public-facing site, cite the underlying primary documents where possible. This dataset is a curated starting roster — not the full 3.5M-page corpus — and is meant to be expanded.</p>
@@ -231,16 +234,15 @@ const TYPEC={person:"--person",bank:"--bank",org:"--org",university:"--universit
 
 const E=[
 /* central */
-{n:"Jeffrey Epstein",t:"person",w:3,s:["FL","BB","CR","EM","FIN"],nat:"Central subject · convicted sex offender",ctx:"Financier and convicted sex offender at the center of every collection; died in federal custody in 2019 awaiting a sex-trafficking trial.",links:[["TIME — unsealed documents overview","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Ghislaine Maxwell",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Convicted",ctx:"Epstein's former partner and associate; convicted in 2021 on federal sex-trafficking and conspiracy charges and sentenced to 20 years. Maintains her innocence.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Virginia Giuffre",t:"person",w:3,s:["CR"],nat:"Accuser / advocate",ctx:"Central accuser whose lawsuits (incl. Giuffre v. Maxwell) drove much of the document disclosure; named many individuals in depositions. Died in April 2025.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Jean-Luc Brunel",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Charged in France · died before trial (2022)",ctx:"French modeling agent and close Epstein associate; charged in France with rape of minors and detained in 2020. Denied all allegations; found dead in a Paris cell in 2022 before trial, so the claims were never adjudicated. (A claimed 'john look' email spelling is unverified and omitted.)",links:[["NBC News","https://www.nbcnews.com/news/world/modeling-agent-linked-jeffrey-epstein-found-dead-prison-cell-rcna16945"]]},
+{n:"Jeffrey Epstein",t:"person",w:3,ac:1,conv:1,s:["FL","BB","CR","EM","FIN"],nat:"Central subject · convicted sex offender",ctx:"Financier and convicted sex offender at the center of every collection; died in federal custody in 2019 awaiting a sex-trafficking trial.",links:[["TIME — unsealed documents overview","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Ghislaine Maxwell",t:"person",w:3,ac:1,conv:1,s:["FL","BB","CR","EM"],nat:"Convicted",ctx:"Epstein's former partner and associate; convicted in 2021 on federal sex-trafficking and conspiracy charges and sentenced to 20 years. Maintains her innocence.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Jean-Luc Brunel",t:"person",w:3,ac:1,conv:1,s:["FL","BB","CR","EM"],nat:"Charged in France · died before trial (2022)",ctx:"French modeling agent and close Epstein associate; charged in France with rape of minors and detained in 2020. Denied all allegations; found dead in a Paris cell in 2022 before trial, so the claims were never adjudicated. (A claimed 'john look' email spelling is unverified and omitted.)",links:[["NBC News","https://www.nbcnews.com/news/world/modeling-agent-linked-jeffrey-epstein-found-dead-prison-cell-rcna16945"]]},
 
 /* named high-flyers */
 {n:"Donald Trump",t:"person",w:3,s:["FL","BB","EM"],nat:"Social acquaintance · denies wrongdoing",ctx:"Documented mid-1990s social acquaintance via flight logs (with family), a black-book entry, and 2025-released emails. Says the relationship ended around 2004; denies wrongdoing and denies authoring a disputed 2003 birthday note (which he has litigated).",links:[["TIME — Trump/Epstein timeline","https://time.com/7333365/trump-epstein-relationship-timeline/"],["NPR — Trump named in emails","https://www.npr.org/2025/11/12/nx-s1-5605582/epstein-files-release-trump-email-grijalva-massie"]]},
 {n:"Bill Clinton",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Association · denies knowledge",ctx:"Documented on multiple flights (incl. a 2002 Africa trip tied to Clinton Foundation work) and referenced in filings/emails. His office says he knew nothing of Epstein's crimes and never visited the island.",links:[["CBS News — unsealed names","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
-{n:"Prince Andrew",t:"person",w:3,s:["FL","BB","CR","EM"],nat:"Named by accuser · settled, denies",ctx:"Named by Virginia Giuffre as someone she was directed to; appears in flight logs, the black book and photos. Denied all allegations and settled her civil suit in 2022 with no admission of liability; later stripped of royal titles.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Alan Dershowitz",t:"person",w:3,s:["FL","BB","CR"],nat:"Named by accuser · denies",ctx:"Attorney who helped negotiate Epstein's 2008 plea deal; appears in flight logs and the black book and was named in Giuffre-related filings. Has consistently and vehemently denied wrongdoing.",links:[["Al Jazeera — unsealed names","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
+{n:"Prince Andrew",t:"person",w:3,ac:1,s:["FL","BB","CR","EM"],nat:"Named by accuser · settled, denies",ctx:"Named by Virginia Giuffre as someone she was directed to; appears in flight logs, the black book and photos. Denied all allegations and settled her civil suit in 2022 with no admission of liability; later stripped of royal titles.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Alan Dershowitz",t:"person",w:3,ac:1,s:["FL","BB","CR"],nat:"Named by accuser · denies",ctx:"Attorney who helped negotiate Epstein's 2008 plea deal; appears in flight logs and the black book and was named in Giuffre-related filings. Has consistently and vehemently denied wrongdoing.",links:[["Al Jazeera — unsealed names","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
 {n:"Bill Gates",t:"person",w:3,s:["EM"],nat:"Post-conviction meetings · denies wrongdoing",ctx:"Met Epstein multiple times beginning 2011 — after Epstein's conviction — in what Gates calls a misjudged belief Epstein could mobilize philanthropic donors. Told the House Oversight Committee he 'never victimized anyone' and called the association a 'huge mistake.'",links:[["CBS News — Gates & Musk","https://www.cbsnews.com/news/bill-gates-elon-musk-epstein-files-what-documents-show/"],["TIME — Gates before Congress","https://time.com/article/2026/06/09/bill-gates-jeffrey-epstein-house-oversight-committee-congress/"]]},
 {n:"Ehud Barak",t:"person",w:3,s:["BB","EM"],nat:"Business / social · denies wrongdoing",ctx:"Former Israeli PM with an acknowledged business and social relationship with Epstein, incl. a 2015 investment in a tech firm partly funded by Epstein and visits to his homes. Denies attending any parties or seeing young women; faces no allegations.",links:[["Times of Israel","https://www.timesofisrael.com/barak-says-he-visited-epstein-at-home-but-didnt-attend-sex-parties"]]},
 {n:"Woody Allen",t:"person",w:2,s:["BB","EM"],nat:"Social · not accused in Epstein matter",ctx:"Filmmaker and NY neighbor who, per 2025-released emails, dined with Epstein often; emails show Epstein helped arrange a 2015 White House visit for Allen's wife. Reporting notes he is not accused of any involvement in Epstein's abuse.",links:[["Hollywood Reporter","https://www.hollywoodreporter.com/news/general-news/woody-allen-compared-jeffrey-epstein-to-dracula-1236338646/"]]},
@@ -266,15 +268,15 @@ const E=[
 {n:"Boris Nikolic",t:"person",w:1,s:["EM"],nat:"Correspondent",ctx:"Biotech investor named in a 2010 email referencing Davos and meeting Clinton and Prince Andrew. No wrongdoing alleged.",links:[["PBS NewsHour","https://www.pbs.org/newshour/politics/emails-reveal-epsteins-network-of-the-rich-and-powerful-despite-sex-offender-status"]]},
 
 /* court-record: named by accuser (denied) */
-{n:"Bill Richardson",t:"person",w:2,s:["CR"],nat:"Named by accuser · denied (deceased)",ctx:"Former New Mexico governor named by Giuffre; denied the allegations through a spokesman. Died in 2023.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
-{n:"Glenn Dubin",t:"person",w:2,s:["CR","FIN"],nat:"Named by accuser · denied",ctx:"Hedge-fund billionaire (Highbridge) and longtime Epstein associate named by Giuffre; he and his wife denied the allegations.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
+{n:"Bill Richardson",t:"person",w:2,ac:1,s:["CR"],nat:"Named by accuser · denied (deceased)",ctx:"Former New Mexico governor named by Giuffre; denied the allegations through a spokesman. Died in 2023.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
+{n:"Glenn Dubin",t:"person",w:2,ac:1,s:["CR","FIN"],nat:"Named by accuser · denied",ctx:"Hedge-fund billionaire (Highbridge) and longtime Epstein associate named by Giuffre; he and his wife denied the allegations.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
 {n:"Eva Andersson-Dubin",t:"person",w:2,s:["FL","CR"],nat:"Ex-girlfriend · denied allegations",ctx:"Former Miss Sweden and Epstein ex-girlfriend, later married to Glenn Dubin; appears frequently in flight logs. Denied allegations alongside her husband.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Marvin Minsky",t:"person",w:2,s:["CR"],nat:"Named by accuser (deceased) · contested",ctx:"MIT AI pioneer named by Giuffre in a deposition; died in 2016 before the claim was unsealed. His family/estate have contested it.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
-{n:"Thomas Pritzker",t:"person",w:2,s:["CR"],nat:"Named by accuser · denied",ctx:"Hyatt executive chairman named by Giuffre in unsealed documents; issued statements denying the allegations.",links:[["Newsweek","https://www.newsweek.com/hyatt-executive-tom-pritzker-jeffrey-epstein-virginia-giuffre-scandal-denial-1857893"]]},
-{n:"George Mitchell",t:"person",w:2,s:["FL","CR"],nat:"Named by accuser · denied",ctx:"Former US Senate Majority Leader named by Giuffre; appears in flight logs. Has categorically denied any contact with her.",links:[["Portland Press Herald","https://www.pressherald.com/2019/08/09/former-u-s-sen-george-mitchell-denies-allegations-made-by-epstein-victim/"]]},
+{n:"Marvin Minsky",t:"person",w:2,ac:1,s:["CR"],nat:"Named by accuser (deceased) · contested",ctx:"MIT AI pioneer named by Giuffre in a deposition; died in 2016 before the claim was unsealed. His family/estate have contested it.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
+{n:"Thomas Pritzker",t:"person",w:2,ac:1,s:["CR"],nat:"Named by accuser · denied",ctx:"Hyatt executive chairman named by Giuffre in unsealed documents; issued statements denying the allegations.",links:[["Newsweek","https://www.newsweek.com/hyatt-executive-tom-pritzker-jeffrey-epstein-virginia-giuffre-scandal-denial-1857893"]]},
+{n:"George Mitchell",t:"person",w:2,ac:1,s:["FL","CR"],nat:"Named by accuser · denied",ctx:"Former US Senate Majority Leader named by Giuffre; appears in flight logs. Has categorically denied any contact with her.",links:[["Portland Press Herald","https://www.pressherald.com/2019/08/09/former-u-s-sen-george-mitchell-denies-allegations-made-by-epstein-victim/"]]},
 
 /* court-record: incidental / recanted */
-{n:"Richard Branson",t:"person",w:2,s:["CR"],nat:"Named in a recanted (false) claim",ctx:"Virgin Group founder named only in a Sarah Ransome claim she later admitted was fabricated; Virgin called the allegations false and baseless.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
+{n:"Richard Branson",t:"person",w:2,s:["CR"],nat:"Named in a recanted (false) claim",ctx:"Virgin Group founder named only in an accuser's claim later admitted to be fabricated; Virgin called the allegations false and baseless.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
 {n:"Robert F. Kennedy Jr.",t:"person",w:2,s:["CR"],nat:"Incidental mention (visitor)",ctx:"Mentioned incidentally in an estate manager's deposition as a visitor; says he flew on Epstein's plane twice with family. Not accused of wrongdoing.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
 {n:"David Copperfield",t:"person",w:2,s:["CR"],nat:"Incidental mention (dinner guest)",ctx:"Magician mentioned by a witness as a dinner guest. Not accused of wrongdoing in the documents.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
 {n:"Michael Jackson",t:"person",w:2,s:["BB","CR"],nat:"Incidental mention",ctx:"Late singer mentioned by a witness as present at Epstein's Palm Beach home; also a contact-book entry. Not accused of wrongdoing.",links:[["Al Jazeera","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"]]},
@@ -305,8 +307,6 @@ const E=[
 {n:"Nadia Marcinkova",t:"person",w:1,s:["CR"],nat:"Associate / staff · never charged",ctx:"Longtime Epstein associate identified in filings; never charged.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
 {n:"David Rodgers",t:"person",w:1,s:["FL"],nat:"Staff (pilot)",ctx:"Epstein's longtime chief pilot who recorded and signed the flight-log pages later entered as court evidence.",links:[["Law&Crime — flight logs","https://lawandcrime.com/live-trials/ghislaine-maxwell/jeffrey-epstein-flight-logs-showing-detailed-passenger-lists-entered-into-evidence-at-ghislaine-maxwell-trial/"]]},
 {n:"Juan Alessi",t:"person",w:1,s:["CR"],nat:"Witness (former staff)",ctx:"Longtime manager of Epstein's Palm Beach estate who gave deposition testimony about visitors.",links:[["CBS News","https://www.cbsnews.com/news/jeffrey-epstein-list-names-released-unsealed-documents/"]]},
-{n:"Johanna Sjoberg",t:"person",w:1,s:["CR"],nat:"Witness / accuser",ctx:"Former Epstein worker who gave deposition testimony describing his operation and contacts.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
-{n:"Sarah Ransome",t:"person",w:1,s:["CR"],nat:"Accuser (recanted some claims)",ctx:"Gave a deposition as an alleged adult victim; later publicly admitted some allegations (about Trump, Branson, Clinton) were fabricated.",links:[["ABC News","https://abcnews.com/US/final-batch-jeffrey-epstein-documents-released/story?id=106227037"]]},
 
 /* officials */
 {n:"Alexander Acosta",t:"person",w:2,s:["CR"],nat:"Prosecutor (2008 plea deal)",ctx:"Former US Attorney who negotiated Epstein's controversial 2008 non-prosecution agreement.",links:[["TIME — court documents","https://time.com/6552063/jeffrey-epsteins-unsealed-court-documents/"]]},
@@ -355,6 +355,8 @@ const canvas=document.getElementById('cv'), ctx2=canvas.getContext('2d');
 let DPR=Math.min(window.devicePixelRatio||1,2), W=0, H=0;
 const typeColor={};for(const k in TYPEC)typeColor[k]=css(TYPEC[k]);
 const HUBCOL=css('--hub');
+const ACCUSEDCOL=css('--accused'), CONVCOL=css('--accused2');
+function nodeColor(n){return n.ac?ACCUSEDCOL:(typeColor[n.t]||'#8aa');}
 
 // build node/edge model
 const hubs=Object.keys(COLNAMES).map(k=>({id:'HUB_'+k,hub:true,key:k,label:COLNAMES[k],x:0,y:0,vx:0,vy:0,r:26}));
@@ -463,7 +465,8 @@ function draw(){
       ctx2.fillText(n.label,n.x,n.y);
     }else{
       ctx2.beginPath();ctx2.arc(n.x,n.y,n.r,0,Math.PI*2);
-      ctx2.fillStyle=typeColor[n.t]||'#8aa';ctx2.fill();
+      ctx2.fillStyle=nodeColor(n);ctx2.fill();
+      if(n.conv){ctx2.lineWidth=2.5/scale;ctx2.strokeStyle=CONVCOL;ctx2.stroke();}
       if(n===selected){ctx2.lineWidth=3/scale;ctx2.strokeStyle='#fff';ctx2.stroke();}
       else if(searchMatch(n)){ctx2.lineWidth=3/scale;ctx2.strokeStyle=css('--accent');ctx2.stroke();}
       // labels: always for w3, for w2 when zoomed or hovered-neighbor, w1 on hover
@@ -521,7 +524,7 @@ const detail=document.getElementById('detail');
 function openDetail(n){
   selected=n;
   document.getElementById('dtypelabel').textContent = n.hub?'Collection':(n.t.charAt(0).toUpperCase()+n.t.slice(1));
-  document.querySelector('#dtype .dot').style.background = n.hub?HUBCOL:(typeColor[n.t]||'#8aa');
+  document.querySelector('#dtype .dot').style.background = n.hub?HUBCOL:nodeColor(n);
   document.getElementById('dname').textContent=n.n;
   document.getElementById('dnat').textContent=n.nat||'';
   document.getElementById('dctx').textContent=n.ctx||'';
@@ -543,7 +546,7 @@ function buildCloud(){
     const el=document.createElement('span');el.className='word';
     el.textContent=n.n;
     el.style.fontSize=sz+'px';
-    el.style.color=typeColor[n.t]||'#8aa';
+    el.style.color=nodeColor(n);
     el.style.opacity = searchTerm? (searchMatch(n)?1:0.2):1;
     el.onclick=()=>openDetail(n);
     wrap.appendChild(el);
