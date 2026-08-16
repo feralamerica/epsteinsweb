@@ -986,7 +986,19 @@ document.getElementById('reset').onclick=()=>{
   scale=1;ox=0;oy=0;alpha=1;refresh();
 };
 document.getElementById('docchip').onclick=()=>{filterDocs=!filterDocs;document.getElementById('docchip').classList.toggle('off',!filterDocs);refresh();};
-function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();if(view==='rolodex')buildRolo();if(view==='list')buildList();}
+function refresh(){updateCount();alpha=Math.max(alpha,0.6);if(view==='cloud')buildCloud();if(view==='rolodex')buildRolo();if(view==='list')buildList();if(view==='network')recenterOffscreen();}
+function recenterOffscreen(){
+  const m=30;
+  for(const n of allNodes){
+    if(n.hub||!visible(n))continue;
+    const sx=W/2+ox+n.x*scale, sy=H/2+oy+n.y*scale;
+    if(sx<-m||sx>W+m||sy<-m||sy>H+m){
+      const tx=W*(0.30+Math.random()*0.40), ty=H*(0.30+Math.random()*0.40);
+      n.x=(tx-W/2-ox)/scale; n.y=(ty-H/2-oy)/scale; n.vx=0; n.vy=0;
+    }
+  }
+  alpha=Math.max(alpha,0.75);
+}
 
 /* ---- rolodex ---- */
 let roloList=[], roloIdx=0, spinning=false;
