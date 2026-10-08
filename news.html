@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News · Epstein's Web</title>
+<meta name="description" content="Reporting on Epstein, from the early profiles to the fight over the files.">
+<meta property="og:title" content="News · Epstein's Web">
+<meta property="og:description" content="Reporting on Epstein, from the early profiles to the fight over the files.">
+<meta property="og:site_name" content="Epstein's Web">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23011032%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ff5c5c%22 font-family=%22Arial%22 font-weight=%22700%22%3EEW%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Source+Serif+4:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#011032}
+a{color:#9cc0ff}a:hover{color:#ffffff}
+.lt a{color:#0b3d91}.lt a:hover{color:#c8102e}
+.topnav a{color:#c9d3e8;text-decoration:none;white-space:nowrap}.topnav a:hover{color:#ffffff}
+.feed a.h{color:#f4f6fb;text-decoration:none}.feed a.h:hover{text-decoration:underline}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:1000px){.g3{grid-template-columns:minmax(0,1fr)}.top{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.topnav{display:none !important}}
+</style>
+
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+
+<div style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; line-height: 1.55; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap">
+<a href="index.html" style="text-decoration: none; color: #f4f6fb"><span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span></a>
+<nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="index.html#money">Money</a>
+<a href="emails.html">Correspondence</a>
+<a href="flights.html">Flight logs</a>
+<a href="book.html">Little Black Book</a>
+<a href="records.html">Court and FBI records</a>
+<a href="news.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">News</a>
+</nav>
+</div>
+</header>
+
+<!-- Title + live feed -->
+<section style="padding: 44px 0 56px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px" class="top">
+<div>
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: #ffd166">Context · News reporting</div>
+<h1 style="margin: 6px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 64px; line-height: .95; text-transform: uppercase">The coverage</h1>
+<p style="margin: 14px 0 0; font-size: 17px; color: #e3e8f3; max-width: 600px">The stories that first exposed Epstein, the fight over the files, and today's headlines. Reporting explains what the documents show; the documents are the proof.</p>
+
+<div style="margin-top: 30px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 16px; padding: 22px 24px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; display: flex; align-items: center; gap: 10px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #4dd0a7; box-shadow: 0 0 0 4px rgba(77,208,167,.2)"></span>Latest headlines</h2>
+<span style="font-size: 12.5px; color: #aab7d1">Updated hourly · {{updated}}</span>
+</div>
+<ol class="feed" style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{feed}}" as="f" hint-placeholder-count="5">
+<li style="padding: 14px 0; border-top: 1px solid #1f3f74; display: flex; gap: 14px; align-items: baseline">
+<span style="flex: none; width: 54px; font-size: 12px; color: #aab7d1; font-variant-numeric: tabular-nums">{{f.date}}</span>
+<span style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+<a class="h" href="{{f.url}}" style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 18px; line-height: 1.3">{{f.title}}</a>
+<span style="font-size: 12.5px; color: #aab7d1">{{f.source}}</span>
+</span>
+</li>
+</sc-for>
+</ol>
+<a href="#archive" style="display: inline-block; margin-top: 10px; font-size: 13.5px; font-weight: 600">More coverage →</a>
+</div>
+</div>
+
+<!-- Bookmobile -->
+<aside style="background: #fbf8ef; color: #1b1b1b; border-radius: 16px; padding: 26px 26px 24px; box-shadow: 0 18px 40px rgba(0,0,0,.4); border-top: 6px solid #c8102e">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #8f0b20">On tour now</div>
+<h2 style="margin: 6px 0 10px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 34px; line-height: 1; text-transform: uppercase">The Redacted Reading Room</h2>
+<p style="margin: 0 0 12px; font-size: 15px; color: #2b2b2b">The Donald J. Trump and Jeffrey Epstein Memorial Bookmobile is taking all 3.5 million released pages on the road, so anyone can read the files in person.</p>
+<div style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #6b6b6b; margin-bottom: 6px">Fall 2026 stops</div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px">
+<sc-for list="{{stops}}" as="s" hint-placeholder-count="5"><span style="font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #ece6d6; color: #3a3a3a">{{s}}</span></sc-for>
+</div>
+<a href="https://trumpepsteinbookmobile.com/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; background: #c8102e; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px">Find a stop near you</a>
+<div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid #e3dccb; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+<a href="https://www.justice.gov/epstein" style="color: #0b3d91; font-weight: 600">DOJ Epstein Library →</a>
+<a href="https://oversightdemocrats.house.gov/" style="color: #0b3d91; font-weight: 600">House Oversight releases →</a>
+</div>
+</aside>
+</div>
+</section>
+
+<!-- From the day -->
+<section id="archive" class="lt" style="background: #f4f6fb; color: #0a1730; padding: 72px 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 52px; text-transform: uppercase; line-height: 1">From the day</h2>
+<p style="margin: 8px 0 30px; color: #43506b; max-width: 680px">The reporting that saw Epstein first, years before the files were released.</p>
+<div class="g3">
+<sc-for list="{{classics}}" as="c" hint-placeholder-count="3">
+<article style="background: #ffffff; border: 1px solid #d7deeb; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 24px rgba(1,16,50,.06)">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px">
+<span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #c8102e">{{c.year}}</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #43506b">{{c.outlet}}</span>
+</div>
+<h3 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.2">{{c.title}}</h3>
+<div style="font-size: 13.5px; color: #43506b">{{c.byline}}</div>
+<p style="margin: 0; font-size: 14.5px; color: #2b3754">{{c.why}}</p>
+<a href="{{c.url}}" style="margin-top: auto; padding-top: 6px; font-weight: 600; font-size: 14px">Read at {{c.outlet}} →</a>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- The fight over the files -->
+<section style="padding: 72px 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0 0 30px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 52px; text-transform: uppercase; line-height: 1">The fight over the files</h2>
+<ol style="list-style: none; margin: 0; padding: 0; border-left: 2px solid #1f3f74; max-width: 860px">
+<sc-for list="{{fight}}" as="t" hint-placeholder-count="6">
+<li style="position: relative; padding: 0 0 26px 30px">
+<span style="position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: {{t.dot}}; border: 2px solid #011032"></span>
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: .06em; color: #aab7d1; text-transform: uppercase">{{t.when}}</div>
+<div style="font-size: 15.5px; margin-top: 2px">{{t.what}}</div>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 30px 0 40px; font-size: 13px; color: #aab7d1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">Headlines link to the original outlets. Epstein's Web is an investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.</div>
+<div style="max-width: 1240px; margin: 8px auto 0; padding: 0 22px; margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support us on Venmo <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div>
+
+</footer>
+</div>
+</template>
+<noscript><p style="padding:20px;font-family:sans-serif">Epstein's Web needs JavaScript to show its search and cards.</p></noscript>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      updated: 'Oct 8, 2026',
+      feed: [
+        { date: 'Oct 8', title: 'Former Prince Andrew scores legal win in Epstein-linked case', source: 'CTV News', url: 'https://www.ctvnews.ca/canada/royal-family/article/former-prince-andrew-scores-legal-win-in-epstein-linked-case/' },
+        { date: 'Oct 8', title: 'Botstein resigns from Bard after damning email ties him to Epstein', source: 'Mid Hudson News', url: 'https://midhudsonnews.com/2026/10/08/botstein-resigns-from-bard-after-damning-email-ties-him-to-epstein-2/' },
+        { date: 'Oct 7', title: 'Former models and Epstein survivors are tracing a pattern of abuse across borders', source: 'Ms. Magazine', url: 'https://msmagazine.com/2026/10/07/epstein-survivors-modeling-industry-france-investigations/' },
+        { date: 'Oct 2', title: 'Ashley Hinson voted for Epstein files’ release. What’s behind Democrats’ messaging to the contrary?', source: 'PolitiFact', url: 'https://politifact.com/factchecks/2026/oct/02/winsenate/ashley-hinson-votes-epstein-files/' },
+        { date: 'Sep 11', title: '“Survivors have answered enough”: The Epstein Reading Room takes survivors’ fight on the road', source: 'Ms. Magazine', url: 'https://msmagazine.com/2026/09/11/epstein-reading-room-virginia-giuffre-survivors-justice/' }
+      ],
+      stops: ['Dallas', 'Omaha', 'Des Moines', 'Iowa City', 'Cedar Rapids'],
+      classics: [
+        { year: '2002', outlet: 'New York Magazine', title: 'Jeffrey Epstein: International Moneyman of Mystery', byline: 'By Landon Thomas Jr.', why: 'The first big profile of Epstein’s money and his famous friends. It carries Trump’s quote that Epstein liked women "on the younger side."', url: 'https://nymag.com/nymetro/news/people/n_7912/' },
+        { year: '2003', outlet: 'Vanity Fair', title: 'The Talented Mr. Epstein', byline: 'By Vicky Ward', why: 'A portrait of a financier no one could explain. Ward later said accounts from two sisters were cut from the piece before it ran.', url: 'https://www.vanityfair.com/news/2003/03/jeffrey-epstein-200303' },
+        { year: '2018', outlet: 'Miami Herald', title: 'Perversion of Justice', byline: 'By Julie K. Brown', why: 'The investigation into Epstein’s 2008 plea deal that led to his 2019 arrest. It found about 80 women who said they were abused as girls.', url: 'https://www.miamiherald.com/news/local/article220097825.html' }
+      ],
+      fight: [
+        { when: 'Nov 2025', what: 'House Oversight releases estate emails, including Epstein’s claim that Trump "knew about the girls."', dot: '#6ea8fe' },
+        { when: 'Nov 2025', what: 'Congress passes the Epstein Files Transparency Act, ordering the Justice Department to release its files.', dot: '#ffd166' },
+        { when: 'Jan 30, 2026', what: 'DOJ publishes more than 3 million pages, after missing the law’s deadline. It says it found over 6 million potentially responsive pages.', dot: '#c8102e' },
+        { when: 'Mar 5, 2026', what: 'DOJ posts FBI interview summaries about an allegation against Trump that it says were wrongly marked as duplicates.', dot: '#c8102e' },
+        { when: 'Sep 2026', what: 'The DOJ library updates again on Sept 11. The bookmobile tour leaves Dallas on Sept 10.', dot: '#4dd0a7' },
+        { when: 'Now', what: 'About 2.5 million identified pages remain unreleased.', dot: '#aab7d1' }
+      ]
+    };
+  }
+}
+
+DCLite.mount(Component, {});
+</script>
+</body>
+</html>

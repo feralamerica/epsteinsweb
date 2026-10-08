@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Court and FBI records · Epstein's Web</title>
+<meta name="description" content="Every court case and government record set in the DOJ Epstein Library.">
+<meta property="og:title" content="Court and FBI records · Epstein's Web">
+<meta property="og:description" content="Every court case and government record set in the DOJ Epstein Library.">
+<meta property="og:site_name" content="Epstein's Web">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23011032%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ff5c5c%22 font-family=%22Arial%22 font-weight=%22700%22%3EEW%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#011032}
+a{color:#9cc0ff}a:hover{color:#ffffff}
+.topnav a{color:#c9d3e8;text-decoration:none;white-space:nowrap}.topnav a:hover{color:#ffffff}
+.efta{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;text-decoration:none;white-space:nowrap}
+.efta:hover{text-decoration:underline}
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.case{background:#fbf8ef;color:#1b1b1b;border-radius:12px;padding:18px 20px;border-left:6px solid #ff8a8a;display:flex;flex-direction:column;gap:8px}
+.folder{position:relative;margin-top:12px}
+.folder:before{content:"";position:absolute;top:-12px;left:0;width:120px;height:14px;background:#fbf8ef;border-radius:8px 8px 0 0}
+@media (max-width:900px){.cgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.topnav{display:none !important}}
+</style>
+
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+
+<div style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; line-height: 1.55; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap">
+<a href="index.html" style="text-decoration: none; color: #f4f6fb"><span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span></a>
+<nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="index.html#money">Money</a>
+<a href="emails.html">Correspondence</a>
+<a href="flights.html">Flight logs</a>
+<a href="book.html">Little Black Book</a>
+<a href="records.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">Court and FBI records</a>
+<a href="news.html">News</a>
+</nav>
+</div>
+</header>
+
+<section style="padding: 44px 0 30px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: #ff8a8a">Legal · Court and FBI records</div>
+<h1 style="margin: 6px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 64px; line-height: .95; text-transform: uppercase">The case files</h1>
+<p style="margin: 14px 0 0; font-size: 17px; color: #e3e8f3; max-width: 780px">Every court case and government record set in the DOJ Epstein Library, from the 2006 Palm Beach investigation to Maxwell’s Supreme Court petition, with what each case was about, how it ended, and the files we link from it.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 26px; max-width: 900px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<div style="border-top: 3px solid {{s.bar}}; background: #0a1c3d; padding: 14px 16px; border-radius: 0 0 10px 10px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 34px; line-height: 1">{{s.n}}</div>
+<div style="font-size: 12.5px; color: #c9d3e8; margin-top: 4px">{{s.l}}</div>
+</div>
+</sc-for>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; margin-top: 26px; max-width: 560px; background: #0a1c3d; border: 1px solid #3a5a92; border-radius: 10px; padding: 0 14px; min-height: 48px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; left: -9999px">Search cases</span>
+<input type="search" value="{{q}}" onInput="{{onFind}}" placeholder="Search cases: Maxwell, JPMorgan, estate, grand jury" style="flex: 1; min-width: 0; border: 0; background: transparent; font: 400 15px Inter, sans-serif; color: #f4f6fb; outline: none">
+</label>
+</div>
+</section>
+
+<section style="padding: 0 0 50px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+<sc-if value="{{g.show}}" hint-placeholder-val="{{true}}">
+<h2 style="margin: 30px 0 14px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; color: #ffd0d0">{{g.g}}</h2>
+<div class="cgrid">
+<sc-for list="{{g.cases}}" as="c" hint-placeholder-count="2">
+<div class="folder"><article class="case">
+<div style="display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap">
+<h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1">{{c.name}}</h3>
+<span style="font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: #ffe1e1; color: #8f0b20">{{c.status}}</span>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6b6b6b">{{c.court}} · {{c.yrs}}</div>
+<p style="margin: 0; font-size: 14.5px; color: #2b2b2b">{{c.desc}}</p>
+<div style="border-top: 1px dashed #d9cfb8; padding-top: 8px; font-size: 12.5px; color: #43506b"><b style="color: #1b1b1b">{{c.n}}</b> {{c.nLabel}}</div>
+<div style="display: flex; gap: 6px 12px; flex-wrap: wrap">
+<sc-for list="{{c.links}}" as="f" hint-placeholder-count="3"><a class="efta" href="{{f.href}}" style="color: #0b3d91">{{f.id}}</a></sc-for>
+</div>
+</article></div>
+</sc-for>
+</div>
+</sc-if>
+</sc-for>
+<sc-if value="{{none}}" hint-placeholder-val="{{false}}"><p style="color: #c9d3e8">No cases match. Try a different word.</p></sc-if>
+
+<h2 style="margin: 44px 0 6px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; color: #ffd0d0">FBI and Justice Department records</h2>
+<p style="margin: 0 0 14px; color: #c9d3e8; max-width: 760px">Records the government created or released outside the courtroom: internal reviews, interview transcripts, FBI case files and FOIA releases.</p>
+<div class="cgrid">
+<sc-for list="{{fbi}}" as="c" hint-placeholder-count="4">
+<article style="background: #0a1c3d; border: 1px solid #1f3f74; border-left: 6px solid #3fb6c9; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 22px">{{c.name}}</h3>
+<p style="margin: 0; font-size: 14px; color: #e3e8f3">{{c.desc}}</p>
+<div style="display: flex; gap: 6px 12px; flex-wrap: wrap"><sc-for list="{{c.links}}" as="f" hint-placeholder-count="2"><a class="efta" href="{{f.href}}">{{f.id}}</a></sc-for></div>
+</article>
+</sc-for>
+</div>
+<p style="margin: 26px 0 0; font-size: 13px; color: #aab7d1">Want every file that names a person? Open their card in the <a href="book.html">Little Black Book</a>. For the money trail, see the <a href="https://stayferalamerica.com/moneymap.html">Money Map</a>.</p>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 30px 0 40px; font-size: 13px; color: #aab7d1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">Case descriptions are ours; every document links to the DOJ Epstein Library. Survivors are never named. A name in a filing may be an allegation, testimony or a passing reference.</div>
+<div style="max-width: 1240px; margin: 8px auto 0; padding: 0 22px; margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support us on Venmo <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div>
+
+</footer>
+</div>
+</template>
+<noscript><p style="padding:20px;font-family:sans-serif">Epstein's Web needs JavaScript to show its search and cards.</p></noscript>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props){ super(props); this.state = { q: '' }; }
+  renderVals() {
+    var self = this, S = this.state;
+    var D = {"groups": [{"g": "Criminal cases", "cases": [{"name": "State of Florida v. Epstein", "court": "Palm Beach County Circuit Court · No. 50-2006-CF-009454", "yrs": "2006 to 2008", "desc": "Epstein pleaded guilty in 2008 to two state prostitution charges, one involving a minor, and served 13 months, much of it on work release.", "status": "Closed", "n": 1, "files": [["EFTA02823332", "Court Records/State of Florida v. Epstein, No. 50-2006-CF-009454-AXXX-MB (Fla. 15th Cir. Ct. 2006)"]]}, {"name": "United States v. Epstein", "court": "S.D.N.Y. · No. 1:19-cr-00490", "yrs": "2019", "desc": "Federal sex-trafficking indictment filed in July 2019. Dismissed after Epstein died in jail that August.", "status": "Dismissed after his death", "n": 3, "files": [["EFTA02824152", "Court Records/United States v. Epstein, No. 119-cr-00490 (S.D.N.Y. 2019)"], ["EFTA02824136", "Court Records/United States v. Epstein, No. 119-cr-00490 (S.D.N.Y. 2019)"], ["EFTA02824517", "Court Records/United States v. Epstein, No. 119-cr-00490 (S.D.N.Y. 2019)"]]}, {"name": "United States v. Maxwell", "court": "S.D.N.Y. · No. 1:20-cr-00330", "yrs": "2020 to 2022", "desc": "Maxwell was convicted in December 2021 of sex trafficking and related counts and sentenced to 20 years. Includes the trial transcripts and exhibits, among them the pilot logbook (Government Exhibit 662-RR).", "status": "Convicted, 20 years", "n": 35, "files": [["EFTA02841117", "Court Records/United States v. Maxwell, No. 120-cr-00330 (S.D.N.Y. 2020)"], ["EFTA02842239", "Court Records/United States v. Maxwell, No. 120-cr-00330 (S.D.N.Y. 2020)"], ["EFTA02838374", "Court Records/United States v. Maxwell, No. 120-cr-00330 (S.D.N.Y. 2020)"], ["EFTA02834166", "Court Records/United States v. Maxwell, No. 120-cr-00330 (S.D.N.Y. 2020)"]]}, {"name": "Maxwell appeals", "court": "Second Circuit · Nos. 21-0058, 21-0770, 22-1426", "yrs": "2021 to 2024", "desc": "Maxwell’s appeals of her detention and conviction. The Second Circuit upheld the conviction in 2024.", "status": "Conviction upheld", "n": 4, "files": [["EFTA02843657", "Court Records/United States v. Maxwell, No. 21-0058 (2d Cir. 2021)"], ["EFTA02843520", "Court Records/United States v. Maxwell, No. 21-0058 (2d Cir. 2021)"], ["EFTA02824716", "Court Records/United States v. Maxwell, No. 21-0770 (2d Cir. 2021)"], ["EFTA02844213", "Court Records/United States v. Maxwell, No. 22-1426 (2d Cir. 2022)"]]}, {"name": "Maxwell v. United States", "court": "U.S. Supreme Court · No. 24-1073", "yrs": "2025", "desc": "Maxwell asked the Supreme Court to void her conviction under Epstein’s 2008 non-prosecution deal. The Court declined to hear the case in October 2025.", "status": "Review denied", "n": 1, "files": [["EFTA02822509", "Court Records/Maxwell v. United States, No. 24-1073 (U.S. 2025) (petition for cert.)"]]}]}, {"g": "Survivors’ cases", "cases": [{"name": "Doe v. United States", "court": "S.D. Fla. · No. 9:08-cv-80736", "yrs": "2008 to 2019", "desc": "Two survivors sued under the Crime Victims’ Rights Act, arguing prosecutors hid the 2008 non-prosecution deal from them. A federal judge ruled in 2019 that the law had been violated.", "status": "Violation found", "n": 22, "files": [["EFTA02755289", "Court Records/Doe v. United States, No. 908-cv-80736 (S.D. Fla. 2008)"], ["EFTA02756416", "Court Records/Doe v. United States, No. 908-cv-80736 (S.D. Fla. 2008)"], ["EFTA02757332", "Court Records/Doe v. United States, No. 908-cv-80736 (S.D. Fla. 2008)"], ["EFTA02755409", "Court Records/Doe v. United States, No. 908-cv-80736 (S.D. Fla. 2008)"]]}, {"name": "Doe v. Epstein (Florida suits)", "court": "S.D. Fla. · Nos. 9:08-cv-80119, 9:08-cv-80804, 9:09-cv-80469", "yrs": "2008 to 2010", "desc": "Civil suits brought by survivors against Epstein after the state case. Includes depositions of household staff and pilots.", "status": "Settled", "n": 12, "files": [["EFTA02747859", "Court Records/Doe v. Epstein, No. 908-cv-80119 (S.D. Fla. 2008)"], ["EFTA02747776", "Court Records/Doe v. Epstein, No. 908-cv-80119 (S.D. Fla. 2008)"], ["EFTA02745154", "Court Records/Doe v. Epstein, No. 908-cv-80119 (S.D. Fla. 2008)"], ["EFTA02745664", "Court Records/Doe v. Epstein, No. 908-cv-80119 (S.D. Fla. 2008)"]]}, {"name": "The 2015 defamation case against Maxwell", "court": "S.D.N.Y. · No. 1:15-cv-07433 (and related No. 1:17-mc-00025)", "yrs": "2015 to 2024", "desc": "A survivor’s defamation suit against Maxwell, settled in 2017. Its sealed records, including the flight chart, depositions and exhibits, were unsealed in 2019 and 2024.", "status": "Settled; records unsealed", "n": 213, "files": [["EFTA02785644", "Court Records/v. Maxwell, No. 115-cv-07433 (S.D.N.Y. 2015)"], ["EFTA02794403", "Court Records/v. Maxwell, No. 115-cv-07433 (S.D.N.Y. 2015)"], ["EFTA02797254", "Court Records/v. Maxwell, No. 115-cv-07433 (S.D.N.Y. 2015)"], ["EFTA02778909", "Court Records/v. Maxwell, No. 115-cv-07433 (S.D.N.Y. 2015)"]]}, {"name": "Jane Doe 43 v. Epstein", "court": "S.D.N.Y. · No. 1:17-cv-00616", "yrs": "2017", "desc": "Civil suit against Epstein, Maxwell and members of his staff.", "status": "Civil suit", "n": 2, "files": [["EFTA02820409", "Court Records/Jane Doe 43 v. Epstein, No. 117-cv-00616 (S.D.N.Y. 2017)"], ["EFTA02819831", "Court Records/Jane Doe 43 v. Epstein, No. 117-cv-00616 (S.D.N.Y. 2017)"]]}, {"name": "Suits against the estate (Doe v. Indyke and others)", "court": "S.D.N.Y. · 11 cases, 2019 to 2020", "yrs": "2019 to 2021", "desc": "Survivors’ suits against Epstein’s executors, Darren Indyke and Richard Kahn, after his death. Many were resolved through the estate’s victim compensation program.", "status": "Mostly resolved", "n": 78, "files": [["EFTA02738039", "Court Records/Doe 17 v. Indyke, No. 119-cv-09610 (S.D.N.Y. 2019)"], ["EFTA02738043", "Court Records/Doe 17 v. Indyke, No. 119-cv-09610 (S.D.N.Y. 2019)"], ["EFTA02738010", "Court Records/Doe 17 v. Indyke, No. 119-cv-09610 (S.D.N.Y. 2019)"], ["EFTA02738041", "Court Records/Doe 17 v. Indyke, No. 119-cv-09610 (S.D.N.Y. 2019)"]]}]}, {"g": "Banks, estate and property", "cases": [{"name": "Virgin Islands v. JPMorgan Chase", "court": "S.D.N.Y. · No. 1:22-cv-10904", "yrs": "2022 to 2023", "desc": "The U.S. Virgin Islands sued JPMorgan for enabling Epstein’s trafficking through years of banking. The bank settled in 2023 for $75 million. Its exhibits hold much of the wire data behind the Money Map.", "status": "Settled, $75M", "n": 137, "files": [["EFTA02810791", "Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)"], ["EFTA02810827", "Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)"], ["EFTA02808599", "Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)"], ["EFTA02805472", "Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)"]]}, {"name": "Operating Engineers v. Dimon", "court": "S.D.N.Y. · No. 1:23-cv-03903", "yrs": "2023", "desc": "Shareholder suit against JPMorgan’s leaders, including Jamie Dimon, over the bank’s Epstein ties.", "status": "Shareholder suit", "n": 11, "files": [["EFTA02822837", "Court Records/Operating Engineers Construction Industry and Miscellaneous Pension Fund v. Dimon, No. 123-cv-03903 (S.D.N.Y. 2023)"], ["EFTA02823201", "Court Records/Operating Engineers Construction Industry and Miscellaneous Pension Fund v. Dimon, No. 123-cv-03903 (S.D.N.Y. 2023)"], ["EFTA02822830", "Court Records/Operating Engineers Construction Industry and Miscellaneous Pension Fund v. Dimon, No. 123-cv-03903 (S.D.N.Y. 2023)"], ["EFTA02822828", "Court Records/Operating Engineers Construction Industry and Miscellaneous Pension Fund v. Dimon, No. 123-cv-03903 (S.D.N.Y. 2023)"]]}, {"name": "Maxwell v. Estate of Jeffrey Epstein", "court": "V.I. Superior Court · No. ST-20-CV-155", "yrs": "2020", "desc": "Maxwell sued the estate to cover her legal fees and security costs. Filings name the 1953 Trust and other estate entities.", "status": "Estate dispute", "n": 6, "files": [["EFTA02822203", "Court Records/Maxwell v. Estate of Jeffrey Epstein, No. ST-20-CV-155 (V.I. Super. Ct. 2020)"], ["EFTA02822007", "Court Records/Maxwell v. Estate of Jeffrey Epstein, No. ST-20-CV-155 (V.I. Super. Ct. 2020)"], ["EFTA02822335", "Court Records/Maxwell v. Estate of Jeffrey Epstein, No. ST-20-CV-155 (V.I. Super. Ct. 2020)"], ["EFTA02822333", "Court Records/Maxwell v. Estate of Jeffrey Epstein, No. ST-20-CV-155 (V.I. Super. Ct. 2020)"]]}, {"name": "Matter of the Estate of Jeffrey E. Epstein", "court": "V.I. Superior Court · No. ST-21-RV-00005", "yrs": "2021", "desc": "Probate proceedings for Epstein’s estate in the Virgin Islands.", "status": "Probate", "n": 5, "files": [["EFTA02821864", "Court Records/Matter of the Estate of Jeffrey E. Epstein, Deceased, No. ST-21-RV-00005 (V.I. Super. Ct. 2021)"], ["EFTA02821562", "Court Records/Matter of the Estate of Jeffrey E. Epstein, Deceased, No. ST-21-RV-00005 (V.I. Super. Ct. 2021)"], ["EFTA02821851", "Court Records/Matter of the Estate of Jeffrey E. Epstein, Deceased, No. ST-21-RV-00005 (V.I. Super. Ct. 2021)"], ["EFTA02821619", "Court Records/Matter of the Estate of Jeffrey E. Epstein, Deceased, No. ST-21-RV-00005 (V.I. Super. Ct. 2021)"]]}, {"name": "Case over 9 East 71st Street", "court": "S.D.N.Y. · No. 1:19-cv-07625", "yrs": "2019", "desc": "Suit naming the company that held Epstein’s Manhattan townhouse.", "status": "Civil suit", "n": 4, "files": [["EFTA02846030", "Court Records/v. Nine East 71st Street, No. 119-cv-07625 (S.D.N.Y. 2019)"], ["EFTA02845984", "Court Records/v. Nine East 71st Street, No. 119-cv-07625 (S.D.N.Y. 2019)"], ["EFTA02846197", "Court Records/v. Nine East 71st Street, No. 119-cv-07625 (S.D.N.Y. 2019)"], ["EFTA02846312", "Court Records/v. Nine East 71st Street, No. 119-cv-07625 (S.D.N.Y. 2019)"]]}]}, {"g": "Fights over the records", "cases": [{"name": "Epstein v. Rothstein", "court": "Palm Beach County Circuit Court · No. 50-2009-CA-040800", "yrs": "2009 to 2018", "desc": "Epstein sued attorney Scott Rothstein and survivors’ lawyer Brad Edwards. Epstein dropped his claims, and Edwards countersued for malicious prosecution. The file holds Epstein-era emails and depositions.", "status": "Settled", "n": 67, "files": [["EFTA02768083", "Court Records/Epstein v. Rothstein, No. 50-2009-CA-040800-XXXX-MB (Fla. 15th Cir. Ct. 2009)"], ["EFTA02769703", "Court Records/Epstein v. Rothstein, No. 50-2009-CA-040800-XXXX-MB (Fla. 15th Cir. Ct. 2009)"], ["EFTA02775446", "Court Records/Epstein v. Rothstein, No. 50-2009-CA-040800-XXXX-MB (Fla. 15th Cir. Ct. 2009)"], ["EFTA02763409", "Court Records/Epstein v. Rothstein, No. 50-2009-CA-040800-XXXX-MB (Fla. 15th Cir. Ct. 2009)"]]}, {"name": "Palm Beach Post v. Aronberg", "court": "Palm Beach County Circuit Court · No. 50-2019-CA-014681", "yrs": "2019 to 2024", "desc": "The Palm Beach Post sued for the secret 2006 state grand jury records. A 2024 Florida law led to their release.", "status": "Records released", "n": 15, "files": [["EFTA02733081", "Court Records/CA Florida Holdings, LLC, Publisher of the Palm Beach Post v. Aronberg, No. 50-2019-CA-014681-XXXX-MB (Fla. 15th Cir. Ct. 2019)"], ["EFTA02736561", "Court Records/CA Florida Holdings, LLC, Publisher of the Palm Beach Post v. Aronberg, No. 50-2019-CA-014681-XXXX-MB (Fla. 15th Cir. Ct. 2019)"], ["EFTA02735319", "Court Records/CA Florida Holdings, LLC, Publisher of the Palm Beach Post v. Aronberg, No. 50-2019-CA-014681-XXXX-MB (Fla. 15th Cir. Ct. 2019)"], ["EFTA02735689", "Court Records/CA Florida Holdings, LLC, Publisher of the Palm Beach Post v. Aronberg, No. 50-2019-CA-014681-XXXX-MB (Fla. 15th Cir. Ct. 2019)"]]}]}], "fbi": [{"name": "DOJ Office of Professional Responsibility report", "desc": "The 2020 internal review of how federal prosecutors handled the 2008 non-prosecution deal.", "files": [["EFTA02847284", "Prior DOJ Disclosures/Memos. & Correspondence"]]}, {"name": "First phase of declassified Epstein files (Feb. 2025)", "desc": "The Justice Department’s first release: the pilot logbook, a redacted contact book and an evidence list.", "files": [["EFTA02846460", "Prior DOJ Disclosures/First Phase of Declassified Epstein Files"], ["EFTA02846578", "Prior DOJ Disclosures/First Phase of Declassified Epstein Files"]]}, {"name": "Maxwell proffer (2025)", "desc": "Transcripts of Maxwell’s 2025 interviews with Justice Department officials.", "files": [["EFTA02846680", "Prior DOJ Disclosures/Maxwell Proffer"], ["EFTA02846943", "Prior DOJ Disclosures/Maxwell Proffer"], ["EFTA02847203", "Prior DOJ Disclosures/Maxwell Proffer"]]}, {"name": "FBI intelligence record", "desc": "An FBI case record that lists Epstein’s potential co-conspirators, including his assistant Lesley Groff.", "files": [["EFTA00173201", "DataSet 9"]]}, {"name": "Prosecutors on Trump’s flights", "desc": "A January 2020 SDNY email noting flight records showed Donald Trump on Epstein’s jet at least eight times from 1993 to 1996. Trump denies wrongdoing.", "files": [["EFTA00028716", "DataSet 8"]]}, {"name": "FOIA releases", "desc": "Records released under the Freedom of Information Act by the FBI, the Bureau of Prisons (including records on his jail death), Customs and Border Protection, and Florida agencies.", "files": [["EFTA02849359", "Freedom of Information Act (FOIA)/Federal Bureau of Investigation (FBI)"], ["EFTA02849279", "Freedom of Information Act (FOIA)/Federal Bureau of Investigation (FBI)"], ["EFTA02851705", "Freedom of Information Act (FOIA)/Federal Bureau of Prisons (BOP)"], ["EFTA02850705", "Freedom of Information Act (FOIA)/Federal Bureau of Prisons (BOP)"]]}], "ncase": 17, "nfiles": 616};
+    var url = function(id, f){ return 'https://www.justice.gov/epstein/files/' + encodeURI(f) + '/' + id + '.pdf'; };
+    var q = S.q.trim().toLowerCase();
+    var any = false;
+    var groups = D.groups.map(function(g){
+      var cs = g.cases.filter(function(c){ return !q || (c.name + ' ' + c.court + ' ' + c.desc + ' ' + g.g).toLowerCase().indexOf(q) >= 0; }).map(function(c){
+        return Object.assign({}, c, { nLabel: c.n === 1 ? 'file from this case linked on Epstein’s Web' : 'files from this case linked on Epstein’s Web', links: c.files.map(function(f){ return { id: f[0], href: url(f[0], f[1]) }; }) }); });
+      if (cs.length) any = true;
+      return { g: g.g, cases: cs, show: cs.length > 0 };
+    });
+    var fbi = D.fbi.map(function(c){ return Object.assign({}, c, { links: c.files.map(function(f){ return { id: f[0], href: url(f[0], f[1]) }; }) }); });
+    return {
+      stats: [
+        { n: String(D.ncase), l: 'court cases and appeals', bar: '#ff8a8a' },
+        { n: String(D.nfiles), l: 'court files linked across the site', bar: '#ffd166' },
+        { n: '4', l: 'courts: Florida, New York, Virgin Islands, Supreme Court', bar: '#6ea8fe' },
+        { n: String(D.fbi.length), l: 'FBI and DOJ record sets', bar: '#3fb6c9' }
+      ],
+      groups: groups, none: !any, fbi: fbi, q: S.q,
+      onFind: function(e){ self.setState({ q: e.target.value }); }
+    };
+  }
+}
+
+DCLite.mount(Component, {});
+</script>
+</body>
+</html>

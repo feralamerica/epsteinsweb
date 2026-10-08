@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flight logs · Epstein's Web</title>
+<meta name="description" content="Boarding records for every named passenger in Epstein's flight logs, each linked to its page in the DOJ files.">
+<meta property="og:title" content="Flight logs · Epstein's Web">
+<meta property="og:description" content="Boarding records for every named passenger in Epstein's flight logs, each linked to its page in the DOJ files.">
+<meta property="og:site_name" content="Epstein's Web">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23011032%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ff5c5c%22 font-family=%22Arial%22 font-weight=%22700%22%3EEW%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#011032}
+a{color:#9cc0ff}a:hover{color:#ffffff}
+.topnav a{color:#c9d3e8;text-decoration:none;white-space:nowrap}.topnav a:hover{color:#ffffff}
+.efta{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;text-decoration:none;white-space:nowrap}
+.efta:hover{text-decoration:underline}
+.ticket{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 92px;background:#fbf8ef;color:#1b1b1b;border-radius:12px;min-height:150px;-webkit-mask:radial-gradient(circle 9px at calc(100% - 92px) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at calc(100% - 92px) 100%,#0000 98%,#000) bottom/100% 51% no-repeat;mask:radial-gradient(circle 9px at calc(100% - 92px) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at calc(100% - 92px) 100%,#0000 98%,#000) bottom/100% 51% no-repeat;transition:transform .15s}
+.ticket:hover{transform:translateY(-2px)}
+.ticket:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.wrap2{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:1100px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.tgrid{grid-template-columns:minmax(0,1fr)}.topnav{display:none !important}}
+</style>
+
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+
+<div style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; line-height: 1.55; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap">
+<a href="index.html" style="text-decoration: none; color: #f4f6fb"><span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span></a>
+<nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="index.html#money">Money</a>
+<a href="emails.html">Correspondence</a>
+<a href="flights.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">Flight logs</a>
+<a href="book.html">Little Black Book</a>
+<a href="records.html">Court and FBI records</a>
+<a href="news.html">News</a>
+</nav>
+</div>
+</header>
+
+<section style="padding: 44px 0 34px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: #c39bff">Travel · Flight logs</div>
+<h1 style="margin: 6px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 64px; line-height: .95; text-transform: uppercase">Who flew</h1>
+<p style="margin: 14px 0 0; font-size: 17px; color: #e3e8f3; max-width: 760px">A ticket for every named passenger, built from two flight records in the DOJ files: the chart filed in the 2015 defamation case against Maxwell (her flights, 1998 to 2002) and pilot David Rodgers’ handwritten logbook, entered as Government Exhibit 662-RR at Maxwell’s trial (1991 to 2006), which we transcribed page by page.</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #aab7d1; max-width: 760px">Flying on the plane is not evidence of wrongdoing. Counts include only flights where the person’s full name is written; initials are not counted. Handwriting is hard to read in places, so open the linked page to check any entry. Survivors and anyone redacted are left out.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 26px; max-width: 900px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<div style="border-top: 3px solid {{s.bar}}; background: #0a1c3d; padding: 14px 16px; border-radius: 0 0 10px 10px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 34px; line-height: 1">{{s.n}}</div>
+<div style="font-size: 12.5px; color: #c9d3e8; margin-top: 4px">{{s.l}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="tickets" style="background: #08193a; border-top: 1px solid #1f3f74; padding: 40px 0 64px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 34px; text-transform: uppercase">Passenger tickets</h2>
+<label style="display: flex; align-items: center; gap: 10px; background: #0f2650; border: 1px solid #3a5a92; border-radius: 10px; padding: 0 12px; min-height: 44px; flex: 0 1 320px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; left: -9999px">Find a passenger</span>
+<input type="search" value="{{q}}" onInput="{{onFind}}" placeholder="Find a passenger" style="flex: 1; min-width: 0; background: transparent; border: 0; color: #f4f6fb; font: 400 14px Inter, sans-serif; outline: none">
+</label>
+</div>
+
+<div class="wrap2">
+<div class="tgrid">
+<sc-for list="{{tickets}}" as="t" hint-placeholder-count="9">
+<button type="button" class="ticket" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="{{t.ring}}">
+<span style="padding: 14px 14px 12px 16px; display: flex; flex-direction: column; gap: 6px; border-left: 6px solid {{t.color}}; border-radius: 12px 0 0 12px; min-width: 0">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6b6b"><span>PASSENGER</span><span>{{t.ac}}</span></span>
+<span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.05; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis">{{t.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #43506b">{{t.span}}</span>
+<span style="font-size: 12.5px; color: #2b2b2b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{t.route}}</span>
+</span>
+<span style="border-left: 2px dashed #cfc6b0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 8px">
+<span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 38px; line-height: 1">{{t.n}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: #6b6b6b">{{t.unit}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+
+<aside id="ticket" aria-live="polite" style="scroll-margin-top: 12px; background: #fbf8ef; color: #1b1b1b; border-radius: 14px; padding: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4); border-top: 6px solid {{d.color}}">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #6b6b6b">BOARDING RECORD</div>
+<h3 style="margin: 4px 0 2px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.05; text-transform: uppercase">{{d.name}}</h3>
+<div style="font-size: 13px; color: #43506b">{{d.nat}}</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0">
+<div style="background: #f1ebdb; border-radius: 8px; padding: 8px 12px"><b style="font-family: 'Saira Condensed', sans-serif; font-size: 26px">{{d.n}}</b> <span style="font-size: 12.5px; color: #43506b">{{d.unit}} in this chart</span></div>
+<div style="background: #f1ebdb; border-radius: 8px; padding: 8px 12px; font-size: 13px; color: #43506b; display: flex; align-items: center">{{d.span}}</div>
+</div>
+<sc-if value="{{d.hasRows}}" hint-placeholder-val="{{true}}">
+<div style="max-height: 520px; overflow: auto; border-top: 1px solid #e3dccb">
+<sc-for list="{{d.rows}}" as="r" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: 74px minmax(0,1fr); gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid #e3dccb">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 600">{{r.date}}</div>
+<div style="font-size: 14px">{{r.route}}</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6b6b6b">{{r.ac}}</div>
+<div style="font-size: 12.5px; color: #43506b">{{r.src}} · <a class="efta" href="{{r.href}}" style="color: #0b3d91">{{r.efta}}</a></div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{d.note}}" hint-placeholder-val="{{false}}"><p style="margin: 0 0 12px; font-size: 14px; color: #2b2b2b">{{d.note}}</p></sc-if>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px">
+<a href="book.html" onClick="{{d.openCard}}" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #0a1730; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 13.5px">Open their card</a>
+<a href="{{chartHref}}" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 9px; border: 1px solid #c3cde0; color: #0a1730; text-decoration: none; font-weight: 500; font-size: 13.5px">Full chart: EFTA02796838</a>
+<a href="{{logHref}}" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 9px; border: 1px solid #c3cde0; color: #0a1730; text-decoration: none; font-weight: 500; font-size: 13.5px">Pilot logbook: EFTA02846460</a>
+</div>
+</aside>
+</div>
+
+<div style="margin-top: 34px; background: #0a1c3d; border: 1px solid #1f3f74; border-radius: 14px; padding: 18px 20px">
+<h3 style="margin: 0 0 6px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase">Not ticketed yet</h3>
+<p style="margin: 0 0 10px; font-size: 14px; color: #c9d3e8">Rød-Larsen does not appear by name in either record; his travel shows up in later manifests and emails we have not transcribed yet. David Rodgers flew the planes and signed every logbook page, so he is not a passenger.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{missing}}" as="m" hint-placeholder-count="6"><span style="font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px dashed #3a5a92; color: #c9d3e8">{{m}}</span></sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 30px 0 40px; font-size: 13px; color: #aab7d1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 22px">Sources: v. Maxwell, No. 15-cv-07433 (S.D.N.Y.), Doc. 153-2, Composite Exhibit 2 (EFTA02796838); and the Rodgers pilot logbook, Government Exhibit 662-RR in U.S. v. Maxwell, released in the DOJ’s first phase of declassified Epstein files (EFTA02846460). Spellings and routes follow the records; some entries are hard to read.</div>
+<div style="max-width: 1240px; margin: 8px auto 0; padding: 0 22px; margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support us on Venmo <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div>
+
+</footer>
+</div>
+</template>
+<noscript><p style="padding:20px;font-family:sans-serif">Epstein's Web needs JavaScript to show its search and cards.</p></noscript>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    var k = 'Bill Clinton';
+    try { var h = JSON.parse(localStorage.getItem('ew-ticket') || 'null'); if (h && h.k && Date.now() - h.at < 120000) { k = h.k; setTimeout(function(){ try { localStorage.removeItem('ew-ticket'); } catch (e) {} }, 3000); this._scrollTo = 'ticket'; this._seen = h.at; } } catch (e) {}
+    this.state = { sel: k, q: '' };
+  }
+  componentDidMount(){
+    var self = this;
+    var scroll = function(id){ [60, 350, 900, 1600, 2600].forEach(function(ms){ setTimeout(function(){ var el = document.getElementById(id); if (el) el.scrollIntoView({ block: 'start' }); }, ms); }); };
+    if (this._scrollTo) { scroll(this._scrollTo); this._scrollTo = null; }
+    var check = function(){ try { var h = JSON.parse(localStorage.getItem('ew-ticket') || 'null'); if (h && h.at > (self._seen || 0) && Date.now() - h.at < 120000 && h.k) { self._seen = h.at; setTimeout(function(){ try { localStorage.removeItem('ew-ticket'); } catch (e) {} }, 3000); self.setState({ sel: h.k, q: '' }); scroll('ticket'); } } catch (e) {} };
+    this._check = check; this._poll = setInterval(check, 400);
+    try { window.addEventListener('storage', check); } catch (e) {}
+  }
+  componentWillUnmount(){ clearInterval(this._poll); try { window.removeEventListener('storage', this._check); } catch (e) {} }
+  renderVals() {
+    var self = this, S = this.state;
+    var FD = {"Bill Clinton": [["02/09/02", "N908JE", "Miami, Florida", "White Plains, NY", 10, "000758"], ["03/19/02", "N908JE", "New York, NY", "London, England", 11, "000760"], ["03/21/02", "N908JE", "London, England", "New York, NY", 11, "000760"], ["05/22/02", "N908JE", "Atsugi Naval Air Facility, Japan", "Khabarovsk, Russia", 11, "000759"], ["05/23/02", "N908JE", "Khabarovsk, Russia", "Shenzhen, China", 11, "000759"], ["05/23/02", "N909JE", "Shenzhen, China", "Singapore", 11, "000759"], ["05/25/02", "N908JE", "Singapore", "Bangkok, Thailand", 11, "000759"], ["05/25/02", "N908JE", "Bangkok, Thailand", "Bandar Seri Begawan, Brunei", 12, "000759"], ["07/13/02", "N908JE", "Rabat, Morocco", "Santa Maria, Portugal", 13, "000765"], ["07/13/02", "N908JE", "Santa Maria, Portugal", "New York, NY", 13, "000765"], ["09/21/02", "N908JE", "New York", "Santa Maria, Portugal", 13, "000767"], ["09/22/02", "N908JE", "Santa Maria, Portugal", "Accra, Ghana", 13, "000767"], ["09/23/02", "N908JE", "Accra, Ghana", "Abuja, Nigeria", 13, "000767"], ["09/24/02", "N908JE", "DNAA", "HRYR", 96, "", "L"], ["09/25/02", "N908JE", "Kigali, Rwanda", "Maputo, Mozambique", 14, "000767"], ["09/26/02", "N908JE", "Maputo, Mozambique", "Cape Town, South Africa", 14, "000767"], ["09/27/02", "N908JE", "FACT", "FAJS", 96, "", "L"], ["09/28/02", "N908JE", "FAJS", "FACT", 96, "", "L"], ["09/29/02", "N908JE", "Accra, Ghana", "Paris, France", 14, "000767"], ["09/29/02", "N908JE", "Paris, France", "London, England", 14, "000768"], ["09/29/02", "N908JE", "LFPB", "EGGW", 97, "", "L"], ["11/04/03", "N908JE", "EBBR", "ENGM", 105, "", "L"], ["11/05/03", "N908JE", "ENGM", "UNNT", 105, "", "L"], ["11/06/03", "N908JE", "UNNT", "VHHH", 105, "", "L"], ["11/09/03", "N908JE", "VHHH", "ZUUU", 105, "", "L"], ["11/09/03", "N908JE", "ZUUU", "ZBAA", 105, "", "L"]], "Kevin Spacey": [["09/21/02", "N908JE", "New York", "Santa Maria, Portugal", 13, "000767"], ["09/22/02", "N908JE", "Santa Maria, Portugal", "Accra, Ghana", 13, "000767"], ["09/23/02", "N908JE", "Accra, Ghana", "Abuja, Nigeria", 13, "000767"], ["09/24/02", "N908JE", "DNAA", "HRYR", 96, "", "L"], ["09/25/02", "N908JE", "Kigali, Rwanda", "Maputo, Mozambique", 14, "000767"], ["09/26/02", "N908JE", "FQMA", "FACT", 96, "", "L"], ["09/27/02", "N908JE", "FACT", "FAJS", 96, "", "L"], ["09/28/02", "N908JE", "FAJS", "FACT", 96, "", "L"], ["09/29/02", "N908JE", "Cape Town, South Africa", "Accra, Ghana", 14, "000767"], ["09/29/02", "N908JE", "Accra, Ghana", "Paris, France", 14, "000767"], ["09/29/02", "N908JE", "Paris, France", "London, England", 14, "000768"]], "Chris Tucker": [["09/21/02", "N908JE", "New York", "Santa Maria, Portugal", 13, "000767"], ["09/22/02", "N908JE", "Santa Maria, Portugal", "Accra, Ghana", 13, "000767"], ["09/23/02", "N908JE", "Accra, Ghana", "Abuja, Nigeria", 13, "000767"], ["09/24/02", "N908JE", "DNAA", "HRYR", 96, "", "L"], ["09/25/02", "N908JE", "Kigali, Rwanda", "Maputo, Mozambique", 14, "000767"], ["09/26/02", "N908JE", "FQMA", "FACT", 96, "", "L"], ["09/27/02", "N908JE", "FACT", "FAJS", 96, "", "L"], ["09/28/02", "N908JE", "FAJS", "FACT", 96, "", "L"], ["09/29/02", "N908JE", "Cape Town, South Africa", "Accra, Ghana", 14, "000767"], ["09/29/02", "N908JE", "Accra, Ghana", "Paris, France", 14, "000767"], ["09/29/02", "N908JE", "Paris, France", "London, England", 14, "000768"]], "Douglas Band": [["03/19/02", "N908JE", "New York, NY", "London, England", 11, "000760"], ["03/21/02", "N908JE", "London, England", "New York, NY", 11, "000760"], ["05/22/02", "N908JE", "RJTA", "VHHH", 93, "", "L"], ["05/23/02", "N908JE", "VHHH", "ZGSZ", 93, "", "L"], ["05/23/02", "N908JE", "ZGSZ", "WSSS", 93, "", "L"], ["05/25/02", "N908JE", "WSSS", "VTBD", 93, "", "L"], ["05/25/02", "N908JE", "VTBD", "WBSB", 93, "", "L"], ["07/13/02", "N908JE", "Rabat, Morocco", "Santa Maria, Portugal", 13, "000765"], ["07/13/02", "N908JE", "Santa Maria, Portugal", "New York, NY", 13, "000765"], ["09/22/02", "N908JE", "LPAZ", "DGAA", 96, "", "L"], ["09/24/02", "N908JE", "DNAA", "HRYR", 96, "", "L"], ["09/25/02", "N908JE", "HRYR", "FQMA", 96, "", "L"], ["09/26/02", "N908JE", "FQMA", "FACT", 96, "", "L"], ["09/27/02", "N908JE", "FACT", "FAJS", 96, "", "L"], ["09/28/02", "N908JE", "FAJS", "FACT", 96, "", "L"], ["09/29/02", "N908JE", "Paris, France", "London, England", 14, "000768"], ["09/29/02", "N908JE", "DGAA", "LFPB", 96, "", "L"], ["09/29/02", "N908JE", "LFPB", "EGGW", 97, "", "L"], ["06/14/03", "N909JE", "TEB", "CYUL", 102, "", "L"], ["06/14/03", "N909JE", "CYUL", "PBI", 102, "", "L"], ["11/04/03", "N908JE", "EBBR", "ENGM", 105, "", "L"], ["11/05/03", "N908JE", "ENGM", "UNNT", 105, "", "L"], ["11/06/03", "N908JE", "UNNT", "VHHH", 105, "", "L"]], "Jean-Luc Brunel": [["05/04/00", "N908JE", "", "", 21, "000739"], ["05/07/00", "N908JE", "West Palm Beach", "US Virgin Islands", 21, "000739"], ["05/08/00", "N908JE", "TIST", "TEB", 74, "", "L"], ["06/21/02", "N909JE", "West Palm Beach", "George Town, Bahamas", 29, "000765"], ["06/23/02", "N909JE", "George Town, Bahamas", "Teterboro, NJ", 29, "000765"], ["06/29/02", "N908JE", "Paris, France", "Toulon, France", 12, "000765"], ["07/13/02", "N908JE", "Nice, France", "Tangier, Morocco", 12, "000765"], ["09/03/02", "N908JE", "LFPB", "JFK", 96, "", "L"], ["11/22/02", "N908JE", "LFPB", "EKCH", 98, "", "L"], ["01/17/03", "N908JE", "JFK", "PBI", 99, "", "L"], ["03/20/03", "N909JE", "TEB", "PBI", 100, "", "L"], ["03/21/03", "N909JE", "PBI", "MYNN", 100, "", "L"], ["03/23/03", "N909JE", "MYNN", "PBI", 100, "", "L"], ["03/25/03", "N908JE", "PBI", "JFK", 100, "", "L"], ["04/02/03", "N908JE", "TIST", "SBGR", 100, "", "L"], ["04/05/03", "N908JE", "SBGR", "GVAC", 100, "", "L"], ["04/06/03", "N908JE", "GVAC", "LFPB", 100, "", "L"], ["05/20/03", "N908JE", "LIRA", "LEMD", 102, "", "L"], ["05/21/03", "N908JE", "LEMD", "JFK", 102, "", "L"], ["01/02/04", "N909JE", "TIST", "PBI", 106, "", "L"]], "Ron Burkle": [["09/21/02", "N908JE", "New York", "Santa Maria, Portugal", 13, "000767"], ["09/22/02", "N908JE", "Santa Maria, Portugal", "Accra, Ghana", 13, "000767"], ["09/23/02", "N908JE", "Accra, Ghana", "Abuja, Nigeria", 13, "000767"]], "Glenn Dubin": [["11/17/96", "N908JE", "PBI", "BED", 45, "", "L"], ["11/17/96", "N908JE", "BED", "TEB", 45, "", "L"], ["01/05/97", "N908JE", "PBI", "EWR", 45, "", "L"], ["02/02/97", "N908JE", "TEB", "SAV", 46, "", "L"], ["01/03/98", "N908JE", "PBI", "TEB", 52, "", "L"], ["01/08/98", "N908JE", "Teterboro, NJ", "Santa Fe, NM", 15, "000721"], ["05/01/98", "N908JE", "Teterboro, NJ", "West Palm Beach, FL", 16, "000724"], ["05/27/98", "N908JE", "", "West Palm Beach", 19, "000726"], ["11/29/98", "N908JE", "PBI", "TEB", 61, "", "L"], ["05/27/99", "N908JE", "TEB", "PBI", 66, "", "L"], ["02/18/02", "N908JE", "PBI", "ABY", 91, "", "L"], ["02/18/02", "N908JE", "ABY", "JFK", 91, "", "L"], ["11/25/03", "N908JE", "JFK", "PBI", 106, "", "L"], ["01/03/04", "N909JE", "PBI", "TIST", 106, "", "L"], ["04/11/04", "N908JE", "PBI", "JFK", 108, "", "L"]], "Eva Andersson-Dubin": [["08/29/91", "N908JE", "TEB", "NEW", 3, "", "L"], ["08/29/91", "N908JE", "NEW", "PBI", 3, "", "L"], ["09/16/91", "N908JE", "CMH", "BKL", 3, "", "L"], ["10/20/91", "N908JE", "CMH", "BKL", 4, "", "L"], ["10/20/91", "N908JE", "BKL", "TEB", 4, "", "L"], ["11/23/91", "N908JE", "TEB", "CHO", 5, "", "L"], ["11/24/91", "N908JE", "CHO", "TEB", 5, "", "L"], ["01/17/92", "N908JE", "CMH", "PLB", 7, "", "L"], ["01/17/92", "N908JE", "PLB", "LAX", 7, "", "L"], ["01/31/92", "N908JE", "TEB", "PBI", 7, "", "L"], ["08/12/92", "N908JE", "TEB", "DCA", 12, "", "L"], ["08/12/92", "N908JE", "DCA", "TEB", 12, "", "L"], ["09/28/92", "N908JE", "TEB", "BOS", 13, "", "L"], ["01/15/93", "N908JE", "TEB", "PBI", 16, "", "L"], ["04/25/93", "N908JE", "TEB", "BOS", 18, "", "L"], ["04/28/93", "N908JE", "?", "JFK", 18, "", "L"], ["08/09/93", "N908JE", "HTO", "TEB", 21, "", "L"], ["10/14/93", "N908JE", "BED", "TEB", 24, "", "L"], ["09/22/94", "N908JE", "TEB", "PBI", 30, "", "L"], ["09/26/94", "N908JE", "PBI", "DCA", 30, "", "L"], ["09/26/94", "N908JE", "DCA", "TEB", 30, "", "L"], ["10/10/94", "N908JE", "PBI", "TEB", 30, "", "L"], ["12/21/94", "N908JE", "TEB", "PBI", 32, "", "L"], ["11/17/96", "N908JE", "PBI", "BED", 45, "", "L"], ["11/17/96", "N908JE", "BED", "TEB", 45, "", "L"], ["03/23/98", "N908JE", "PBI", "TEB", 54, "", "L"], ["04/09/98", "N908JE", "Teterboro, NJ", "West Palm Beach, FL", 16, "000723"], ["11/28/99", "N908JE", "West Palm Beach, FL", "Teterboro, NJ", 20, "000737"], ["03/22/01", "N909JE", "", "West Palm Beach, FL", 26, "000747"], ["11/25/03", "N908JE", "JFK", "PBI", 106, "", "L"], ["10/08/04", "N908JE", "JFK", "PBI", 111, "", "L"], ["10/10/04", "N908JE", "PBI", "JFK", 111, "", "L"], ["02/19/05", "N909JE", "TIST", "PBI", 114, "", "L"]], "Naomi Campbell": [["06/08/01", "N909JE", "TEB", "CYUL", 84, "", "L"], ["03/21/02", "N908JE", "EGGW", "JFK", 91, "", "L"], ["05/11/02", "N908JE", "New York, NY", "Paris, France", 11, "000759"], ["10/02/02", "N908JE", "Paris, France", "New York, NY", 14, "000768"], ["04/02/03", "N908JE", "TIST", "SBGR", 100, "", "L"]], "Marvin Minsky": [["03/29/01", "N909JE", "Teterboro, NJ", "Santa Fe, NM", 26, "000747"], ["03/31/01", "N909JE", "Santa Fe, NM", "West Palm Beach, FL", 26, "000747"]], "Alan Dershowitz": [["09/08/96", "N908JE", "DCA", "CMH", 43, "", "L"], ["09/08/96", "N908JE", "CMH", "TEB", 43, "", "L"], ["09/09/96", "N908JE", "TEB", "BOS", 43, "", "L"], ["01/11/97", "N908JE", "EWR", "TIX", 45, "", "L"], ["02/09/98", "N908JE", "West Palm Beach, FL", "Teterboro, NJ", 16, "000721"], ["10/21/98", "N908JE", "BED", "TEB", 60, "", "L"], ["04/16/99", "N908JE", "TEB", "MVY", 65, "", "L"], ["02/05/04", "N909JE", "BED", "TEB", 107, "", "L"], ["11/17/05", "N909JE", "BED", "CYUL", 118, "", "L"], ["11/17/05", "N909JE", "CYUL", "BED", 118, "", "L"]], "Andrew Mountbatten-Windsor": [["02/09/99", "N908JE", "TEB", "TIST", 62, "", "L"], ["02/12/99", "N908JE", "TIST", "PBI", 62, "", "L"], ["05/12/00", "N908JE", "", "", 21, "000740"]], "Thomas Pritzker": [["12/07/00", "N908JE", "London, England", "Marham, UK", 24, "000744"], ["11/22/03", "N908JE", "TIST", "PBI", 106, "", "L"]], "Donald Trump": [["04/23/93", "N908JE", "TEB", "PBI", 18, "", "L"], ["04/26/93", "N908JE", "PBI", "TEB", 18, "", "L"], ["10/11/93", "N908JE", "PBI", "TEB", 24, "", "L"], ["10/17/93", "N908JE", "PBI", "TEB", 24, "", "L"], ["05/15/94", "N988JE", "PBI", "DCA", 27, "", "L"], ["05/15/94", "N988JE", "DCA", "TEB", 27, "", "L"], ["08/13/95", "N908JE", "PBI", "TEB", 37, "", "L"], ["01/05/97", "N908JE", "PBI", "EWR", 45, "", "L"]], "Lawrence Summers": [["09/19/98", "N908JE", "ASE", "IAD", 59, "", "L"], ["04/15/04", "N908JE", "JFK", "BED", 108, "", "L"], ["09/14/05", "N909JE", "BED", "HPN", 117, "", "L"], ["12/21/05", "N909JE", "BED", "TIST", 118, "", "L"]], "Sarah Ferguson": [["04/16/98", "N908JE", "MBPV", "MYNN", 54, "", "L"]], "George Mitchell": [["06/07/94", "N988JE", "TEB", "DCA", 28, "", "L"], ["01/08/95", "N908JE", "PBI", "IAD", 32, "", "L"], ["01/08/95", "N908JE", "IAD", "TEB", 32, "", "L"], ["05/29/95", "N908JE", "MIA", "ISM", 35, "", "L"], ["05/29/95", "N908JE", "ISM", "MIA", 35, "", "L"], ["09/28/95", "N908JE", "TEB", "PBI", 38, "", "L"]], "Itzhak Perlman": [["07/31/92", "N908JE", "TEB", "TVC", 11, "", "L"], ["08/03/92", "N908JE", "TVC", "POU", 11, "", "L"], ["08/03/92", "N908JE", "POU", "HTO", 11, "", "L"], ["08/07/93", "N908JE", "FOK", "TVC", 21, "", "L"], ["08/08/93", "N908JE", "TVC", "YIP", 21, "", "L"], ["08/08/93", "N908JE", "YIP", "HTO", 21, "", "L"]], "Sarah Kellen": [["09/03/01", "N908JE", "TIST", "HPN", 86, "", "L"], ["10/05/01", "N908JE", "PBI", "ABQ", 86, "", "L"], ["10/11/01", "N909JE", "TEB", "PBI", 87, "", "L"], ["10/30/01", "N909JE", "PBI", "LCQ", 87, "", "L"], ["11/15/01", "N909JE", "TEB", "PBI", 88, "", "L"]], "Nicole Junkermann": [["03/22/02", "N908JE", "JFK", "PBI", 91, "", "L"], ["08/31/02", "N908JE", "LFPB", "EGBB", 96, "", "L"], ["09/02/02", "N908JE", "EGBB", "LFPB", 96, "", "L"]], "Andrés Pastrana": [["03/20/03", "N909JE", "TEB", "PBI", 100, "", "L"], ["03/21/03", "N909JE", "PBI", "MYNN", 100, "", "L"]], "Alan Greenberg": [["04/27/92", "N908JE", "PBI", "DCA", 9, "", "L"], ["11/26/95", "N908JE", "PBI", "TEB", 39, "", "L"]], "Nathan Myhrvold": [["12/09/96", "N908JE", "FTK", "TEB", 45, "", "L"], ["01/11/97", "N908JE", "EWR", "TIX", 45, "", "L"]]};
+    var META = {"Bill Clinton": {"full": "Bill Clinton", "ac": 0, "nat": "Association · denies knowledge"}, "Kevin Spacey": {"full": "Kevin Spacey", "ac": 0, "nat": "Passenger / incidental"}, "Chris Tucker": {"full": "Chris Tucker", "ac": 0, "nat": "Passenger (2002 trip)"}, "Douglas Band": {"full": "Douglas Band", "ac": 0, "nat": "Named in flight logs / emails"}, "Jean-Luc Brunel": {"full": "Jean-Luc Brunel", "ac": 1, "nat": "Charged in France · died before trial (2022)"}, "Ron Burkle": {"full": "Ron Burkle", "ac": 0, "nat": "Contact-book entry"}, "Glenn Dubin": {"full": "Glenn Dubin", "ac": 1, "nat": "Named by accuser · denied"}, "Eva Andersson-Dubin": {"full": "Eva Andersson-Dubin", "ac": 0, "nat": "Ex-girlfriend · denied allegations"}, "Naomi Campbell": {"full": "Naomi Campbell", "ac": 0, "nat": "Passenger / incidental"}, "Marvin Minsky": {"full": "Marvin Minsky", "ac": 1, "nat": "Named by accuser (deceased) · contested"}, "Alan Dershowitz": {"full": "Alan Dershowitz", "ac": 1, "nat": "Named by accuser · denies"}, "Andrew Mountbatten-Windsor": {"full": "Andrew Mountbatten-Windsor", "ac": 1, "nat": "Named by accuser · settled, denies"}, "Thomas Pritzker": {"full": "Thomas Pritzker", "ac": 1, "nat": "Named by accuser · denied"}, "Donald Trump": {"full": "Donald Trump", "ac": 1, "nat": "Named by an accuser · denies"}, "Lawrence Summers": {"full": "Lawrence Summers", "ac": 0, "nat": "Correspondent · expressed regret"}, "Sarah Ferguson": {"full": "Sarah Ferguson", "ac": 0, "nat": "Peripheral contact"}, "George Mitchell": {"full": "George Mitchell", "ac": 1, "nat": "Named by accuser · denied"}, "Itzhak Perlman": {"full": "Itzhak Perlman", "ac": 0, "nat": "Passenger (peripheral)"}, "Sarah Kellen": {"full": "Sarah Kellen", "ac": 0, "nat": "Staff · alleged scheduler; denies"}, "Nicole Junkermann": {"full": "Nicole Junkermann", "ac": 0, "nat": "Correspondent · resigned roles"}, "Andrés Pastrana": {"full": "Andrés Pastrana", "ac": 0, "nat": "Named in files · denies knowledge"}, "Alan Greenberg": {"full": "Alan Greenberg", "ac": 0, "nat": "Bear Stearns chairman (hired Epstein)"}, "Nathan Myhrvold": {"full": "Nathan Myhrvold", "ac": 0, "nat": "Correspondent"}, "Ghislaine Maxwell": {"full": "Ghislaine Maxwell", "ac": 1, "nat": "Convicted"}};
+    var BASE = 'https://www.justice.gov/epstein/files/' + encodeURI('Court Records/v. Maxwell, No. 115-cv-07433 (S.D.N.Y. 2015)') + '/EFTA02796838.pdf';
+    var LOG = 'https://www.justice.gov/epstein/files/' + encodeURI('Prior DOJ Disclosures/First Phase of Declassified Epstein Files') + '/EFTA02846460.pdf';
+    var NOTES = { 'Sarah Kellen': 'Only flights with her full name are counted. The initials SK appear on about 300 more logbook flights from 2001 to 2006.', 'Sarah Ferguson': 'The logbook notes Epstein was not aboard: "JE (not present, on the ground)."', 'George Mitchell': 'Logged as "Senator George Mitchell" or "Senator and Mrs Mitchell." Flights listing only Heather Mitchell are not counted.' };
+    var people = Object.keys(FD).map(function(n){
+      var f = FD[n], m = META[n] || {};
+      var acs = {}; f.forEach(function(r){ acs[r[1]] = 1; });
+      var withRoute = f.filter(function(r){ return r[2] && r[3]; });
+      return { key: n, name: m.full || n, n: f.length, unit: f.length === 1 ? 'FLIGHT' : 'FLIGHTS', ac: Object.keys(acs).join(' · '),
+        span: f.length ? (f[0][0] === f[f.length-1][0] ? f[0][0] : f[0][0] + ' to ' + f[f.length-1][0]) : '',
+        route: withRoute.length ? withRoute[0][2].split(',')[0] + ' to ' + withRoute[0][3].split(',')[0] + (f.length > 1 ? ' and more' : '') : 'Route not legible in the chart',
+        color: m.ac ? '#ff5c5c' : '#6ea8fe', nat: m.nat || '', rows: f, note: NOTES[n] || '' };
+    });
+    people.sort(function(a, b){ return b.n - a.n || a.name.localeCompare(b.name); });
+    people.unshift({ key: 'Ghislaine Maxwell', name: 'Ghislaine Maxwell', n: 304, unit: 'FLIGHTS', ac: 'N908JE · N909JE', span: '01/03/98 to 12/23/02', route: 'Every flight in the chart', color: '#ff5c5c', nat: (META['Ghislaine Maxwell'] || {}).nat || '', rows: [], note: 'The chart is built around Maxwell: it lists all 304 flights she took on Epstein’s planes in these five years. Epstein was aboard nearly all of them.' });
+    var q = S.q.trim().toLowerCase();
+    var shown = people.filter(function(p){ return !q || p.name.toLowerCase().indexOf(q) >= 0; });
+    var tickets = shown.map(function(p){ var a = p.key === S.sel; return Object.assign({}, p, { on: a ? 'true' : 'false', ring: a ? 'box-shadow: 0 0 0 3px #ffd166;' : '', pick: function(){ self.setState({ sel: p.key }); setTimeout(function(){ var el = document.getElementById('ticket'); if (el && window.matchMedia('(max-width:1100px)').matches) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 30); } }); });
+    var p = people.filter(function(x){ return x.key === S.sel; })[0] || people[1];
+    var d = Object.assign({}, p, {
+      hasRows: p.rows.length > 0, note: p.note || '',
+      rows: p.rows.map(function(r){ var lg = r[6] === 'L'; var id = lg ? 'EFTA02846460' : 'EFTA0' + (2796838 + r[4] - 1); return { date: r[0], ac: r[1], route: r[2] && r[3] ? r[2] + ' → ' + r[3] : (r[3] ? 'Origin not legible → ' + r[3] : 'Route not legible in the record'), pg: r[4], bates: r[5], efta: id, src: lg ? 'Pilot logbook, page ' + r[4] : 'Chart page ' + r[4] + ', pilot log ' + r[5], href: (lg ? LOG : BASE) + '#page=' + r[4] }; }),
+      openCard: function(){ try { localStorage.setItem('ew-card', JSON.stringify({ f: p.key, at: Date.now() })); } catch (e) {} }
+    });
+    var total = 0; Object.keys(FD).forEach(function(n){ total += FD[n].length; });
+    return {
+      stats: [
+        { n: '2', l: 'flight records: the 1998 to 2002 chart and the 1991 to 2006 pilot logbook', bar: '#c39bff' },
+        { n: String(people.length), l: 'named passengers ticketed so far', bar: '#6ea8fe' },
+        { n: '16', l: 'years of flights, 1991 to 2006', bar: '#ffd166' },
+        { n: String(total), l: 'boarding records, each linked to its page in the DOJ library', bar: '#4dd0a7' }
+      ],
+      tickets: tickets, d: d, q: S.q, chartHref: BASE, logHref: LOG,
+      onFind: function(e){ self.setState({ q: e.target.value }); },
+      missing: ['Terje Rød-Larsen', 'David Rodgers (pilot who kept the logbook)']
+    };
+  }
+}
+
+DCLite.mount(Component, {});
+</script>
+</body>
+</html>

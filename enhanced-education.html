@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enhanced Education · Epstein's Web</title>
+<meta name="description" content="How Epstein's private foundation moved money, traced through the DOJ files.">
+<meta property="og:title" content="Enhanced Education · Epstein's Web">
+<meta property="og:description" content="How Epstein's private foundation moved money, traced through the DOJ files.">
+<meta property="og:site_name" content="Epstein's Web">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23011032%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ff5c5c%22 font-family=%22Arial%22 font-weight=%22700%22%3EEW%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#011032}
+a{color:#9cc0ff}a:hover{color:#ffffff}
+.lt a{color:#0b3d91}.lt a:hover{color:#c8102e}
+.efta{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;text-decoration:none;white-space:nowrap}
+.efta:hover{text-decoration:underline}
+.chipbtn{cursor:pointer;font:500 13px/1 Inter,sans-serif;border-radius:999px;min-height:36px;padding:0 14px}
+.conn:hover{border-color:#0a1730 !important}
+.drow:hover{background:#eef2f9}
+.secnav a{color:#c9d3e8;text-decoration:none}
+.secnav a:hover{color:#ffffff}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;align-items:start}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.drow{display:grid;grid-template-columns:150px 120px 120px minmax(0,1fr) 84px;gap:16px;align-items:start}
+@media (max-width:900px){
+.hero,.g2{grid-template-columns:minmax(0,1fr)}
+.g3{grid-template-columns:minmax(0,1fr)}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.drow{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px}
+.dhead{display:none !important}
+.dgist{grid-column:1 / -1}
+.topnav{display:none !important}
+}
+</style>
+
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+
+<div id="top" style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; min-height: 100vh; line-height: 1.6">
+
+<!-- Site header -->
+<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<div style="max-width: 1180px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap">
+<a href="index.html" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: baseline; gap: 10px">
+<span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span>
+<span style="font-size: 12px; color: #aab7d1">by Feral America</span>
+</a>
+<nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="index.html#money">Money</a>
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="emails.html">Correspondence</a>
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="flights.html">Flight logs</a>
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="book.html">Little Black Book</a>
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="records.html">Court and FBI records</a>
+<a style="text-decoration: none; color: #c9d3e8; white-space: nowrap" href="news.html">News</a>
+</nav>
+<label style="margin-left: auto; flex: 1 1 260px; max-width: 380px; display: flex; align-items: center; gap: 10px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 10px; padding: 0 12px; min-height: 44px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; left: -9999px">Search the files</span>
+<input type="search" placeholder="Search people, entities, EFTA numbers" style="flex: 1; min-width: 0; background: transparent; border: 0; color: #f4f6fb; font: 400 14px Inter, sans-serif; outline: none">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #aab7d1; border: 1px solid #1f3f74; border-radius: 5px; padding: 1px 6px">/</span>
+</label>
+</div>
+</header>
+
+<!-- Hero -->
+<section style="padding: 36px 0 56px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<nav aria-label="Breadcrumb" style="font-size: 13px; color: #aab7d1; display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px">
+<a href="index.html" style="color: #aab7d1; text-decoration: none">Explore</a><span aria-hidden="true">/</span>
+<a href="network.html" style="color: #aab7d1; text-decoration: none">Trusts and entities</a><span aria-hidden="true">/</span>
+<span style="color: #f4f6fb">Enhanced Education</span>
+</nav>
+<div class="hero">
+<div>
+<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,225,77,.12); color: #ffe14d; border: 1px solid rgba(255,225,77,.45); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase">
+<span style="width: 9px; height: 9px; border-radius: 3px; background: #ffe14d"></span>Trust / entity</span>
+<span style="font-size: 12px; color: #aab7d1">Epstein-controlled · St. Thomas, USVI · 2000 to 2019</span>
+</div>
+<h1 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 72px; line-height: .95; letter-spacing: .01em; text-transform: uppercase">Enhanced Education</h1>
+<p style="margin: 10px 0 0; color: #aab7d1; font-size: 15px">Trade name of The J. Epstein Virgin Islands Foundation, Inc.</p>
+<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.65; max-width: 640px; color: #e3e8f3">Epstein's private foundation presented itself as a science and education philanthropy. The DOJ files show it paying a government fine, consultants and Les Wexner personally, and being lined up to receive fees Leon Black owed Epstein as a "charitable donation."</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px">
+<a href="https://stayferalamerica.com/moneymap.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 10px; background: {{accent}}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px">See it on the Money Map</a>
+<a href="records.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #3a5a92; color: #f4f6fb; text-decoration: none; font-weight: 500; font-size: 14px">Browse the documents</a>
+<button type="button" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #3a5a92; background: transparent; color: #f4f6fb; font: 500 14px Inter, sans-serif; cursor: pointer">Cite this page</button>
+</div>
+</div>
+<aside aria-label="Fact sheet" style="background: #0f2650; border: 1px solid #1f3f74; border-radius: 14px; padding: 22px 24px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: #aab7d1; margin-bottom: 10px">Fact sheet</div>
+<sc-for list="{{facts}}" as="f" hint-placeholder-count="7">
+<div style="display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 12px; padding: 9px 0; border-top: 1px solid #1f3f74; font-size: 13.5px">
+<div style="color: #aab7d1">{{f.k}}</div>
+<div><span>{{f.v}}</span> <a class="efta" href="{{f.href}}" style="color: #9cc0ff">{{f.id}}</a></div>
+</div>
+</sc-for>
+<div style="font-size: 12px; color: #aab7d1; margin-top: 12px">Last updated Oct 8, 2026</div>
+</aside>
+</div>
+<div class="stats" style="margin-top: 40px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<div style="border-top: 3px solid {{s.bar}}; background: #0a1c3d; padding: 16px 18px; border-radius: 0 0 10px 10px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 40px; line-height: 1">{{s.n}}</div>
+<div style="font-size: 13px; color: #c9d3e8; margin-top: 6px">{{s.l}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- Section nav -->
+<nav class="secnav" aria-label="On this page" style="position: sticky; top: 0; z-index: 5; background: rgba(1,12,38,.96); border-top: 1px solid #1f3f74; border-bottom: 1px solid #1f3f74">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px; display: flex; gap: 26px; overflow-x: auto; font-size: 14px; font-weight: 500; white-space: nowrap">
+<a href="#findings" style="padding: 14px 0">Key findings</a>
+<a href="#money" style="padding: 14px 0">Money</a>
+<a href="#connections" style="padding: 14px 0">Connections</a>
+<a href="#timeline" style="padding: 14px 0">Timeline</a>
+<a href="records.html" style="padding: 14px 0">Documents <span style="color: #aab7d1">491</span></a>
+<a href="#open" style="padding: 14px 0">Open questions</a>
+</div>
+</nav>
+
+<!-- Key findings (light) -->
+<section id="findings" class="lt" style="background: #f4f6fb; color: #0a1730; padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Key findings</h2>
+<p style="margin: 8px 0 32px; color: #43506b; max-width: 640px">What the documents establish. Each claim links to the file it comes from.</p>
+<div class="g2">
+<sc-for list="{{findings}}" as="k" hint-placeholder-count="4">
+<article style="background: #ffffff; border: 1px solid #d7deeb; border-radius: 14px; padding: 26px 26px 22px; box-shadow: 0 8px 24px rgba(1,16,50,.06); display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .12em; color: {{accent}}">{{k.tag}}</div>
+<h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1">{{k.title}}</h3>
+<p style="margin: 0; color: #2b3754; font-size: 15.5px">{{k.body}}</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 6px">
+<sc-for list="{{k.cites}}" as="c" hint-placeholder-count="2">
+<a class="efta" href="{{c.href}}" style="background: #eef2f9; border: 1px solid #d7deeb; border-radius: 6px; padding: 4px 8px; color: #0b3d91">{{c.id}}</a>
+</sc-for>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- Money (dark) -->
+<section id="money" style="padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Money</h2>
+<p style="margin: 8px 0 32px; color: #aab7d1; max-width: 680px">Where the foundation's money went, from its own bank and tax records.</p>
+<div class="g2">
+<div style="background: #0f2650; border: 1px solid #1f3f74; border-radius: 14px; padding: 24px">
+<h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase">Outgoing JPMorgan wires, 2008 to 2014</h3>
+<p style="margin: 4px 0 18px; font-size: 13px; color: #aab7d1">$1.72M to outside recipients, by recipient. Transfers to its own FirstBank account and the 2014 move to Pershing are left out. <a class="efta" href="{{wireHref}}">EFTA02816240</a></p>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="8">
+<div style="padding: 7px 0">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px"><span>{{b.label}}</span><span style="font-variant-numeric: tabular-nums; color: #e3e8f3">{{b.amt}}</span></div>
+<div style="height: 8px; background: #0a1c3d; border-radius: 4px; margin-top: 5px"><div style="height: 8px; border-radius: 4px; width: {{b.pct}}; background: {{b.color}}"></div></div>
+</div>
+</sc-for>
+</div>
+<div style="background: #0f2650; border: 1px solid #1f3f74; border-radius: 14px; padding: 24px">
+<h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase">2017 grants, as reported to the IRS</h3>
+<p style="margin: 4px 0 14px; font-size: 13px; color: #aab7d1">$356,000 total, from the 990-PF prepared Aug 1, 2018. <a class="efta" href="{{grantHref}}">EFTA00811971</a></p>
+<sc-for list="{{grants}}" as="g" hint-placeholder-count="8">
+<div style="display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 4px 14px; padding: 10px 0; border-top: 1px solid #1f3f74; font-size: 14px">
+<div>{{g.name}}</div>
+<div style="font-variant-numeric: tabular-nums">{{g.amt}}</div>
+<sc-if value="{{g.flag}}" hint-placeholder-val="{{false}}">
+<div style="grid-column: 1 / -1; font-size: 12.5px; color: #ffb4bf; display: flex; gap: 6px; align-items: baseline"><span aria-hidden="true">▲</span><span>{{g.flag}}</span></div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="margin-top: 24px; background: #0a1c3d; border: 1px solid #1f3f74; border-radius: 14px; padding: 22px 24px">
+<h3 style="margin: 0 0 14px; font-family: 'Saira Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase">Promised vs. delivered</h3>
+<div class="g3">
+<sc-for list="{{promised}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 12px; color: #aab7d1; text-transform: uppercase; letter-spacing: .08em">{{p.when}}</div>
+<div style="font-size: 14.5px"><b>Promised:</b> {{p.promised}}</div>
+<div style="font-size: 14.5px; color: #ffd27a"><b>Record:</b> {{p.record}}</div>
+<div><a class="efta" href="{{p.href}}">{{p.id}}</a></div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Connections (light) -->
+<section id="connections" class="lt" style="background: #f4f6fb; color: #0a1730; padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Connections</h2>
+<p style="margin: 8px 0 26px; color: #43506b">Each one will have its own profile like this page.</p>
+<div style="display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px; color: #43506b; margin-bottom: 22px">
+<sc-for list="{{legend}}" as="l" hint-placeholder-count="5">
+<span style="display: inline-flex; align-items: center; gap: 7px"><span style="width: 10px; height: 10px; border-radius: {{l.radius}}; background: {{l.color}}; box-shadow: inset 0 0 0 1px rgba(10,23,48,.3)"></span>{{l.name}}</span>
+</sc-for>
+</div>
+<sc-for list="{{groups}}" as="grp" hint-placeholder-count="3">
+<h3 style="margin: 26px 0 12px; font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; color: #43506b">{{grp.name}}</h3>
+<div class="g3">
+<sc-for list="{{grp.items}}" as="c" hint-placeholder-count="6">
+<a class="conn" href="#connections" style="display: flex; gap: 12px; align-items: flex-start; background: #ffffff; border: 1px solid #d7deeb; border-radius: 12px; padding: 14px 16px; text-decoration: none; color: #0a1730; min-height: 44px">
+<span style="flex: none; width: 12px; height: 12px; margin-top: 5px; border-radius: {{c.radius}}; background: {{c.color}}; box-shadow: inset 0 0 0 1px rgba(10,23,48,.3)"></span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 600; font-size: 15px">{{c.name}}</span>
+<span style="font-size: 13px; color: #43506b">{{c.role}}</span>
+</span>
+</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- Timeline (dark) -->
+<section id="timeline" style="padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0 0 30px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Timeline</h2>
+<ol style="list-style: none; margin: 0; padding: 0; border-left: 2px solid #1f3f74; max-width: 860px">
+<sc-for list="{{timeline}}" as="t" hint-placeholder-count="12">
+<li style="position: relative; padding: 0 0 26px 30px">
+<span style="position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: {{t.dot}}; border: 2px solid #011032"></span>
+<div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: .06em; color: #aab7d1; text-transform: uppercase">{{t.when}}</div>
+<div style="font-size: 15.5px; margin-top: 2px">{{t.what}} <a class="efta" href="{{t.href}}">{{t.id}}</a></div>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<!-- Documents (light) -->
+<section id="documents" class="lt" style="background: #f4f6fb; color: #0a1730; padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div>
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Documents</h2>
+<p style="margin: 8px 0 0; color: #43506b; max-width: 640px">491 DOJ files mention Enhanced Education. A <b>finding</b> has been read in full and is cited above; a <b>lead</b> is a file still to be worked.</p>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #c3cde0; border-radius: 10px; padding: 0 12px; min-height: 44px; flex: 0 1 320px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#43506b" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; left: -9999px">Filter documents</span>
+<input type="search" value="{{q}}" onInput="{{onSearch}}" placeholder="Filter these files" style="flex: 1; min-width: 0; border: 0; background: transparent; font: 400 14px Inter, sans-serif; color: #0a1730; outline: none">
+</label>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; align-items: center">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #43506b; margin-right: 4px">Type</span>
+<sc-for list="{{typeChips}}" as="c" hint-placeholder-count="7">
+<button type="button" class="chipbtn" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="{{c.style}}">{{c.label}} <span style="opacity: .7">{{c.n}}</span></button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; align-items: center">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #43506b; margin-right: 4px">Status</span>
+<sc-for list="{{statusChips}}" as="c" hint-placeholder-count="3">
+<button type="button" class="chipbtn" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="{{c.style}}">{{c.label}} <span style="opacity: .7">{{c.n}}</span></button>
+</sc-for>
+</div>
+
+<div style="margin-top: 26px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #43506b; margin-bottom: 8px">Files by year · click a bar to filter</div>
+<div style="display: flex; align-items: flex-end; gap: 6px; height: 96px; border-bottom: 1px solid #c3cde0">
+<sc-for list="{{years}}" as="y" hint-placeholder-count="12">
+<button type="button" onClick="{{y.pick}}" aria-label="{{y.aria}}" style="flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; background: transparent; border: 0; padding: 0; cursor: pointer">
+<span style="font-size: 11px; color: #43506b; text-align: center">{{y.n}}</span>
+<span style="display: block; height: {{y.h}}; background: {{y.color}}; border-radius: 3px 3px 0 0"></span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; gap: 6px; margin-top: 4px">
+<sc-for list="{{years}}" as="y" hint-placeholder-count="12">
+<span style="flex: 1; min-width: 0; text-align: center; font-size: 11px; color: #43506b; font-variant-numeric: tabular-nums">{{y.label}}</span>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 26px 0 10px; flex-wrap: wrap">
+<div style="font-size: 14px; color: #43506b">Showing <b style="color: #0a1730">{{shown}}</b> of {{total}} files in this mockup</div>
+<sc-if value="{{filtered}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{clearAll}}" style="min-height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid #c3cde0; background: #ffffff; font: 500 13px Inter, sans-serif; color: #0a1730; cursor: pointer">Clear filters</button>
+</sc-if>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #d7deeb; border-radius: 14px; overflow: hidden">
+<div class="drow dhead" style="padding: 12px 18px; background: #e9eef7; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #43506b">
+<div>File</div><div>Date</div><div>Type</div><div>What it shows</div><div>Status</div>
+</div>
+<sc-for list="{{docs}}" as="d" hint-placeholder-count="10">
+<div class="drow" style="padding: 14px 18px; border-top: 1px solid #e3e8f1; font-size: 14px">
+<div><a class="efta" href="{{d.href}}" style="color: #0b3d91; font-size: 13px">{{d.id}}</a></div>
+<div style="color: #43506b; font-variant-numeric: tabular-nums">{{d.dateLabel}}</div>
+<div style="color: #43506b">{{d.type}}</div>
+<div class="dgist" style="color: #1c2742">{{d.gist}}</div>
+<div><span style="{{d.badge}}">{{d.statusLabel}}</span></div>
+</div>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px 18px; color: #43506b; font-size: 14px">No files match. Try clearing a filter.</div>
+</sc-if>
+</div>
+<div style="display: flex; justify-content: center; margin-top: 20px">
+<button type="button" style="min-height: 44px; padding: 0 22px; border-radius: 10px; border: 1px solid #0a1730; background: transparent; font: 600 14px Inter, sans-serif; color: #0a1730; cursor: pointer">Load more files (461 more on the live site)</button>
+</div>
+</div>
+</section>
+
+<!-- Open questions (dark) -->
+<section id="open" style="padding: 72px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
+<h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1">Open questions</h2>
+<p style="margin: 8px 0 28px; color: #aab7d1; max-width: 680px">What the files don't settle yet. If you have documents that answer any of these, send them in.</p>
+<div class="g2">
+<sc-for list="{{questions}}" as="oq" hint-placeholder-count="6">
+<div style="display: flex; gap: 14px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 12px; padding: 18px 20px">
+<span style="flex: none; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; line-height: 1; color: {{accent}}">{{oq.n}}</span>
+<span style="font-size: 15px">{{oq.q}}</span>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap">
+<a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 9px; background: #c8102e; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip or document</a>
+<a href="https://venmo.com/u/bustertoks" title="Support us on Venmo: @bustertoks" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 9px; background: #1f9d55; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 12px; font-weight: 800">$</span>Venmo</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 30px 0 40px; font-size: 13px; color: #aab7d1">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 22px; display: flex; flex-direction: column; gap: 8px">
+<div>Every claim on this page links to a file in the DOJ Epstein Library (Epstein Files Transparency Act release). Leads are not findings. Survivors are never named.</div>
+<div><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support us on Venmo <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div>
+<div>An investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a></div>
+</div>
+</footer>
+</div>
+</template>
+<noscript><p style="padding:20px;font-family:sans-serif">Epstein's Web needs JavaScript to show its search and cards.</p></noscript>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props){ super(props); this.state = { q: '', type: 'All', status: 'All', year: null }; }
+  url(id){
+    if (id === 'EFTA00639892') return 'document.html';
+    var vi = {EFTA02806228:1,EFTA02809262:1,EFTA02810827:1,EFTA02814338:1,EFTA02816240:1,EFTA02814265:1};
+    var n = parseInt(id.slice(4), 10);
+    var f = vi[id] ? 'Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)' : n < 40000 ? 'DataSet 8' : n < 1250000 ? 'DataSet 9' : n < 2220000 ? 'DataSet 10' : 'DataSet 11';
+    return 'https://www.justice.gov/epstein/files/' + encodeURI(f) + '/' + id + '.pdf';
+  }
+  cite(id){ return { id: id, href: this.url(id) }; }
+  renderVals() {
+    var self = this;
+    var accent = this.props.accent ?? '#c8102e';
+    var S = this.state;
+    var TC = { person: ['#6ea8fe','50%'], accused: ['#ff5c5c','50%'], foundation: ['#ffe14d','3px'], company: ['#ffe14d','3px'], org: ['#b088f9','3px'], bank: ['#f4a259','3px'], institution: ['#4dd0a7','3px'] };
+    var conn = function(name, role, t){ return { name: name, role: role, color: TC[t][0], radius: TC[t][1] }; };
+
+    var facts = [
+      { k: 'Legal name', v: 'The J. Epstein Virgin Islands Foundation, Inc.', id: 'EFTA01268689' },
+      { k: 'EIN', v: '66-0585379 · files Form 990-PF', id: 'EFTA01118648' },
+      { k: 'Tax status', v: '501(c)(3) private foundation, Nov 1, 2000', id: 'EFTA01377445' },
+      { k: 'Officers', v: 'Epstein; Darren Indyke (president); Cecile de Jongh (VP); Jeanne Brennan (secretary)', id: 'EFTA01118648' },
+      { k: 'Banks', v: 'Bear Stearns / JPMorgan (#5810), FirstBank PR, Deutsche Bank from 2014', id: 'EFTA01940002' },
+      { k: 'Public 990s', v: 'Only 2002 is public. Reuters found none after it.', id: 'EFTA01138979' },
+      { k: 'Closed', v: 'Last positions sold, account closed Jan to Feb 2019', id: 'EFTA01426941' }
+    ].map(function(f){ return Object.assign({}, f, { href: self.url(f.id) }); });
+
+    var stats = [
+      { n: '491', l: 'DOJ files mention it', bar: accent },
+      { n: '$1.72M', l: 'wired to outside recipients from JPMorgan, 2008 to 2014', bar: '#ffe14d' },
+      { n: '$10M', l: 'of Black’s "fees" lined up for it in 2015, paid to another Epstein charity', bar: '#6ea8fe' },
+      { n: '2002', l: 'last tax return anyone can find in public', bar: '#b088f9' }
+    ];
+
+    var findings = [
+      { tag: 'OCT 2015 · LEON BLACK', title: 'Fees, paid as a "charitable donation"', body: 'Epstein’s accountant wrote that Black had "agreed upon fees" and proposed paying part of them as a donation to this foundation, from an LLC chosen "to avoid public disclosure of Leon name." Epstein replied "Yes." The $10M went to Gratitude America on Oct 14 instead.', cites: ['EFTA00639892','EFTA00844021','EFTA00587879'] },
+      { tag: '2009 TO 2010 · LES WEXNER', title: '$124,232 to Les Wexner personally', body: 'The foundation wired Wexner $124,232 and his family charitable fund $404,588 on the same two dates. The U.S. Virgin Islands cited the personal payments in 2023 and sought to subpoena him.', cites: ['EFTA02816240','EFTA02806228'] },
+      { tag: 'JULY 2017 · ST. THOMAS', title: 'A government fine, booked as charity', body: 'Check #2631 paid $160,000 to the USVI Department of Planning and Natural Resources for a notice of violation. The foundation’s books coded it "Charitable contributions." After Epstein’s death the FBI asked DPNR about it.', cites: ['EFTA00615501','EFTA00148030'] },
+      { tag: '2003 TO 2013 · HARVARD', title: 'The $30 million grant that was $6.5 million', body: 'At least 28 press releases and pitches, including a 2013 Foundation Center application, claimed a $30M grant to found Harvard’s Program for Evolutionary Dynamics. Harvard’s 2020 review counted $6.5M for PED in 2003.', cites: ['EFTA02570766'] }
+    ].map(function(k){ return Object.assign({}, k, { cites: k.cites.map(function(c){ return self.cite(c); }) }); });
+
+    var raw = [
+      ['Wexner and his family fund', 528820, '#ffe14d'],
+      ['C.O.U.Q. Foundation (Epstein’s)', 440000, '#ffe14d'],
+      ['Companies: violin dealer, PR and others', 242222, '#b088f9'],
+      ['Ben Goertzel and Humanity+', 185000, '#6ea8fe'],
+      ['Charities', 120000, '#b088f9'],
+      ['Redacted recipients', 98000, '#7f8db0'],
+      ['Marvin Minsky consulting', 58333, '#6ea8fe'],
+      ['Other individual', 50000, '#7f8db0']
+    ];
+    var bars = raw.map(function(r){ return { label: r[0], amt: '$' + r[1].toLocaleString('en-US'), pct: (r[1] / 528820 * 100).toFixed(1) + '%', color: r[2] }; });
+
+    var grants = [
+      { name: 'Humanity+ (Ben Goertzel)', amt: '$115,000' },
+      { name: 'UAB Fors Projektai, Vilnius', amt: '$75,000', flag: 'A Lithuanian event company, listed on the return as a "501 C 3"' },
+      { name: 'Education Advance', amt: '$55,000', flag: 'Its listed address is Richard Kahn’s office' },
+      { name: 'Hasty Pudding Institute', amt: '$50,000' },
+      { name: 'ASU Foundation', amt: '$25,000' },
+      { name: '"Barbro School," Stockholm', amt: '$25,000' },
+      { name: 'Pacific College of Oriental Medicine', amt: '$8,000' },
+      { name: 'VIBT', amt: '$3,000' }
+    ].map(function(g){ return Object.assign({ flag: '' }, g); });
+
+    var promised = [
+      { when: 'Dec 2014', promised: '$10.5M from Black "next week," with a draft receipt', record: 'No wire found. Not on the Dec 23 list of Black’s gifts.', id: 'EFTA00584573' },
+      { when: 'Oct 2015', promised: '$4.75M, then $10M, to Enhanced Education', record: '$10M paid to Gratitude America on Oct 14, 2015.', id: 'EFTA00587879' },
+      { when: '2003 to 2013', promised: '"$30 million grant" to Harvard PED', record: 'Harvard counted $6.5M in 2003, $9.1M over 1998 to 2008.', id: 'EFTA02570766' }
+    ].map(function(p){ return Object.assign({}, p, { href: self.url(p.id) }); });
+
+    var legend = [ ['Person','person'], ['Accused (overrides type)','accused'], ['Trust or entity','foundation'], ['Organization','org'], ['Bank','bank'], ['University','institution'] ].map(function(l){ return { name: l[0], color: TC[l[1]][0], radius: TC[l[1]][1] }; });
+    var groups = [
+      { name: 'People', items: [
+        conn('Jeffrey Epstein','Founder and officer','person'),
+        conn('Darren Indyke','President; signed receipts','person'),
+        conn('Richard Kahn','Accountant; ran the books','person'),
+        conn('Leon Black','Promised $10.5M; "fees" routed as gifts','accused'),
+        conn('Les Wexner','Paid $124,232 personally, 2009 to 2010','person'),
+        conn('Ben Goertzel','$75K personally, $110K to Humanity+','person'),
+        conn('Marvin Minsky','Monthly consulting payments, 2011 to 2012','person'),
+        conn('Lawrence Krauss','Origins Project grants from 2011','person'),
+        conn('Joscha Bach','Wires from the Deutsche Bank account, 2016 to 2017','person') ] },
+      { name: 'Entities', items: [
+        conn('Gratitude America','Received Black’s $10M in Oct 2015','foundation'),
+        conn('C.O.U.Q. Foundation','$440,000 in wires, 2008 to 2010','foundation'),
+        conn('Southern Trust Company','Received Black’s other fee payments','company'),
+        conn('BV70 LLC','Black’s LLC that paid the $10M','company'),
+        conn('Education Advance','$55,000 grant, 2017','org'),
+        conn('UAB Fors Projektai','$75,000 grant to a company, 2017','org') ] },
+      { name: 'Banks and institutions', items: [
+        conn('JPMorgan / Bear Stearns','Account #5810 until Jan 2014','bank'),
+        conn('Deutsche Bank / Pershing','Accounts from 2014 to 2019','bank'),
+        conn('FirstBank Puerto Rico','St. Thomas operating account','bank'),
+        conn('Harvard PED','The "$30 million" claim','institution'),
+        conn('ASU Origins Project','Grants, then the unspent-funds fight','institution'),
+        conn('MIT Media Lab','Got the redirected Origins money in 2019','institution') ] }
+    ];
+
+    var tl = [
+      ['Nov 2000','IRS recognizes the foundation as a 501(c)(3) private foundation.','EFTA01377445','#ffe14d'],
+      ['2002','The last tax return that is public today.','EFTA01138979','#7f8db0'],
+      ['2008 to 2010','$440,000 to Epstein’s C.O.U.Q. Foundation; $124,232 to Wexner personally.','EFTA02816240','#ffe14d'],
+      ['2011 to 2012','Monthly consulting payments to Marvin Minsky under signed agreements.','EFTA00287078','#6ea8fe'],
+      ['Nov 2013','Memo on pushing the trade name so searches land on "Enhanced Education."','EFTA00975739','#b088f9'],
+      ['Jan 2014','$3,016,809 moves from JPMorgan to Deutsche Bank.','EFTA01940002','#f4a259'],
+      ['Dec 2014','Epstein tells Black’s office "10,5 to enhanced education next week."','EFTA00716151','#6ea8fe'],
+      ['Jan 2015','Reuters asks why there are no filings after 2002.','EFTA01138979','#7f8db0'],
+      ['Oct 2015','Black’s "fees" are lined up as a donation; $10M goes to Gratitude America.','EFTA00639892',accent],
+      ['Jul 2017','$160,000 government fine paid and booked as a charitable contribution.','EFTA00615501',accent],
+      ['Oct 2018','Black asks ASU to send unspent Origins money to Gratitude America.','EFTA00317137','#6ea8fe'],
+      ['Jan to Feb 2019','Last positions sold and the Deutsche Bank account closed.','EFTA01426941','#f4a259']
+    ];
+    var timeline = tl.map(function(t){ return { when: t[0], what: t[1], id: t[2], href: self.url(t[2]), dot: t[3] }; });
+
+    var D = [
+      ['EFTA00639892','2015-10-09','Oct 9, 2015','Email','Kahn to Black’s office: Black’s agreed "fees" to be paid partly as a donation to the foundation, to keep his name out of public filings.','finding'],
+      ['EFTA00844021','2015-10-09','Oct 9, 2015','Email','Epstein answers "Yes" to the fee plan.','finding'],
+      ['EFTA02485037','2015-10-09','Oct 2015','Email','Another copy of the October 2015 fee thread.','finding'],
+      ['EFTA00587879','2015-10-14','Oct 14, 2015','Receipt','Indyke’s receipt: $10M from BV70 LLC to Gratitude America, "no goods or services."','finding'],
+      ['EFTA00716151','2014-12-04','Dec 4, 2014','Email','Epstein to Black’s office: "10,5 to enhanced education next week."','finding'],
+      ['EFTA00584573','2014-12-01','Dec 2014','Receipt','Unsigned draft receipt to Leon Black for $10,500,000.','finding'],
+      ['EFTA02816240','2008-06-11','2008 to 2014','Bank record','JPMorgan wire log for the foundation’s account, 78 outgoing wires.','finding'],
+      ['EFTA02806228','2023-02-23','Feb 23, 2023','Court filing','USVI filing citing the $124,232 paid to Wexner; seeks to subpoena him.','finding'],
+      ['EFTA00615501','2017-07-11','Jul 11, 2017','Bank record','Check #2631: $160,000 to USVI DPNR for a notice of violation, booked as charity.','finding'],
+      ['EFTA00148030','2019-11-01','Nov 2019','Memo','FBI asks DPNR whether a charity paying fines broke policy.','finding'],
+      ['EFTA02570766','2013-01-01','2013','Letter','Foundation Center application repeating the "$30 million" Harvard grant claim.','finding'],
+      ['EFTA00811971','2018-08-01','Aug 1, 2018','Tax filing','2017 990-PF statement: $356,000 in grants.','finding'],
+      ['EFTA01377445','2000-11-01','Nov 1, 2000','Tax filing','IRS 501(c)(3) private foundation determination.','finding'],
+      ['EFTA01138979','2015-01-01','Jan 2015','Email','Reuters questions: no filings after 2002; website claims disputed by MIT and the MS Society.','finding'],
+      ['EFTA01940002','2014-01-16','Jan 16, 2014','Email','JPMorgan closes the Bear accounts; $3,016,809 moves to Deutsche Bank.','finding'],
+      ['EFTA00979293','2013-12-01','Dec 2013','Email','Goertzel returns $45K; $60K then goes from Southern Trust to his company Novamente.','finding'],
+      ['EFTA00317137','2018-10-17','Oct 17, 2018','Letter','Black asks ASU to send unspent Origins money to Gratitude America.','finding'],
+      ['EFTA02630295','2019-01-18','Jan 18, 2019','Email','Kahn offers Black’s office a drafted letter sending the money to MIT instead.','finding'],
+      ['EFTA00359778','2014-10-01','Oct 2014','Email','$50,000 to Columbia dental, credited as another person’s donation.','finding'],
+      ['EFTA01365138','2016-01-01','2016','Bank record','Wire from the Deutsche Bank account to researcher Joscha Bach.','finding'],
+      ['EFTA01268689','','Undated','Bank record','Bank KYC: "t/a Enhanced Education, all checks payable to the trade name only."','finding'],
+      ['EFTA01426941','2019-01-01','Jan 2019','Email','Kahn sells the last positions and asks Deutsche Bank to close the account.','lead'],
+      ['EFTA00635118','2017-01-01','2017','Email','Epstein tells his architect to put the tennis-area permit in the foundation’s name.','lead'],
+      ['EFTA00287078','2011-01-01','2011','Letter','Minsky consulting agreement with the foundation.','lead'],
+      ['EFTA01154556','2013-01-01','2013','Invoice','Shears Consulting reputation-management invoice to the foundation.','lead'],
+      ['EFTA00975739','2013-11-01','Nov 2013','Memo','Memo on search results and using the trade name.','lead'],
+      ['EFTA02810827','','Undated','Court filing','Forensic accountant’s report; Figure 7 summarizes the account by year.','lead'],
+      ['EFTA00162121','','Undated','Court filing','Jane Doe v. JPMorgan complaint: payments "with no clear nexus" to a charitable purpose.','lead'],
+      ['EFTA01028726','2019-02-01','Feb 1, 2019','Email','Epstein says a check "from enhanced education" is on its way; part of settlement-era talks. Purpose still being confirmed.','lead'],
+      ['EFTA00431024','2011-01-01','2011','Email','Staff told to say the foundation "is working with the Gates Foundation."','lead']
+    ].map(function(d){ return { id: d[0], date: d[1], dateLabel: d[2], type: d[3], gist: d[4], status: d[5], year: d[1] ? d[1].slice(0,4) : 'n.d.' }; });
+
+    var q = (S.q || '').toLowerCase();
+    var match = function(d, skip){
+      if (skip !== 'type' && S.type !== 'All' && d.type !== S.type) return false;
+      if (skip !== 'status' && S.status !== 'All' && d.status !== S.status) return false;
+      if (skip !== 'year' && S.year && d.year !== S.year) return false;
+      if (q && (d.id + ' ' + d.gist + ' ' + d.type).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    };
+    var on = 'background:#0a1730;color:#ffffff;border:1px solid #0a1730;';
+    var off = 'background:#ffffff;color:#0a1730;border:1px solid #c3cde0;';
+    var types = ['All','Email','Bank record','Tax filing','Court filing','Letter','Receipt','Memo','Invoice'];
+    var typeChips = types.map(function(t){
+      var n = D.filter(function(d){ return match(d,'type') && (t === 'All' || d.type === t); }).length;
+      var a = S.type === t;
+      return { label: t, n: n, on: a ? 'true' : 'false', style: a ? on : off, pick: function(){ self.setState({ type: t }); } };
+    });
+    var statusChips = [['All','All'],['finding','Findings'],['lead','Leads']].map(function(s){
+      var n = D.filter(function(d){ return match(d,'status') && (s[0] === 'All' || d.status === s[0]); }).length;
+      var a = S.status === s[0];
+      return { label: s[1], n: n, on: a ? 'true' : 'false', style: a ? on : off, pick: function(){ self.setState({ status: s[0] }); } };
+    });
+    var ys = ['2000','2008','2011','2013','2014','2015','2016','2017','2018','2019','2023','n.d.'];
+    var counts = ys.map(function(y){ return D.filter(function(d){ return match(d,'year') && d.year === y; }).length; });
+    var mx = Math.max.apply(null, counts.concat([1]));
+    var years = ys.map(function(y, i){
+      var a = S.year === y;
+      return { label: y, n: counts[i] || '', aria: y + ': ' + counts[i] + ' files', h: Math.max(counts[i] ? 6 : 2, Math.round(counts[i] / mx * 76)) + 'px', color: a ? accent : (S.year ? '#c3cde0' : '#0a1730'), pick: function(){ self.setState({ year: a ? null : y }); } };
+    });
+
+    var badgeF = 'display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:#0a1730;color:#ffffff;';
+    var badgeL = 'display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:#ffffff;color:#8f0b20;border:1px dashed #c8102e;';
+    var docs = D.filter(function(d){ return match(d); })
+      .sort(function(a, b){ return (b.date || '0').localeCompare(a.date || '0'); })
+      .map(function(d){ return Object.assign({}, d, { href: self.url(d.id), statusLabel: d.status === 'finding' ? 'Finding' : 'Lead', badge: d.status === 'finding' ? badgeF : badgeL }); });
+
+    var questions = [
+      'Did the $10.5M Black promised in Dec 2014 ever reach the foundation, or did it all go to Gratitude America?',
+      'Was Plan D’s $10M wire to BV70 in Oct 2018 a loan repayment or the 2015 "donation" coming back?',
+      'Who funded the roughly $8M the foundation held at the end of 2010?',
+      'Where did the $160,000 fine end up on the 2017 tax return?',
+      'Grants lists for every year other than 2017 (IRS Form 4506-B request for EIN 66-0585379).',
+      'The amount and purpose of the Feb 2019 check, and whether the recipient kept it.'
+    ].map(function(t, i){ return { n: String(i + 1).padStart(2, '0'), q: t }; });
+
+    return {
+      accent: accent, facts: facts, stats: stats, findings: findings, bars: bars, grants: grants, promised: promised,
+      wireHref: this.url('EFTA02816240'), grantHref: this.url('EFTA00811971'),
+      legend: legend, groups: groups, timeline: timeline,
+      q: S.q, onSearch: function(e){ self.setState({ q: e.target.value }); },
+      typeChips: typeChips, statusChips: statusChips, years: years,
+      docs: docs, shown: docs.length, total: D.length, empty: docs.length === 0,
+      filtered: !!(S.q || S.type !== 'All' || S.status !== 'All' || S.year),
+      clearAll: function(){ self.setState({ q: '', type: 'All', status: 'All', year: null }); },
+      questions: questions
+    };
+  }
+}
+
+DCLite.mount(Component, {"accent": "#c8102e"});
+</script>
+</body>
+</html>
