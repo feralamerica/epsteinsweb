@@ -77,7 +77,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 </div>
 <div style="margin-top: 22px; background: #0f2650; border: 1px solid #1f3f74; border-left: 4px solid #aab7d1; border-radius: 10px; padding: 14px 16px; font-size: 15px"><b>Response:</b> {{p.denial}}</div>
 </div>
-<aside style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<aside style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start">
 <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
 <div style="border-top: 3px solid {{s.bar}}; background: #0a1c3d; padding: 14px 16px; border-radius: 0 0 10px 10px">
 <div style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 34px; line-height: 1">{{s.n}}</div>
@@ -245,10 +245,7 @@ class Component extends DCLogic {
     return {
       p: p, tabs: tabs,
       stats: [
-        { n: d.doj, l: 'DOJ library hits for "' + d.q + '"', bar: p.color },
-        { n: String(files.length), l: 'key files reviewed', bar: '#ffe14d' },
-        { n: String(hits.length), l: 'top search hits summarized', bar: '#6ea8fe' },
-        { n: String(d.cols.length), l: 'collections they appear in', bar: '#4dd0a7' }
+        { n: d.doj, l: 'DOJ library hits for "' + d.q + '"', bar: p.color }
       ],
       files: S.all ? files : files.slice(0, 8), noFiles: files.length === 0, more: files.length > 8,
       moreLabel: S.all ? 'Show fewer' : 'Show all ' + files.length + ' files', toggleAll: function(){ self.setState({ all: !S.all }); },

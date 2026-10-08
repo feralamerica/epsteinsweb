@@ -72,7 +72,7 @@
       var whole = WHOLE.exec(val);
       if (EVENTS[lname]) {
         var fn = whole ? lookup(scope, whole[1]) : null;
-        if (typeof fn === 'function') el.addEventListener(EVENTS[lname], fn);
+        if (typeof fn === 'function') { el.addEventListener(EVENTS[lname], fn); (el.__ev || (el.__ev = {}))[EVENTS[lname]] = fn; }
         continue;
       }
       if (whole) {
@@ -89,6 +89,36 @@
     renderNodes(kids, scope, el, key);
     if (el.__value != null) el.value = el.__value;
     parent.appendChild(el);
+  }
+
+
+  /* Patch the live DOM to match a freshly rendered tree, keeping existing nodes
+     (so a focused search box keeps focus and the phone keyboard stays open). */
+  function morphKids(a, b) {
+    var ak = a.childNodes, bk = Array.prototype.slice.call(b.childNodes);
+    for (var i = 0; i < bk.length; i++) {
+      var o = ak[i], n = bk[i];
+      if (!o) { a.appendChild(n); continue; }
+      if (o.nodeType !== n.nodeType || o.nodeName !== n.nodeName || o.namespaceURI !== n.namespaceURI) { a.replaceChild(n, o); continue; }
+      if (o.nodeType === 3) { if (o.nodeValue !== n.nodeValue) o.nodeValue = n.nodeValue; continue; }
+      if (o.nodeType !== 1) { a.replaceChild(n, o); continue; }
+      morphEl(o, n);
+    }
+    while (ak.length > bk.length) a.removeChild(a.lastChild);
+  }
+  function morphEl(o, n) {
+    var i, at;
+    for (i = o.attributes.length - 1; i >= 0; i--) { at = o.attributes[i]; if (!n.hasAttribute(at.name)) o.removeAttribute(at.name); }
+    for (i = 0; i < n.attributes.length; i++) { at = n.attributes[i]; if (o.getAttribute(at.name) !== at.value) o.setAttribute(at.name, at.value); }
+    var oe = o.__ev || {}, ne = n.__ev || {}, t;
+    for (t in oe) o.removeEventListener(t, oe[t]);
+    for (t in ne) o.addEventListener(t, ne[t]);
+    o.__ev = n.__ev;
+    if (n.__value != null && o.value !== n.__value) o.value = n.__value;
+    var tag = o.localName;
+    if (tag === 'input' || tag === 'textarea') return;
+    if (tag === 'select') { morphKids(o, n); if (n.__value != null) o.value = n.__value; return; }
+    morphKids(o, n);
   }
 
   function Component(props) { this.props = props || {}; this.state = {}; }
@@ -115,11 +145,9 @@
     var vals = this.renderVals() || {};
     var frag = document.createDocumentFragment();
     renderNodes(tpl.content.childNodes, vals, frag, 'r');
-    root.style.minHeight = root.offsetHeight + 'px';
-    root.replaceChildren(frag);
-    root.style.minHeight = '';
-    if (this._mounted) window.scrollTo(x, y);
-    if (akey) {
+    if (!this._mounted) { root.replaceChildren(frag); }
+    else { morphKids(root, frag); window.scrollTo(x, y); }
+    if (akey && document.activeElement !== active) {
       var n = root.querySelector('[data-k="' + akey + '"]');
       if (n) { n.focus({ preventScroll: true }); if (sel && sel[0] != null) { try { n.setSelectionRange(sel[0], sel[1]); } catch (e) {} } }
     }
