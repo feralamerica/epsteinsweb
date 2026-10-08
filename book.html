@@ -28,9 +28,11 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 .efta:hover{text-decoration:underline}
 .card a{color:#0b3d91}.card a:hover{color:#c8102e}
 .spread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
-.bookwrap{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:28px;align-items:start}
+.bookwrap{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
 .rolo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
 @media (max-width:1180px){.bookwrap{grid-template-columns:minmax(0,1fr)}}
+.subc{display:grid !important;grid-template-columns:320px minmax(0,1fr);align-items:center}
+@media (max-width:760px){.subc{display:block !important}}
 @media (max-width:760px){.spread{grid-template-columns:minmax(0,1fr)}.rolo{grid-template-columns:minmax(0,1fr)}.topnav{display:none !important}}
 </style>
 
@@ -163,7 +165,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <sc-if value="{{c.hasSub}}" hint-placeholder-val="{{false}}">
 <div>
 <div style="font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #c8102e; margin-bottom: 8px">Our reporting</div>
-<sc-for list="{{c.subL}}" as="n" hint-placeholder-count="1"><a href="{{n.href}}" target="_blank" rel="noopener" style="display: block; background: #ffffff; border: 1px solid #e0d8c6; border-radius: 12px; overflow: hidden; text-decoration: none; color: #1b1b1b; box-shadow: 0 2px 8px rgba(0,0,0,.06); margin-bottom: 10px"><img src="{{n.img}}" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #e9e3d4"><span style="display: block; padding: 12px 14px 14px"><span style="display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #c8102e"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 5px; background: #c8102e; color: #ffffff; font-size: 11px">FA</span>Feral America · Substack</span><span style="display: block; margin-top: 6px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15">{{n.label}}</span><sc-if value="{{n.hasSubt}}" hint-placeholder-val="{{true}}"><span style="display: block; margin-top: 4px; font-size: 13.5px; color: #43506b; line-height: 1.4">{{n.subt}}</span></sc-if><span style="display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; font-size: 12.5px; color: #6b6b6b"><span>{{n.date}}</span><span style="font-weight: 700; color: #c8102e">Read on Substack ↗</span></span></span></a></sc-for>
+<sc-for list="{{c.subL}}" as="n" hint-placeholder-count="1"><a href="{{n.href}}" class="subc" target="_blank" rel="noopener" style="display: block; background: #ffffff; border: 1px solid #e0d8c6; border-radius: 12px; overflow: hidden; text-decoration: none; color: #1b1b1b; box-shadow: 0 2px 8px rgba(0,0,0,.06); margin-bottom: 10px"><img src="{{n.img}}" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #e9e3d4"><span style="display: block; padding: 12px 14px 14px"><span style="display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #c8102e"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 5px; background: #c8102e; color: #ffffff; font-size: 11px">FA</span>Feral America · Substack</span><span style="display: block; margin-top: 6px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15">{{n.label}}</span><sc-if value="{{n.hasSubt}}" hint-placeholder-val="{{true}}"><span style="display: block; margin-top: 4px; font-size: 13.5px; color: #43506b; line-height: 1.4">{{n.subt}}</span></sc-if><span style="display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; font-size: 12.5px; color: #6b6b6b"><span>{{n.date}}</span><span style="font-weight: 700; color: #c8102e">Read on Substack ↗</span></span></span></a></sc-for>
 </div>
 </sc-if>
 
