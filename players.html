@@ -63,11 +63,11 @@ header .byfa{display:none}
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="book.html">Little Black Book</a>
 <a href="moneymap.html">Money Map</a>
 <a href="network.html">Network map</a>
-<a href="emails.html">Correspondence</a>
 <a href="flights.html">Flight logs</a>
-<a href="book.html">Little Black Book</a>
+<a href="emails.html">Correspondence</a>
 <a href="records.html">Court and FBI records</a>
 <a href="news.html">News</a>
 </nav>
@@ -102,7 +102,7 @@ header .byfa{display:none}
 </div>
 </div>
 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 18px">
-<sc-for list="{{p.tags}}" as="t" hint-placeholder-count="3"><span style="{{t.style}}">{{t.label}}</span></sc-for>
+<sc-for list="{{p.tags}}" as="t" hint-placeholder-count="3"><a href="{{t.href}}" onClick="{{t.pick}}" title="{{t.title}}" style="{{t.style}}">{{t.label}}</a></sc-for>
 </div>
 <div style="margin-top: 22px; background: #0f2650; border: 1px solid #1f3f74; border-left: 4px solid #aab7d1; border-radius: 10px; padding: 14px 16px; font-size: 15px"><b>Response:</b> {{p.denial}}</div>
 </div>
@@ -255,12 +255,31 @@ class Component extends DCLogic {
       { name: 'Andrew Mountbatten-Windsor', init: 'AM', role: 'Former Prince Andrew', color: C.accused[0],
         tags: tg([['Named by an accuser',1],['Flight logs'],['Contact book'],['Correspondence']]),
         points: [
-          pt('Named by an accuser; settled her lawsuit in 2022 with no admission. Stripped of his titles in 2025.'),
+          pt('Publicly named by a survivor in court documents and in a best-selling book; settled her lawsuit in 2022 with no admission. Stripped of his titles in 2025.'),
           pt('Arrested Feb 19, 2026 on suspicion of misconduct in public office, after files suggested he forwarded official trip reports to Epstein in 2010.'),
           pt('Appears in the flight logs and Epstein’s contact book.')
         ],
         denial: 'Denies wrongdoing; says he regrets the friendship.', files: '2,560 DOJ library hits', href: 'players.html' }
     ];
+
+    var KPL = {
+      'Donald Trump': { card: 'Donald Trump', fl: 'Donald Trump', em: 'Trump', mm: '' },
+      'Leon Black': { card: 'Leon Black', fl: '', em: 'Leon Black', mm: 'black' },
+      'Les Wexner': { card: 'Leslie Wexner', fl: '', em: 'Leslie Wexner', mm: 'wexner' },
+      'Jes Staley': { card: 'Jes Staley', fl: '', em: 'Jes Staley', mm: '' },
+      'Glenn and Eva Dubin': { card: 'Glenn Dubin', fl: 'Glenn Dubin', em: 'Dubin', mm: 'dubin' },
+      'Andrew Mountbatten-Windsor': { card: 'Andrew Mountbatten-Windsor', fl: 'Andrew Mountbatten-Windsor', em: 'Andrew Mountbatten-Windsor', mm: '' }
+    };
+    var tagLink = function(label, name){
+      var k = KPL[name] || {}; var set = function(key, v){ return function(){ try { localStorage.setItem(key, JSON.stringify(Object.assign({ at: Date.now() }, v))); } catch (e) {} }; };
+      var card = { href: 'book.html', pick: set('ew-card', { f: k.card }), title: 'Open the Little Black Book card' };
+      if (label === 'Flight logs' && k.fl) return { href: 'flights.html', pick: set('ew-ticket', { k: k.fl }), title: 'See the flight log record' };
+      if (label === 'Correspondence') return { href: 'emails.html', pick: set('ew-search', { q: k.em, area: 'EM' }), title: 'Search the emails for this name' };
+      if ((label === 'Money Map' || label === 'Financial') && k.mm) return { href: 'moneymap.html#' + k.mm, pick: function(){}, title: 'Open in the Money Map' };
+      if (label === 'Contact book' || label === 'Court records' || label === 'Financial') return card;
+      return null;
+    };
+    players = players.map(function(x){ return Object.assign({}, x, { tags: x.tags.map(function(t){ var l = tagLink(t.label, x.name); return l ? Object.assign({}, t, l, { style: t.style + 'cursor:pointer;text-decoration:none;' }) : Object.assign({}, t, { href: null, pick: function(){}, title: '', style: t.style + 'cursor:default;' }); }) }); });
 
     var KPIMG = {"Donald Trump": "kp-trump.jpg", "Leon Black": "kp-black.jpg", "Les Wexner": "kp-wexner.jpg", "Jes Staley": "kp-staley.jpg", "Glenn and Eva Dubin": "kp-dubin.jpg", "Andrew Mountbatten-Windsor": "kp-andrew.jpg"};
     var p = players.filter(function(x){ return x.name === S.k; })[0] || players[1];
