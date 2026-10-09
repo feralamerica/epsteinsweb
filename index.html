@@ -69,8 +69,8 @@ header .byfa{display:none}
 <a href="#top" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: center; gap: 10px">
 <img src="favicon-192.png" alt="" width="32" height="32" style="display: block; border-radius: 7px; flex: none">
 <span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span>
-<span class="byfa" style="font-size: 12px; color: #aab7d1">by Feral America</span>
 </a>
+<span class="byfa" style="font-size: 12px; color: #aab7d1">by <a href="https://stayferalamerica.com" style="color: #c9d3e8; text-decoration: underline; text-underline-offset: 3px">Feral America</a></span>
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 16px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
@@ -113,7 +113,7 @@ header .byfa{display:none}
 </sc-if>
 <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; font-size: 13px; color: #aab7d1; align-items: center">
 <span>Try:</span>
-<sc-for list="{{tries}}" as="t" hint-placeholder-count="4">
+<sc-for list="{{tries}}" as="t" hint-placeholder-count="3">
 <a href="{{t.href}}" onClick="{{t.pick}}" style="color: #c9d3e8; border: 1px solid #1f3f74; border-radius: 999px; padding: 4px 12px; text-decoration: none">{{t.label}}</a>
 </sc-for>
 </div>
@@ -164,10 +164,11 @@ header .byfa{display:none}
 <sc-for list="{{players}}" as="p" hint-placeholder-count="6">
 <article class="kp" style="background: #ffffff; border: 1px solid #d7deeb; border-top: 4px solid {{p.color}}; border-radius: 14px; padding: 22px 22px 18px; box-shadow: 0 8px 24px rgba(1,16,50,.06); display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; gap: 14px; align-items: center">
-<span style="flex: none; width: 52px; height: 52px; border-radius: 50%; background: {{p.color}}; color: #0a1730; display: flex; align-items: center; justify-content: center; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 22px">{{p.init}}</span>
+<img src="{{p.img}}" alt="{{p.name}}" width="88" height="88" loading="lazy" style="flex: none; display: block; width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center top; background: #f4f6fb; box-shadow: 0 0 0 3px {{p.color}}">
 <div style="min-width: 0">
 <h3 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.05; text-transform: uppercase">{{p.name}}</h3>
 <div style="font-size: 13px; color: #43506b">{{p.role}}</div>
+<sc-if value="{{p.credit}}" hint-placeholder-val="{{false}}"><div style="font-size: 11.5px; color: #6b7690; font-style: italic; margin-top: 2px">{{p.credit}}</div></sc-if>
 </div>
 </div>
 <div style="display: flex; gap: 6px; flex-wrap: wrap">
@@ -265,8 +266,8 @@ header .byfa{display:none}
 </div>
 <div style="background: #ffffff; border: 1px solid #d7deeb; border-radius: 14px; padding: 22px">
 <h3 style="margin: 0 0 14px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase">Guided threads</h3>
-<sc-for list="{{threads}}" as="t" hint-placeholder-count="4">
-<a href="network.html" style="display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid #e3e8f1; text-decoration: none; color: #0a1730; min-height: 44px">
+<sc-for list="{{threads}}" as="t" hint-placeholder-count="3">
+<a href="{{t.href}}" onClick="{{t.pick}}" style="display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid #e3e8f1; text-decoration: none; color: #0a1730; min-height: 44px">
 <span><b style="display: block; font-size: 15px">{{t.name}}</b><span style="font-size: 13px; color: #43506b">{{t.desc}}</span></span>
 <span aria-hidden="true" style="color: #43506b">→</span>
 </a>
@@ -322,7 +323,7 @@ header .byfa{display:none}
 
 <footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 34px 0 44px; font-size: 13px; color: #aab7d1">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px; display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: space-between">
-<div>Epstein's Web is an investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.<div style="margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support our work <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div></div>
+<div>Epstein's Web is an investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.<div style="margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support our work</a></div></div></div>
 <div style="display: flex; gap: 18px; flex-wrap: wrap">
 <a href="https://www.justice.gov/epstein" style="color: #c9d3e8">DOJ Epstein Library</a>
 <a href="https://oversightdemocrats.house.gov/" style="color: #c9d3e8">House Oversight releases</a>
@@ -404,9 +405,10 @@ class Component extends DCLogic {
           pt('An Aug 2019 FBI memo listed him among possible "co-conspirators"; he was never charged. Deposed by House Oversight, Feb 2026.', 'EFTA00173201')
         ],
         denial: 'Says Epstein "misappropriated vast sums" and denies knowing of his crimes.', files: '1,760 DOJ library hits', href: '#players' },
-      { name: 'Jes Staley', init: 'JS', role: 'Former JPMorgan and Barclays executive', color: C.person[0],
+      { name: 'Jes Staley', init: 'JS', credit: 'Painting by an Epstein survivor', role: 'Former JPMorgan and Barclays executive', color: C.person[0],
         tags: tg([['Financial'],['Correspondence']]),
         points: [
+          pt('In a July 2010 exchange produced by JPMorgan, Staley wrote "Say hi to Snow White." Epstein asked "what character would you like next"; the reply was "Beauty and the Beast."', 'EFTA01300651'),
           pt('Kept Epstein as a JPMorgan private-banking client; exchanged more than 1,000 emails with him, calling him "family."'),
           pt('The 2019 SDNY memo also covers him in a victim’s account. Under review for our red standard.', 'EFTA02731082'),
           pt('UK ban for misleading regulators about the relationship, upheld June 2025. House Oversight interview, July 2026.')
@@ -415,7 +417,7 @@ class Component extends DCLogic {
       { name: 'Glenn and Eva Dubin', init: 'GD', role: 'Highbridge co-founder; Epstein’s former girlfriend', color: C.accused[0],
         tags: tg([['Named by an accuser',1],['Financial'],['Flight logs'],['Money Map']]),
         points: [
-          pt('Glenn Dubin was named by Virginia Giuffre in unsealed court records.'),
+          pt('Glenn Dubin was named by an accuser in unsealed court records.'),
           pt('At least $982,897 in Dubin distributions went to Epstein’s Jeepers, Inc., 2014 to 2017, under a 2011 settlement.', 'EFTA01200058'),
           pt('Eva Dubin dated Epstein before marrying Glenn; she appears often in the flight logs.')
         ],
@@ -423,14 +425,15 @@ class Component extends DCLogic {
       { name: 'Andrew Mountbatten-Windsor', init: 'AM', role: 'Former Prince Andrew', color: C.accused[0],
         tags: tg([['Named by an accuser',1],['Flight logs'],['Contact book'],['Correspondence']]),
         points: [
-          pt('Named by Virginia Giuffre; settled her lawsuit in 2022 with no admission. Stripped of his titles in 2025.'),
+          pt('Named by an accuser; settled her lawsuit in 2022 with no admission. Stripped of his titles in 2025.'),
           pt('Arrested Feb 19, 2026 on suspicion of misconduct in public office, after files suggested he forwarded official trip reports to Epstein in 2010.'),
           pt('Appears in the flight logs and Epstein’s contact book. In Nov 2010 Epstein’s staff arranged his stay at an Epstein house.', 'EFTA02415281')
         ],
         denial: 'Denies wrongdoing; says he regrets the friendship.', files: '2,560 DOJ library hits', href: '#players' }
     ];
 
-    players = players.map(function(x){ return Object.assign({}, x, { open: function(){ try { localStorage.setItem('ew-player', JSON.stringify({ k: x.name, at: Date.now() })); } catch (e) {} } }); });
+    var KPIMG = {"Donald Trump": "kp-trump.jpg", "Leon Black": "kp-black.jpg", "Les Wexner": "kp-wexner.jpg", "Jes Staley": "kp-staley.jpg", "Glenn and Eva Dubin": "kp-dubin.jpg", "Andrew Mountbatten-Windsor": "kp-andrew.jpg"};
+    players = players.map(function(x){ return Object.assign({}, x, { img: KPIMG[x.name], open: function(){ try { localStorage.setItem('ew-player', JSON.stringify({ k: x.name, at: Date.now() })); } catch (e) {} } }); });
     return {
       accent: accent,
       tries: [['Leon Black', 'players.html', 'ew-player', 'Leon Black'], ['Southern Trust', 'book.html', 'ew-card', 'Southern Trust Company'], ['Enhanced Education', 'enhanced-education.html', '', ''], ['EFTA00639892', 'document.html', '', '']].map(function(t){ return { label: t[0], href: t[1], pick: function(){ if (t[2]) { try { localStorage.setItem(t[2], JSON.stringify(t[2] === 'ew-card' ? { f: t[3], at: Date.now() } : { k: t[3], at: Date.now() })); } catch (e) {} } } }; }),
@@ -475,10 +478,9 @@ class Component extends DCLogic {
         { name: 'Document', note: 'a single EFTA file', color: C.doc[0], radius: '2px' }
       ],
       threads: [
-        { name: 'Follow the money', desc: 'From Black’s fees to the shells to the grants' },
-        { name: 'After the conviction', desc: 'Who stayed close to Epstein after 2008' },
-        { name: 'The science pipeline', desc: 'Universities, labs and the scientists he funded' },
-        { name: 'The accused', desc: 'Everyone named by an accuser, with their denials' }
+        { name: 'Follow the money', href: 'moneymap.html#flow', desc: 'From Black’s fees to the shells to the grants' },
+        { name: 'After his arrest', href: 'emails.html', pick: function(){ try { localStorage.setItem('ew-search', JSON.stringify({ q: '', area: 'EM', from: '2019-07-06', to: '', at: Date.now() })); } catch (e) {} }, desc: 'The emails written after his July 2019 arrest' },
+        { name: 'The science pipeline', href: 'science.html', desc: 'Universities, labs and the scientists he funded' }
       ],
       recent: [
         ['EFTA00639892','Oct 2015','Black’s "fees" to be paid as a charitable donation','Leon Black','accused','finding'],
