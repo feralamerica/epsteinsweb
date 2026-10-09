@@ -26,7 +26,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 @media (max-width:900px){.dgrid{grid-template-columns:minmax(0,1fr)}}
 </style>
 
-<style>@media (max-width:700px){h1{font-size:40px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
+<style>[id]{scroll-margin-top:84px}header{position:sticky !important;top:0;z-index:100}@media (min-width:761px){header nav.topnav{gap:14px !important;font-size:13.5px !important}header .hdr{gap:14px !important}header .hbtns a{padding:0 12px !important}}@media (max-width:700px){h1{font-size:40px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
 </head>
 <body>
 <div id="dc-root"></div>
@@ -53,29 +53,31 @@ header .hbtns a{flex:1 1 0;justify-content:center;min-height:46px !important}
 header .byfa{display:none}
 }
 </style>
-<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<header style="position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1f3f74; background: #010c26">
 <div style="max-width: 1180px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap">
 <a href="index.html" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: baseline; gap: 10px">
 <span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span>
-<span style="font-size: 12px; color: #aab7d1">by Feral America</span>
 </a>
+<span class="byfa" style="font-size: 12px; color: #aab7d1">by <a href="https://stayferalamerica.com" style="color: #c9d3e8; text-decoration: underline; text-underline-offset: 3px">Feral America</a></span>
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
 <a href="moneymap.html">Money Map</a>
+<a href="network.html">Network map</a>
 <a href="emails.html">Correspondence</a>
 <a href="flights.html">Flight logs</a>
 <a href="book.html">Little Black Book</a>
 <a href="records.html">Court and FBI records</a>
 <a href="news.html">News</a>
 </nav>
-<label style="margin-left: auto; flex: 1 1 260px; max-width: 380px; display: flex; align-items: center; gap: 10px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 10px; padding: 0 12px; min-height: 44px">
+
+</div>
+</header>
+<div style="background: #010c26; border-bottom: 1px solid #1f3f74"><div style="max-width: 1180px; margin: 0 auto; padding: 10px 22px; display: flex"><label style="margin-left: auto; width: 100%; max-width: 380px; display: flex; align-items: center; gap: 10px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 10px; padding: 0 12px; min-height: 44px">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <span style="position: absolute; left: -9999px">Search the files</span>
 <input type="search" placeholder="Search people, entities, EFTA numbers" style="flex: 1; min-width: 0; background: transparent; border: 0; color: #f4f6fb; font: 400 14px Inter, sans-serif; outline: none">
-</label>
-</div>
-</header>
+</label></div></div>
 
 <section style="padding: 32px 0 48px">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
@@ -154,7 +156,7 @@ header .byfa{display:none}
 
 <footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 30px 0 40px; font-size: 13px; color: #aab7d1">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">Every claim links to a file in the DOJ Epstein Library. Leads are not findings. Survivors are never named. An investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.</div>
-<div style="max-width: 1240px; margin: 8px auto 0; padding: 0 22px; margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support our work <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div>
+<div style="max-width: 1240px; margin: 8px auto 0; padding: 0 22px; margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support our work</a></div></div>
 
 </footer>
 </div>

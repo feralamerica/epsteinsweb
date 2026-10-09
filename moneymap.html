@@ -197,7 +197,7 @@
 .efta.lead i{text-transform:uppercase;letter-spacing:.06em}
 @media(max-width:560px){.nfi-list li{grid-template-columns:1fr}}
 #flow{scroll-margin-top:calc(var(--navh,69px) - 40px)}
-.mm-cards{display:flex;flex-wrap:wrap;gap:6px}
+.mm-btn-card{display:inline-flex;align-items:center;font:600 .7rem var(--stencil);letter-spacing:.12em;text-transform:uppercase;background:#fff;color:#0a1730;border-radius:999px;padding:8px 13px;text-decoration:none} .mm-btn-card:hover{background:#ffd9d9} .mm-cards{display:flex;flex-wrap:wrap;gap:6px}
 .mm-card{display:inline-flex;align-items:center;gap:7px;font:600 .78rem var(--body);color:#fff;background:rgba(255,255,255,.06);border:1px solid var(--navy-line);border-radius:999px;padding:6px 11px;text-decoration:none}
 .mm-card:hover{border-color:var(--red-bright)}
 .mm-card i{width:9px;height:9px;border-radius:50%;flex:none}
@@ -215,6 +215,7 @@
     <button class="nav-toggle" aria-label="Menu">☰</button>
     <nav class="nav-links">
       <a href="moneymap.html" aria-current="page" style="color:#fff">Money Map</a>
+      <a href="network.html">Network map</a>
       <a href="emails.html">Correspondence</a>
       <a href="flights.html">Flight logs</a>
       <a href="book.html">Little Black Book</a>
@@ -687,6 +688,8 @@ document.addEventListener("click", function(e){
   try { localStorage.setItem("ew-card", JSON.stringify({ f: a.getAttribute("data-card"), at: Date.now() })); } catch(err) {}
 });
 
+var OWN = {"black": "Leon Black", "bv70": "BV70 LLC", "rothschild": "Edmond de Rothschild", "wexner": "Leslie Wexner", "dubin": "Glenn Dubin", "usvi": "U.S. Virgin Islands", "ftc": "Financial Trust Company", "stc": "Southern Trust Company", "southernfin": "Southern Financial LLC", "jeepers": "Jeepers Inc.", "personal": "Jeffrey Epstein", "ee": "Enhanced Education", "gratitude": "Gratitude America Ltd.", "couq": "C.O.U.Q. Foundation", "haze": "Haze Trust", "butterfly": "Butterfly Trust", "caterpillar": "2017 Caterpillar Trust", "pland": "Plan D LLC", "aviation": "JEGE & Hyperion Air", "nes": "NES LLC", "property": "Great St. Jim LLC", "political": "Stacey Plaskett", "edwards": "Brad Edwards", "investments": "Joi Ito", "universities": "MIT Media Lab"};
+function ownBtn(id){ var f = OWN[id]; return f ? '<a class="mm-btn-card" href="book.html" data-card="'+esc(f).replace(/"/g,"&quot;")+'">Open full card \u2192</a>' : ""; }
 /* ---------- Nodes ---------- */
 /* lane: in | hub | out. g: group label. */
 var N = [
@@ -980,7 +983,7 @@ function build(){
         '<div class="node-sub">Receipts</div><div class="eftas">'+n.c.map(chip).join("")+'</div>'+
         cardsHTML(n)+
         leadsHTML(n.id)+
-        '<div class="node-actions"><button class="mm-btn-trace" data-trace="'+n.id+'">Trace this money ↑</button><button class="mm-btn-link" data-copy="'+n.id+'">Copy link</button></div>'+
+        '<div class="node-actions">'+ownBtn(n.id)+'<button class="mm-btn-trace" data-trace="'+n.id+'">Trace this money ↑</button><button class="mm-btn-link" data-copy="'+n.id+'">Copy link</button></div>'+
       '</div>';
     col.appendChild(el);
   });
@@ -1065,7 +1068,7 @@ function fxSelect(id, keep){
   svg.querySelectorAll(".nd").forEach(function(g){ g.parentNode.appendChild(g); });
   var n=byId[id];
   det.innerHTML='<div class="t">'+esc(n.tag)+' · '+links.length+' connection'+(links.length===1?"":"s")+'</div><h3>'+esc(n.name)+(n.amt?' <b>'+n.amt+'</b>':'')+'</h3><p>'+esc(n.teaser)+'</p>'+
-    '<div class="row"><button class="mm-btn-trace" data-open="'+id+'">Open the receipts ↓</button><button class="mm-btn-link" data-fxclear="1">Close</button></div>';
+    '<div class="row">'+ownBtn(id)+'<button class="mm-btn-trace" data-open="'+id+'">Open the receipts ↓</button><button class="mm-btn-link" data-fxclear="1">Close</button></div>';
   det.classList.add("on");
   fxPlace(id);
 }

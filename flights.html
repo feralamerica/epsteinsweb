@@ -31,7 +31,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 @media (max-width:640px){.tgrid{grid-template-columns:minmax(0,1fr)}.topnav{display:none !important}}
 </style>
 
-<style>@media (max-width:700px){h1{font-size:40px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
+<style>[id]{scroll-margin-top:84px}header{position:sticky !important;top:0;z-index:100}@media (min-width:761px){header nav.topnav{gap:14px !important;font-size:13.5px !important}header .hdr{gap:14px !important}header .hbtns a{padding:0 12px !important}}@media (max-width:700px){h1{font-size:40px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
 </head>
 <body>
 <div id="dc-root"></div>
@@ -58,13 +58,14 @@ header .hbtns a{flex:1 1 0;justify-content:center;min-height:46px !important}
 header .byfa{display:none}
 }
 </style>
-<header style="border-bottom: 1px solid #1f3f74; background: #010c26">
+<header style="position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1f3f74; background: #010c26">
 <div style="max-width: 1240px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap">
 <a href="index.html" style="text-decoration: none; color: #f4f6fb"><span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span></a>
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
 <a href="moneymap.html">Money Map</a>
+<a href="network.html">Network map</a>
 <a href="emails.html">Correspondence</a>
 <a href="flights.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">Flight logs</a>
 <a href="book.html">Little Black Book</a>
@@ -120,7 +121,7 @@ header .byfa{display:none}
 </sc-for>
 </div>
 
-<aside id="ticket" aria-live="polite" style="scroll-margin-top: 12px; background: #fbf8ef; color: #1b1b1b; border-radius: 14px; padding: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4); border-top: 6px solid {{d.color}}">
+<aside id="ticket" aria-live="polite" style="scroll-margin-top: 84px; background: #fbf8ef; color: #1b1b1b; border-radius: 14px; padding: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4); border-top: 6px solid {{d.color}}">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #6b6b6b">BOARDING RECORD</div>
 <h3 style="margin: 4px 0 2px; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.05; text-transform: uppercase">{{d.name}}</h3>
 <div style="font-size: 13px; color: #43506b">{{d.nat}}</div>
