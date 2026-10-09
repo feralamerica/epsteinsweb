@@ -8,7 +8,11 @@
 <meta property="og:title" content="Epstein's Web">
 <meta property="og:description" content="A research resource on the Justice Department's Epstein files: the money, the flight logs, the emails, the Little Black Book and the court record, every claim linked to its source file.">
 <meta property="og:site_name" content="Epstein's Web">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23011032%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ff5c5c%22 font-family=%22Arial%22 font-weight=%22700%22%3EEW%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="https://epsteinsweb.com/assets/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
@@ -26,11 +30,13 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 .g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .mm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:48px;align-items:center}
 .flow{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);gap:10px;align-items:center}
+@media (max-width:1360px){header .byfa{display:none}}
+@media (max-width:1250px){header nav.topnav{gap:12px !important;font-size:13px !important}header .hbtns a{padding:0 10px !important;font-size:12.5px !important}header .hdr{gap:14px !important}}
 @media (max-width:1000px){.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.g5{grid-template-columns:repeat(3,minmax(0,1fr))}.mm{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:700px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}.g5{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:minmax(0,1fr)}.arrow{transform:rotate(90deg)}.topnav{display:none !important}}
 </style>
 
-<style>@media (max-width:700px){h1{font-size:44px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
+<style>@media (max-width:700px){h1{font-size:40px !important;line-height:1 !important}h2{font-size:32px !important;line-height:1.05 !important}}</style>
 </head>
 <body>
 <div id="dc-root"></div>
@@ -39,12 +45,13 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <div id="top" style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; line-height: 1.6">
 
 <header style="border-bottom: 1px solid #1f3f74; background: #010c26">
-<div style="max-width: 1180px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap">
-<a href="#top" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: baseline; gap: 10px">
+<div class="hdr" style="max-width: 1320px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
+<a href="#top" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: center; gap: 10px">
+<img src="favicon-192.png" alt="" width="32" height="32" style="display: block; border-radius: 7px; flex: none">
 <span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span>
-<span style="font-size: 12px; color: #aab7d1">by Feral America</span>
+<span class="byfa" style="font-size: 12px; color: #aab7d1">by Feral America</span>
 </a>
-<nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<nav class="topnav" aria-label="Main" style="display: flex; gap: 16px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
 <a href="moneymap.html">Money Map</a>
 <a href="emails.html">Correspondence</a>
 <a href="flights.html">Flight logs</a>
@@ -52,16 +59,25 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <a href="records.html">Court and FBI records</a>
 <a href="news.html">News</a>
 </nav>
-<a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="margin-left: auto; display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #c8102e; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a>
-<a href="https://venmo.com/u/bustertoks" title="Support us on Venmo: @bustertoks" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #1f9d55; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 12px; font-weight: 800">$</span>Venmo</a>
+<div class="hbtns" style="margin-left: auto; display: flex; gap: 10px; flex: none; white-space: nowrap">
+<a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #c8102e; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a>
+<a href="https://venmo.com/u/bustertoks" title="Support us on Venmo: @bustertoks" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #1f9d55; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 12px; font-weight: 800">$</span>Support our work</a>
+</div>
 </div>
 </header>
+
+<!-- Logo -->
+<section aria-label="Epstein's Web by Feral America" style="background: #ffffff; border-bottom: 1px solid #d7deeb">
+<div style="max-width: 1180px; margin: 0 auto; padding: 34px 22px 28px; display: flex; justify-content: center">
+<img src="assets/ew-logo.webp" alt="Epstein's Web by Feral America" width="1000" height="676" style="display: block; width: 100%; max-width: 640px; height: auto">
+</div>
+</section>
 
 <!-- Hero -->
 <section style="padding: 72px 0 64px">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
 <div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: .18em; text-transform: uppercase; color: #ff8a8a">A sourced map of the DOJ Epstein files</div>
-<h1 style="margin: 14px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 88px; line-height: .92; text-transform: uppercase; max-width: 900px">The Epstein files, mapped. With receipts.</h1>
+<h1 style="margin: 14px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: .95; text-transform: uppercase; max-width: 820px">The Epstein files, mapped. With receipts.</h1>
 <p style="margin: 24px 0 0; font-size: 19px; line-height: 1.6; max-width: 720px; color: #e3e8f3">The Justice Department has released more than 3.5 million pages. We trace them two ways: the <b>money</b> (wires, trusts, shells, tax filings) and the <b>relationships</b> (emails, flight logs, contact books, court and FBI records, news reporting). Every claim links to the file it comes from.</p>
 <form role="search" action="#" onSubmit="{{onHqGo}}" style="margin: 0"><label style="margin-top: 32px; display: flex; align-items: center; gap: 12px; max-width: 680px; background: #0f2650; border: 1px solid #3a5a92; border-radius: 12px; padding: 0 16px; min-height: 56px">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
@@ -284,7 +300,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 
 <footer style="border-top: 1px solid #1f3f74; background: #010c26; padding: 34px 0 44px; font-size: 13px; color: #aab7d1">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px; display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: space-between">
-<div>Epstein's Web is an investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.<div style="margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support us on Venmo <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div></div>
+<div>Epstein's Web is an investigation by <a href="https://stayferalamerica.com" style="color: #c9d3e8">Feral America</a>.<div style="margin-top: 14px"><div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #c8102e; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a><a href="https://venmo.com/u/bustertoks" title="Venmo @bustertoks" style="display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: #1f9d55; color: #ffffff; font-weight: 700; font-size: 14px; text-decoration: none"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 13px; font-weight: 800">$</span>Support our work <span style="font-weight: 500; opacity: .85">@bustertoks</span></a></div></div></div>
 <div style="display: flex; gap: 18px; flex-wrap: wrap">
 <a href="https://www.justice.gov/epstein" style="color: #c9d3e8">DOJ Epstein Library</a>
 <a href="https://oversightdemocrats.house.gov/" style="color: #c9d3e8">House Oversight releases</a>
@@ -299,7 +315,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 
 class Component extends DCLogic {
   url(id){
-    var F = {EFTA02731082:'DataSet 12',EFTA02731783:'DataSet 12'};
+    var F = {EFTA02731082:'DataSet 12',EFTA02731783:'DataSet 12',EFTA02846460:'Prior DOJ Disclosures/First Phase of Declassified Epstein Files'};
     var vi = {EFTA02816240:1};
     var n = parseInt(id.slice(4), 10);
     var f = F[id] ? F[id] : vi[id] ? 'Court Records/Government of the United States Virgin Islands v. JPMorgan Chase Bank, N.A., No. 122-cv-10904 (S.D.N.Y. 2022)' : n < 40000 ? 'DataSet 8' : n < 1250000 ? 'DataSet 9' : n < 2220000 ? 'DataSet 10' : 'DataSet 11';
@@ -345,10 +361,10 @@ class Component extends DCLogic {
         tags: tg([['Named by an accuser',1],['Correspondence'],['Flight logs'],['Contact book']]),
         points: [
           pt('FBI interview summaries from 2019, released by DOJ in March 2026, record a woman’s allegation that Trump sexually assaulted her when she was 13 to 15, after Epstein introduced them. The files don’t show how investigators assessed it.'),
-          pt('In emails released by House Oversight in Nov 2025, Epstein wrote that Trump "knew about the girls." That is Epstein’s claim, not proof.'),
-          pt('Documented social ties in the 1990s: flights with family, a contact-book entry. Says the friendship ended around 2004.')
+          pt('In a Jan 2019 email to Michael Wolff, Epstein wrote that Trump "knew about the girls." That is Epstein’s claim, not proof.', 'EFTA01028620'),
+          pt('Documented social ties in the 1990s: 8 flights on Epstein’s planes in the pilot logbook, and a contact-book entry. Says the friendship ended around 2004.', 'EFTA02846460')
         ],
-        denial: 'Denies all wrongdoing. The White House called the allegation "completely baseless."', files: 'EFTA links in progress', href: 'players.html' },
+        denial: 'Denies all wrongdoing. The White House called the allegation "completely baseless."', files: '1,825 DOJ library hits', href: 'players.html' },
       { name: 'Leon Black', init: 'LB', role: 'Apollo co-founder', color: C.accused[0],
         tags: tg([['Named by accusers',1],['Held in contempt of Congress'],['Financial'],['Money Map']]),
         points: [
@@ -357,7 +373,7 @@ class Component extends DCLogic {
           pt('A 2019 SDNY memo on possible co-conspirators records a victim’s allegation against him; the Manhattan DA later investigated.', 'EFTA02731082'),
           pt('2015 emails plan to pay Black’s "fees" to Epstein as a charitable donation.', 'EFTA00639892')
         ],
-        denial: 'Denies all allegations; never criminally charged. He is suing the Oversight Committee over its subpoenas.', files: '8,500 files mention him', href: '#players' },
+        denial: 'Denies all allegations; never criminally charged. He is suing the Oversight Committee over its subpoenas.', files: '8,512 DOJ library hits', href: '#players' },
       { name: 'Les Wexner', init: 'LW', role: 'L Brands founder', color: C.person[0],
         tags: tg([['Financial'],['Court records'],['Money Map']]),
         points: [
@@ -365,7 +381,7 @@ class Component extends DCLogic {
           pt('Epstein’s foundation paid Wexner $124,232 personally in 2009 and 2010, after their split.', 'EFTA02816240'),
           pt('An Aug 2019 FBI memo listed him among possible "co-conspirators"; he was never charged. Deposed by House Oversight, Feb 2026.', 'EFTA00173201')
         ],
-        denial: 'Says Epstein "misappropriated vast sums" and denies knowing of his crimes.', files: 'Profile in progress', href: '#players' },
+        denial: 'Says Epstein "misappropriated vast sums" and denies knowing of his crimes.', files: '1,760 DOJ library hits', href: '#players' },
       { name: 'Jes Staley', init: 'JS', role: 'Former JPMorgan and Barclays executive', color: C.person[0],
         tags: tg([['Financial'],['Correspondence']]),
         points: [
@@ -373,7 +389,7 @@ class Component extends DCLogic {
           pt('The 2019 SDNY memo also covers him in a victim’s account. Under review for our red standard.', 'EFTA02731082'),
           pt('UK ban for misleading regulators about the relationship, upheld June 2025. House Oversight interview, July 2026.')
         ],
-        denial: 'Says he was unaware of Epstein’s crimes.', files: 'Profile in progress', href: '#players' },
+        denial: 'Says he was unaware of Epstein’s crimes.', files: '7,903 DOJ library hits', href: '#players' },
       { name: 'Glenn and Eva Dubin', init: 'GD', role: 'Highbridge co-founder; Epstein’s former girlfriend', color: C.accused[0],
         tags: tg([['Named by an accuser',1],['Financial'],['Flight logs'],['Money Map']]),
         points: [
@@ -381,15 +397,15 @@ class Component extends DCLogic {
           pt('At least $982,897 in Dubin distributions went to Epstein’s Jeepers, Inc., 2014 to 2017, under a 2011 settlement.', 'EFTA01200058'),
           pt('Eva Dubin dated Epstein before marrying Glenn; she appears often in the flight logs.')
         ],
-        denial: 'Both deny the allegations.', files: 'Profile in progress', href: '#players' },
+        denial: 'Both deny the allegations.', files: '7,121 DOJ library hits', href: '#players' },
       { name: 'Andrew Mountbatten-Windsor', init: 'AM', role: 'Former Prince Andrew', color: C.accused[0],
         tags: tg([['Named by an accuser',1],['Flight logs'],['Contact book'],['Correspondence']]),
         points: [
           pt('Named by Virginia Giuffre; settled her lawsuit in 2022 with no admission. Stripped of his titles in 2025.'),
           pt('Arrested Feb 19, 2026 on suspicion of misconduct in public office, after files suggested he forwarded official trip reports to Epstein in 2010.'),
-          pt('Appears in the flight logs and Epstein’s contact book.')
+          pt('Appears in the flight logs and Epstein’s contact book. In Nov 2010 Epstein’s staff arranged his stay at an Epstein house.', 'EFTA02415281')
         ],
-        denial: 'Denies wrongdoing; says he regrets the friendship.', files: 'Profile in progress', href: '#players' }
+        denial: 'Denies wrongdoing; says he regrets the friendship.', files: '2,560 DOJ library hits', href: '#players' }
     ];
 
     players = players.map(function(x){ return Object.assign({}, x, { open: function(){ try { localStorage.setItem('ew-player', JSON.stringify({ k: x.name, at: Date.now() })); } catch (e) {} } }); });
@@ -399,7 +415,7 @@ class Component extends DCLogic {
       hq: HQ, hs: HS, hasHs: HS.length > 0, onHq: function(e){ self.setState({ hq: e.target.value }); }, onHqGo: function(e){ e.preventDefault(); var a = document.getElementById('hs-0'); if (a) a.click(); }, onHqKey: function(e){ if (e.key === 'Enter') { e.preventDefault(); var a = document.getElementById('hs-0'); if (a) a.click(); } if (e.key === 'Escape') self.setState({ hq: '' }); },
       stats: [
         { n: '3.5M+', l: 'pages released by the Justice Department', bar: '#ffd166' },
-        { n: '56,064', l: 'DOJ files linked across Epstein\u2019s Web', bar: accent },
+        { n: '56,068', l: 'DOJ files linked across Epstein\u2019s Web', bar: accent },
         { n: '2.5M+', l: 'pages DOJ identified but never released', bar: '#6ea8fe' }
       ],
       lenses: [
