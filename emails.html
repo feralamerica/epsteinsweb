@@ -72,11 +72,11 @@ header .byfa{display:none}
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="book.html">Little Black Book</a>
 <a href="moneymap.html">Money Map</a>
 <a href="network.html">Network map</a>
-<a href="emails.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">Correspondence</a>
 <a href="flights.html">Flight logs</a>
-<a href="book.html">Little Black Book</a>
+<a href="emails.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">Correspondence</a>
 <a href="records.html">Court and FBI records</a>
 <a href="news.html">News</a>
 </nav>
@@ -97,11 +97,18 @@ header .byfa{display:none}
 <section class="lt" style="background: #f4f6fb; color: #0a1730; padding: 26px 0 60px">
 <div style="max-width: 1320px; margin: 0 auto; padding: 0 22px">
 
-<label style="display: flex; align-items: center; gap: 12px; background: #ffffff; border: 1px solid #c3cde0; border-radius: 12px; padding: 0 16px; min-height: 54px; margin-bottom: 18px">
+<div style="position: relative; margin-bottom: 18px">
+<label style="display: flex; align-items: center; gap: 12px; background: #ffffff; border: 1px solid #c3cde0; border-radius: 12px; padding: 0 16px; min-height: 54px">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#43506b" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <span style="position: absolute; left: -9999px">Search emails</span>
-<input type="search" value="{{q}}" onInput="{{onSearch}}" placeholder="Search words, names or an EFTA number. Try: invoice, trafficked, Rothschild" style="flex: 1; min-width: 0; border: 0; background: transparent; font: 400 16px Inter, sans-serif; color: #0a1730; outline: none">
+<input type="search" enterkeyhint="search" autocomplete="off" autocapitalize="off" value="{{q}}" onInput="{{onSearch}}" onKeyDown="{{onSearchKey}}" onFocus="{{onSearchFocus}}" onBlur="{{onSearchBlur}}" aria-label="Search emails" placeholder="Search words, names or an EFTA number. Try: invoice, trafficked, Rothschild" style="flex: 1; min-width: 0; border: 0; background: transparent; font: 400 16px Inter, sans-serif; color: #0a1730; outline: none">
 </label>
+<sc-if value="{{hasSug}}" hint-placeholder-val="{{false}}">
+<div role="listbox" style="position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 60; background: #ffffff; border: 1px solid #c3cde0; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 34px rgba(1,16,50,.18)">
+<sc-for list="{{sug}}" as="g" hint-placeholder-count="5"><button type="button" role="option" onClick="{{g.pick}}" style="all: unset; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; padding: 11px 16px; border-top: 1px solid #e3e8f1; color: #0a1730; font: 500 14.5px Inter, sans-serif; {{g.extra}}"><span style="display: inline-flex; align-items: center; gap: 10px; min-width: 0"><span style="width: 10px; height: 10px; flex: none; border-radius: {{g.shape}}; background: {{g.color}}"></span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{g.label}}</span></span><span style="flex: none; font-size: 12px; color: #43506b">{{g.kind}}</span></button></sc-for>
+</div>
+</sc-if>
+</div>
 
 <div class="app">
 
@@ -340,7 +347,25 @@ class Component extends DCLogic {
         pick: function(){ self.setState({ sel: m.id }); setTimeout(function(){ var r = document.getElementById('reader'); if (!r) return; r.scrollTop = 0; var b = r.getBoundingClientRect(); if (b.top < 0 || b.top > window.innerHeight - 120) r.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 40); } }); });
 
     var nAll = list.length; var lim = S.lim || 80; var more = nAll > lim; list = list.slice(0, lim);
-    var selId = list.some(function(m){ return m.id === S.sel; }) || !list.length ? S.sel : list[0].id;
+
+    var SUG = [];
+    if (S.dd && q.length >= 2) {
+      var toReader = function(){ setTimeout(function(){ var el = document.getElementById('reader'); if (el) { el.scrollTop = 0; el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, 60); };
+      var em = /efta\s*0*(\d{6,8})/i.exec(S.q);
+      if (em) { var eid = 'EFTA' + ('0000000' + em[1]).slice(-8); var hit = all.filter(function(m){ return m.id === eid; })[0];
+        if (hit) SUG.push({ label: 'Open ' + eid + (hit.subject ? ': ' + hit.subject : ''), kind: hit.dateShort, color: '#3fb6c9', shape: '2px', pick: function(){ self.setState({ sel: eid, selPin: true, q: '', dd: false, person: null, topic: null, thread: null }); toReader(); } }); }
+      if (!self._pc) { var pc = {}; self._ix.concat(featured).forEach(function(m){ m.people.forEach(function(x){ if (!x || /redacted|^Other correspondent$|^Not yet mapped$|^Not readable in file$/i.test(x)) return; pc[x] = (pc[x] || 0) + 1; }); }); self._pc = Object.keys(pc).map(function(k){ return [k, pc[k], k.toLowerCase()]; }).sort(function(a, b){ return b[1] - a[1]; }); }
+      self._pc.filter(function(x){ return qw.every(function(w){ return x[2].indexOf(w) >= 0; }); }).slice(0, 5).forEach(function(x){
+        var c = P[x[0]] || ['#6ea8fe', '50%'];
+        SUG.push({ label: x[0], kind: 'Person · ' + x[1].toLocaleString() + (x[1] === 1 ? ' email' : ' emails'), color: c[0], shape: c[1] || '50%', pick: function(){ self.setState({ person: x[0], q: '', dd: false, lim: 80 }); } });
+      });
+      all.filter(function(m){ return m.subject && qw.every(function(w){ return m.subject.toLowerCase().indexOf(w) >= 0; }) && ok(m); }).sort(function(a, b){ return b.date.localeCompare(a.date); }).slice(0, 4).forEach(function(m){
+        SUG.push({ label: m.subject, kind: m.dateShort, color: '#9cc0ff', shape: '2px', pick: function(){ self.setState({ sel: m.id, selPin: true, dd: false }); toReader(); } });
+      });
+      if (nAll) SUG.push({ label: 'Show every email that mentions “' + S.q.trim() + '”', kind: nAll.toLocaleString() + ' results', color: '#0b3d91', shape: '2px', extra: 'background: #f4f6fb; font-weight: 600;', pick: function(){ self.setState({ dd: false }); } });
+      SUG = SUG.map(function(g){ return Object.assign({ extra: '' }, g); });
+    }
+    var selId = (S.selPin && all.some(function(m){ return m.id === S.sel; })) || list.some(function(m){ return m.id === S.sel; }) || !list.length ? S.sel : list[0].id;
     list = list.map(function(m){ return Object.assign(m, { rowStyle: m.id === selId ? 'background:#eaf1ff;box-shadow:inset 4px 0 0 #0b3d91;' : '' }); });
     var selM = all.filter(function(m){ return m.id === selId; })[0] || featured.filter(function(m){ return m.id === selId; })[0];
     var sel = selM ? Object.assign({}, selM, {
@@ -376,7 +401,11 @@ class Component extends DCLogic {
     if (S.thread) rangeLabel += ' · thread: ' + S.thread;
     return {
       q: S.q, from: S.from, to: S.to,
-      onSearch: function(e){ self.setState({ q: e.target.value, lim: 80 }); },
+      onSearch: function(e){ self.setState({ q: e.target.value, lim: 80, dd: true, selPin: false }); },
+      onSearchKey: function(e){ if (e.key === 'Enter' || e.key === 'Escape') { if (e.key === 'Enter') e.preventDefault(); self.setState({ dd: false }); } },
+      onSearchFocus: function(){ clearTimeout(self._ddT); if (S.q && S.q.trim().length >= 2) self.setState({ dd: true }); },
+      onSearchBlur: function(){ self._ddT = setTimeout(function(){ self.setState({ dd: false }); }, 200); },
+      sug: SUG, hasSug: SUG.length > 0,
       onFrom: function(e){ self.setState({ from: e.target.value }); },
       onTo: function(e){ self.setState({ to: e.target.value }); },
       presets: presets, people: people, topics: topics,
