@@ -95,7 +95,7 @@ header .byfa{display:none}
 <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px">
 <a href="{{dojHref}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 10px; background: {{accent}}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px">Open the PDF at justice.gov
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
-<button type="button" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #3a5a92; background: transparent; color: #f4f6fb; font: 500 14px Inter, sans-serif; cursor: pointer">Copy citation</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #3a5a92; background: transparent; color: #f4f6fb; font: 500 14px Inter, sans-serif; cursor: pointer" onClick="{{copyCite}}">{{citeLabel}}</button>
 </div>
 <p style="margin: 14px 0 0; font-size: 12.5px; color: #aab7d1">The DOJ library asks you to confirm you are 18 or older before it opens a file.</p>
 </div>
@@ -197,7 +197,10 @@ class Component extends DCLogic {
       ['EFTA00587879','Receipt: $10M from BV70 to Gratitude America'],
       ['EFTA00027019','Prosecutors’ exhibits: Black deposits to Southern Trust']
     ].map(function(r){ return { id: r[0], gist: r[1], href: self.url(r[0]) }; });
-    return { accent: accent, dojHref: this.url('EFTA00639892'), steps: steps, entities: entities, related: related };
+    var self = this, copied = this.state && this.state.copied;
+    return { accent: accent, dojHref: this.url('EFTA00639892'), steps: steps, entities: entities, related: related,
+      citeLabel: copied ? 'Copied' : 'Copy citation',
+      copyCite: function(){ var t = "U.S. Department of Justice, Epstein Library, EFTA00639892 (email, Oct 9, 2015), https://www.justice.gov/epstein/files/DataSet%209/EFTA00639892.pdf; via Epstein's Web, Feral America, https://epsteinsweb.com/document.html (accessed " + new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) + ")."; try { navigator.clipboard.writeText(t); } catch (e) {} self.setState({ copied: true }); setTimeout(function(){ self.setState({ copied: false }); }, 2000); } };
   }
 }
 
