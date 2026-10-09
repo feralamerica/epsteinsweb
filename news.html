@@ -61,11 +61,11 @@ header .byfa{display:none}
 <input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
 <label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<a href="book.html">Little Black Book</a>
 <a href="moneymap.html">Money Map</a>
 <a href="network.html">Network map</a>
-<a href="emails.html">Correspondence</a>
 <a href="flights.html">Flight logs</a>
-<a href="book.html">Little Black Book</a>
+<a href="emails.html">Correspondence</a>
 <a href="records.html">Court and FBI records</a>
 <a href="news.html" aria-current="page" style="color: #ffffff; box-shadow: inset 0 -2px 0 #c8102e">News</a>
 </nav>
@@ -83,7 +83,7 @@ header .byfa{display:none}
 <div style="margin-top: 30px; background: #0f2650; border: 1px solid #1f3f74; border-radius: 16px; padding: 22px 24px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px">
 <h2 style="margin: 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; text-transform: uppercase; display: flex; align-items: center; gap: 10px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #4dd0a7; box-shadow: 0 0 0 4px rgba(77,208,167,.2)"></span>Latest headlines</h2>
-<span style="font-size: 12.5px; color: #aab7d1">Updated hourly · {{updated}}</span>
+<span style="font-size: 12.5px; color: #aab7d1">Updated {{updated}}</span>
 </div>
 <ol class="feed" style="list-style: none; margin: 0; padding: 0">
 <sc-for list="{{feed}}" as="f" hint-placeholder-count="5">
@@ -170,8 +170,9 @@ header .byfa{display:none}
 class Component extends DCLogic {
   renderVals() {
     return {
-      updated: 'Oct 8, 2026',
+      updated: 'Oct 9, 2026',
       feed: [
+        { date: 'Oct 9', title: 'How the Epstein files became a $35 million midterm attack weapon', source: 'CNN', url: 'https://www.cnn.com/2026/10/09/politics/epstein-files-midterm-ads' },
         { date: 'Oct 8', title: 'Former Prince Andrew scores legal win in Epstein-linked case', source: 'CTV News', url: 'https://www.ctvnews.ca/canada/royal-family/article/former-prince-andrew-scores-legal-win-in-epstein-linked-case/' },
         { date: 'Oct 8', title: 'Botstein resigns from Bard after damning email ties him to Epstein', source: 'Mid Hudson News', url: 'https://midhudsonnews.com/2026/10/08/botstein-resigns-from-bard-after-damning-email-ties-him-to-epstein-2/' },
         { date: 'Oct 7', title: 'Former models and Epstein survivors are tracing a pattern of abuse across borders', source: 'Ms. Magazine', url: 'https://msmagazine.com/2026/10/07/epstein-survivors-modeling-industry-france-investigations/' },
