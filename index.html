@@ -44,6 +44,26 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 
 <div id="top" style="font-family: Inter, 'Helvetica Neue', sans-serif; color: #f4f6fb; background: #011032; line-height: 1.6">
 
+<style>
+.navtog{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.hamb{display:none}
+@media (max-width:760px){
+header .hamb{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin-left:auto;width:46px;height:46px;flex:none;border:1px solid #3a5a92;border-radius:10px;cursor:pointer;background:#0f2650}
+header .hamb span{display:block;width:20px;height:2px;border-radius:2px;background:#f4f6fb;transition:transform .2s,opacity .2s}
+.navtog:checked + .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtog:checked + .hamb span:nth-child(2){opacity:0}
+.navtog:checked + .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.navtog:focus-visible + .hamb{outline:2px solid #ff8a8a;outline-offset:2px}
+header nav.topnav{display:none !important;order:10;flex-basis:100%;flex-direction:column;gap:0 !important;font-size:16px !important;border-top:1px solid #1f3f74;margin-top:4px}
+header nav.topnav a{padding:13px 2px;border-bottom:1px solid #13284f;box-shadow:none !important}
+.navtog:checked ~ nav.topnav{display:flex !important}
+header .hbtns{display:flex !important;order:9;flex:1 1 100% !important;margin:2px 0 2px !important;gap:10px}
+header .lbl-full{display:none}
+header .lbl-short{display:inline !important}
+header .hbtns a{flex:1 1 0;justify-content:center;min-height:46px !important}
+header .byfa{display:none}
+}
+</style>
 <header style="border-bottom: 1px solid #1f3f74; background: #010c26">
 <div class="hdr" style="max-width: 1320px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
 <a href="#top" style="text-decoration: none; color: #f4f6fb; display: flex; align-items: center; gap: 10px">
@@ -51,6 +71,8 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <span style="font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; text-transform: uppercase">Epstein's Web</span>
 <span class="byfa" style="font-size: 12px; color: #aab7d1">by Feral America</span>
 </a>
+<input type="checkbox" id="navtog" class="navtog" aria-label="Open menu">
+<label for="navtog" class="hamb" title="Menu"><span></span><span></span><span></span></label>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 16px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
 <a href="moneymap.html">Money Map</a>
 <a href="emails.html">Correspondence</a>
@@ -61,7 +83,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 </nav>
 <div class="hbtns" style="margin-left: auto; display: flex; gap: 10px; flex: none; white-space: nowrap">
 <a href="mailto:localtip@proton.me" title="Email localtip@proton.me" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #c8102e; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 2 10.5l7.5 3L12 21l3.5-6.2L22 2zM9.5 13.5 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Send a tip</a>
-<a href="https://venmo.com/u/bustertoks" title="Support us on Venmo: @bustertoks" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #1f9d55; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 12px; font-weight: 800">$</span>Support our work</a>
+<a href="https://venmo.com/u/bustertoks" title="Support us on Venmo: @bustertoks" style="display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 9px; background: #1f9d55; color: #ffffff; text-decoration: none; font-size: 13.5px; font-weight: 700"><span aria-hidden="true" style="display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; color: #1f9d55; font-size: 12px; font-weight: 800">$</span><span class="lbl-full">Support our work</span><span class="lbl-short" style="display: none">Venmo</span></a>
 </div>
 </div>
 </header>
@@ -77,7 +99,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <section style="padding: 72px 0 64px">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 22px">
 <div style="font-family: 'Saira Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: .18em; text-transform: uppercase; color: #ff8a8a">A sourced map of the DOJ Epstein files</div>
-<h1 style="margin: 14px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: .95; text-transform: uppercase; max-width: 820px">The Epstein files, mapped. With receipts.</h1>
+<h1 style="margin: 14px 0 0; font-family: 'Saira Condensed', sans-serif; font-weight: 700; font-size: 60px; line-height: .95; text-transform: uppercase; max-width: 900px">The Epstein files, mapped.<br><span style="white-space: nowrap">With receipts.</span></h1>
 <p style="margin: 24px 0 0; font-size: 19px; line-height: 1.6; max-width: 720px; color: #e3e8f3">The Justice Department has released more than 3.5 million pages. We trace them two ways: the <b>money</b> (wires, trusts, shells, tax filings) and the <b>relationships</b> (emails, flight logs, contact books, court and FBI records, news reporting). Every claim links to the file it comes from.</p>
 <form role="search" action="#" onSubmit="{{onHqGo}}" style="margin: 0"><label style="margin-top: 32px; display: flex; align-items: center; gap: 12px; max-width: 680px; background: #0f2650; border: 1px solid #3a5a92; border-radius: 12px; padding: 0 16px; min-height: 56px">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#aab7d1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
