@@ -1,0 +1,35 @@
+name: Update news headlines
+
+on:
+  schedule:
+    - cron: "23 * * * *"   # every hour, at 23 minutes past
+  workflow_dispatch: {}     # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh news.json
+        run: python scripts/update_news.py
+      - name: Commit if headlines changed
+        run: |
+          if git diff --quiet -- news.json; then
+            echo "No new headlines."
+          else
+            git config user.name "epsteinsweb-news-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add news.json
+            git commit -m "Update news headlines"
+            git push
+          fi
