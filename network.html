@@ -16,13 +16,13 @@
 <meta property="og:image" content="https://epsteinsweb.com/og-card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#011032; --panel:#08193a; --panel2:#0f2650; --line:#1f3f74;
     --ink:#f4f6fb; --mut:#aab7d1; --dim:#7f8db0;
     --red:#c8102e; --red-bright:#e4141b; --silver:#c6cedd;
-    --display:"Anton",Impact,"Arial Narrow",sans-serif; --stencil:"Oswald",sans-serif;
+    --display:"Saira Condensed","Arial Narrow",sans-serif; --stencil:"Inter",sans-serif;
     --person:#6ea8fe; --bank:#f4a259; --org:#b088f9; --university:#4dd0a7; --trust:#ffe14d;
     --accused:#ff5c5c; --accused2:#b3243b; --doc:#3fb6c9;
     --hub:#ffd166; --accent:#7cc4ff;
@@ -62,7 +62,7 @@
 
   header:not(.franav){padding:12px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#08193a,#011032);flex:0 0 auto}
   .titlerow{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-  h1{font-size:21px;margin:0;letter-spacing:.5px;font-family:var(--display);font-weight:400;text-transform:uppercase}
+  h1{font-size:30px;margin:0;letter-spacing:.02em;font-family:var(--display);font-weight:700;text-transform:uppercase}
   h1 .sub{color:var(--mut);font-weight:500;font-size:12.5px;margin-left:2px}
   .count{color:var(--dim);font-size:12px;margin-left:auto}
 
@@ -244,35 +244,61 @@
     #dname{font-size:19px}
     .dhead,.dbody{padding-left:16px;padding-right:16px}
   }
+
+  /* Epstein's Web shared header (matches the other pages) */
+  header.franav.ewh{background:#010c26;border-bottom:1px solid #1f3f74;position:relative}
+  header.franav.ewh .nav-inner{max-width:1320px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:26px}
+  header.franav.ewh .brand{display:flex;align-items:center;gap:10px;font-family:"Saira Condensed",sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#f4f6fb;text-decoration:none}
+  header.franav.ewh .brand img{width:32px;height:32px;border-radius:7px;filter:none}
+  header.franav.ewh .brand span{font-size:26px;line-height:1.55}
+  header.franav.ewh .byfa{font-size:12px;color:#aab7d1;white-space:nowrap}
+  header.franav.ewh .byfa a{color:#c9d3e8;text-decoration:underline;text-underline-offset:3px}
+  header.franav.ewh .nav-links{margin-left:0;flex:1 1 auto;display:flex;align-items:center;gap:14px;min-width:0}
+  header.franav.ewh .nav-links a{font-family:"Inter",sans-serif;font-weight:500;text-transform:none;letter-spacing:0;font-size:13.5px;color:#c9d3e8;padding:4px 0;border-radius:0;background:none;white-space:nowrap;text-decoration:none}
+  header.franav.ewh .nav-links a:hover{color:#fff;background:none}
+  header.franav.ewh .nav-links a[aria-current]{color:#fff;box-shadow:inset 0 -2px 0 #c8102e}
+  header.franav.ewh .hb{margin-left:auto;display:flex;gap:10px;flex:none}
+  header.franav.ewh .nav-links .hb a{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 12px;border-radius:9px;color:#fff;font-weight:700;font-size:13.5px;box-shadow:none}
+  header.franav.ewh .nav-links .hb a.hb-tip{background:#c8102e}
+  header.franav.ewh .nav-links .hb a.hb-ven{background:#1f9d55}
+  header.franav.ewh .hb-ven i{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#fff;color:#1f9d55;font-size:12px;font-weight:800;font-style:normal}
+  header.franav.ewh .hb-ven .ls{display:none}
+  header.franav.ewh .nav-toggle{display:none}
+  @media(max-width:1180px){header.franav.ewh .byfa{display:none}header.franav.ewh .nav-links{gap:12px}header.franav.ewh .nav-links a{font-size:13px}}
+  @media(max-width:820px){
+    header.franav.ewh .nav-toggle{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin-left:auto;width:46px;height:46px;border:1px solid #3a5a92;border-radius:10px;background:#0f2650;cursor:pointer;padding:0}
+    header.franav.ewh .nav-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:#f4f6fb}
+    header.franav.ewh .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#010c26;border-bottom:1px solid #1f3f74;padding:4px 22px 16px;z-index:45}
+    header.franav.ewh .nav-links.open{display:flex}
+    header.franav.ewh .nav-links a{padding:13px 2px;border-bottom:1px solid #13284f;font-size:16px;box-shadow:none !important}
+    header.franav.ewh .hb{margin:12px 0 0}
+    header.franav.ewh .nav-links .hb a{flex:1 1 0;justify-content:center;min-height:46px;border-bottom:0}
+    header.franav.ewh .hb-ven .lf{display:none}header.franav.ewh .hb-ven .ls{display:inline}
+  }
 </style>
 <script>var EWCARD={set:{"Alexander Acosta": 1, "Juan Alessi": 1, "Woody Allen": 1, "Anil Ambani": 1, "Eva Andersson-Dubin": 1, "Apollo Global Management": 1, "Dan Ariely": 1, "Peter Attia": 1, "Richard Axel": 1, "The 1953 Trust": 1, "Joscha Bach": 1, "Adam Back": 1, "Alec Baldwin": 1, "Douglas Band": 1, "Bank Leumi": 1, "Bank of America": 1, "Steve Bannon": 1, "Ehud Barak": 1, "Bard College": 1, "Tom Barrack": 1, "Paul Barrett": 1, "Bear Stearns": 1, "Jeff Bezos": 1, "Bryan Bishop": 1, "Leon Black": 1, "David Blaine": 1, "Tony Blair": 1, "Leonard Blavatnik": 1, "Todd Boehly": 1, "Leon Botstein": 1, "Richard Branson": 1, "Børge Brende": 1, "Flavio Briatore": 1, "Sergey Brin": 1, "John Brockman": 1, "Jean-Luc Brunel": 1, "Ron Burkle": 1, "William J. Burns": 1, "Butterfly Trust": 1, "BV70 LLC": 1, "2017 Caterpillar Trust": 1, "C.O.U.Q. Foundation": 1, "Naomi Campbell": 1, "Nick Candy": 1, "Noam Chomsky": 1, "Deepak Chopra": 1, "George Church": 1, "Clinton Foundation": 1, "Bill Clinton": 1, "David Copperfield": 1, "Bill Cosby": 1, "Alan Dershowitz": 1, "Deutsche Bank": 1, "Jamie Dimon": 1, "Glenn Dubin": 1, "Edge Foundation": 1, "Edmond de Rothschild": 1, "Brad Edwards": 1, "Enhanced Education": 1, "Jeffrey Epstein": 1, "Andrew Farkas": 1, "Sarah Ferguson": 1, "Ralph Fiennes": 1, "Financial Trust Company": 1, "Bill Gates": 1, "David Gelernter": 1, "Gordon Getty": 1, "Ben Goertzel": 1, "Goldman Sachs": 1, "Al Gore": 1, "Gratitude America Ltd.": 1, "Great St. Jim LLC": 1, "Alan Greenberg": 1, "Lesley Groff": 1, "Hanson Robotics": 1, "Josh Harris": 1, "Harvard University": 1, "Stephen Hawking": 1, "Haze Trust": 1, "HBRK Associates": 1, "Highbridge Capital": 1, "Steven Hoffenberg": 1, "Reid Hoffman": 1, "Jack Horner": 1, "HSBC": 1, "Carl Icahn": 1, "Darren Indyke": 1, "Joi Ito": 1, "J. Epstein & Co.": 1, "Michael Jackson": 1, "Thorbjørn Jagland": 1, "Jeepers Inc.": 1, "JEGE & Hyperion Air": 1, "JPMorgan Chase": 1, "Nicole Junkermann": 1, "Mona Juul": 1, "Richard Kahn": 1, "Dean Kamen": 1, "Brad Karp": 1, "Sarah Kellen": 1, "Erika Kellerhals": 1, "Edward Kennedy": 1, "Robert F. Kennedy Jr.": 1, "John Kerry": 1, "Adnan Khashoggi": 1, "Henry Kissinger": 1, "Bobby Kotick": 1, "Robert Kraft": 1, "Lawrence Krauss": 1, "L Brands / Victoria's Secret": 1, "Miroslav Lajčák": 1, "Jack Lang": 1, "Ronald Lauder": 1, "Liquid Funding Ltd.": 1, "Courtney Love": 1, "Howard Lutnick": 1, "Peter Mandelson": 1, "Maple Inc.": 1, "Nadia Marcinkova": 1, "Ghislaine Maxwell": 1, "Mette-Marit": 1, "Marvin Minsky": 1, "MIT Media Lab": 1, "George Mitchell": 1, "Mohammed bin Salman": 1, "Paul Morris": 1, "Andrew Mountbatten-Windsor": 1, "Rupert Murdoch": 1, "Elon Musk": 1, "Kimbal Musk": 1, "Nathan Myhrvold": 1, "NES LLC": 1, "Elisa New": 1, "Boris Nikolic": 1, "Martin Nowak": 1, "OpenAI": 1, "Mehmet Oz": 1, "Andrés Pastrana": 1, "Paul, Weiss": 1, "John Paulson": 1, "Itzhak Perlman": 1, "Plan D LLC": 1, "Stacey Plaskett": 1, "Soon-Yi Previn": 1, "Thomas Pritzker": 1, "Brett Ratner": 1, "Bill Richardson": 1, "David Rodgers": 1, "Ariane de Rothschild": 1, "Marc Rowan": 1, "Kathryn Ruemmler": 1, "Terje Rød-Larsen": 1, "Nicolas Sarkozy": 1, "Peggy Siegal": 1, "Southern Financial LLC": 1, "Southern Trust Company": 1, "Kevin Spacey": 1, "Jes Staley": 1, "Lawrence Summers": 1, "Peter Thiel": 1, "Landon Thomas Jr.": 1, "Steve Tisch": 1, "Mark Tramo": 1, "Donald Trump": 1, "Ivana Trump": 1, "Chris Tucker": 1, "U.S. Virgin Islands": 1, "UBS": 1, "Brad Wechsler": 1, "Harvey Weinstein": 1, "Wells Fargo": 1, "Leslie Wexner": 1, "Michael Wolff": 1, "Zorro Trust": 1, "Mortimer Zuckerman": 1},alias:{"Prince Andrew": "Andrew Mountbatten-Windsor", "Jeffrey Epstein VI Foundation": "Enhanced Education"}};</script>
 </head>
 <body>
-<header class="franav">
+<header class="franav ewh">
   <div class="nav-inner">
-    <a class="brand" href="index.html"><img src="favicon-192.png" alt="" style="border-radius:7px"><span>EPSTEIN'S WEB</span></a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <nav class="nav-links">
+    <a class="brand" href="index.html"><span>Epstein's Web</span></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" aria-label="Main">
       <a href="book.html">Little Black Book</a>
       <a href="moneymap.html">Money Map</a>
-      <a href="network.html" aria-current="page" style="color:#fff">Network map</a>
+      <a href="network.html" aria-current="page">Network map</a>
       <a href="flights.html">Flight logs</a>
       <a href="emails.html">Correspondence</a>
       <a href="records.html">Court and FBI records</a>
       <a href="news.html">News</a>
-      <a class="nav-cta" href="mailto:localtip@proton.me">Send a Tip</a>
     </nav>
-  </div>
-  <div class="support-strip">
-    <a class="ss-doj" href="https://www.justice.gov/epstein" target="_blank" rel="noopener" title="Official DOJ Epstein Files Library">DOJ Epstein Files Library ↗</a>
-    <a class="ss-book" href="https://trumpepsteinbookmobile.com/" target="_blank" rel="noopener" title="The Redacted Reading Room bookmobile tour">Redacted Reading Room · Bookmobile Tour ↗</a>
   </div>
 </header>
 
 <div id="app">
   <header>
     <div class="titlerow">
-      <h1>Epstein's Web <span class="sub">A sourced map of documented people, institutions &amp; money</span></h1>
+      <h1>Network map <span class="sub">A sourced map of documented people, institutions &amp; money</span></h1>
       <span class="count" id="count"></span>
     </div>
     <div class="controls">
@@ -301,7 +327,6 @@
         <option value="money">Follow the money</option>
         <option value="postconv">After the conviction</option>
         <option value="science">The science pipeline</option>
-        <option value="accused">The accused</option>
       </select>
       <button class="ghost" id="reset">Reset</button>
     </div>
