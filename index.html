@@ -44,7 +44,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 <span style="font-size: 12px; color: #aab7d1">by Feral America</span>
 </a>
 <nav class="topnav" aria-label="Main" style="display: flex; gap: 20px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
-<a href="#money">Money</a>
+<a href="moneymap.html">Money Map</a>
 <a href="emails.html">Correspondence</a>
 <a href="flights.html">Flight logs</a>
 <a href="book.html">Little Black Book</a>
@@ -168,7 +168,7 @@ a{color:#9cc0ff}a:hover{color:#ffffff}
 </sc-for>
 </div>
 <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px">
-<a href="https://stayferalamerica.com/moneymap.html" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 10px; background: {{accent}}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px">Open the Money Map</a>
+<a href="moneymap.html" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 10px; background: {{accent}}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px">Open the Money Map</a>
 <a href="enhanced-education.html" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 10px; border: 1px solid #3a5a92; color: #f4f6fb; text-decoration: none; font-weight: 500; font-size: 14px">Start with Enhanced Education</a>
 </div>
 </div>
@@ -333,7 +333,7 @@ class Component extends DCLogic {
 
     var C = { person: ['#6ea8fe','50%'], bank: ['#f4a259','3px'], org: ['#b088f9','3px'], university: ['#4dd0a7','3px'], trust: ['#ffe14d','3px'], accused: ['#ff5c5c','50%'], collection: ['#ffd166','2px'], doc: ['#3fb6c9','2px'] };
     var CARDN = { 'Leon Black': 'Leon Black', 'Rothschild': 'Edmond de Rothschild', 'Glenn Dubin': 'Glenn Dubin', 'Southern Trust Co.': 'Southern Trust Company', 'Enhanced Education': 'Enhanced Education', 'Gratitude America': 'Gratitude America Ltd.', 'Jeepers, Inc.': 'Jeepers Inc.', 'Les Wexner': 'Leslie Wexner' };
-    var cardify = function(xs){ return xs.map(function(f){ var cn = CARDN[f.name]; return Object.assign({}, f, { href: cn ? 'book.html' : 'https://stayferalamerica.com/moneymap.html', cta: cn ? 'Open card →' : 'See on the Money Map →', pick: function(){ if (cn) { try { localStorage.setItem('ew-card', JSON.stringify({ f: cn, at: Date.now() })); } catch (e) {} } } }); }); };
+    var cardify = function(xs){ return xs.map(function(f){ var cn = CARDN[f.name]; return Object.assign({}, f, { href: cn ? 'book.html' : 'moneymap.html', cta: cn ? 'Open card →' : 'See on the Money Map →', pick: function(){ if (cn) { try { localStorage.setItem('ew-card', JSON.stringify({ f: cn, at: Date.now() })); } catch (e) {} } } }); }); };
     var tagRed = 'font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:#fff0f0;color:#8f0b20;border:1px solid #ff9a9a;';
     var tagN = 'font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:#eef2f9;color:#2b3754;border:1px solid #d7deeb;';
     var tg = function(list){ return list.map(function(t){ return { label: t[0], style: t[1] ? tagRed : tagN }; }); };
