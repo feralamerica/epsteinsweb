@@ -1,12 +1,19 @@
 {
- "updated": "2026-10-15T07:30+00:00",
+ "updated": "2026-10-15T13:28+00:00",
  "items": [
   {
-   "ts": "2026-10-14T04:00:44+00:00",
-   "date": "Oct 14",
-   "title": "‘He’s terrified, panicked, can’t sleep’: the tragic, lonely death of Beatles manager Brian Epstein",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/music/2026/oct/14/beatles-brian-epstein-gary-kemp-spandau-ballet"
+   "ts": "2026-10-15T13:00:08+00:00",
+   "date": "Oct 15",
+   "title": "Midterms Could Shift Focus of Epstein Abuse to Banks’ Role",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/15/business/epstein-banks-midterm-elections.html"
+  },
+  {
+   "ts": "2026-10-15T11:52:54+00:00",
+   "date": "Oct 15",
+   "title": "Mace, Subramanyam vow to keep pushing Epstein investigation under either party",
+   "source": "The Hill",
+   "url": "https://thehill.com/homenews/house/6149990-mace-subramanyam-vow-to-keep-pushing-epstein-investigation-under-either-party/"
   },
   {
    "ts": "2026-10-09T13:09:23+00:00",
@@ -37,11 +44,11 @@
    "url": "https://www.nytimes.com/2026/10/08/world/europe/prince-andrew-search-warrants-police-uk.html"
   },
   {
-   "ts": "2026-10-07T23:56:55+00:00",
+   "ts": "2026-10-07T23:07:53+00:00",
    "date": "Oct 7",
-   "title": "Leon Botstein, Former Bard President With Epstein Ties, Resigns From College Positions",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/07/us/leon-botstein-bard-college-resign-epstein.html"
+   "title": "Leon Botstein resigns from Bard roles as key Democrat demands investigation into Epstein links",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/oct/07/leon-botstein-bard-college-jeffrey-epstein"
   }
  ]
 }
