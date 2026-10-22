@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T00:01+00:00",
+ "updated": "2026-10-22T04:56+00:00",
  "items": [
   {
    "ts": "2026-10-21T18:40:35+00:00",
@@ -14,13 +14,6 @@
    "title": "Epstein’s Right-Hand Men Hit With Explosive New Lawsuit",
    "source": "The Daily Beast",
    "url": "https://www.thedailybeast.com/jeffrey-epsteins-right-hand-men-hit-with-explosive-new-lawsuit"
-  },
-  {
-   "ts": "2026-10-21T16:07:00-04:00",
-   "date": "Oct 21",
-   "title": "New Mexico AG accuses Epstein's lawyer, accountant of concealing crimes",
-   "source": "CBS News",
-   "url": "https://www.cbsnews.com/news/jeffrey-epstein-lawyer-accountant-new-mexico-lawsuit/"
   },
   {
    "ts": "2026-10-21T15:09:22-04:00",
@@ -56,6 +49,13 @@
    "title": "How the Epstein Files forced the Nobel Peace Prize to reckon with impartiality.",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/09/world/europe/epstein-files-thorbjorn-jagland-committee.html"
+  },
+  {
+   "ts": "2026-10-08T16:10:22+00:00",
+   "date": "Oct 8",
+   "title": "Warrants to Search Former Prince Andrew’s Properties Were Unlawful, Court Says",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/08/world/europe/prince-andrew-search-warrants-police-uk.html"
   }
  ]
 }
