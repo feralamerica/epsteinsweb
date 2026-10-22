@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T20:39+00:00",
+ "updated": "2026-10-22T00:01+00:00",
  "items": [
   {
    "ts": "2026-10-21T18:40:35+00:00",
@@ -9,13 +9,6 @@
    "url": "https://www.theguardian.com/us-news/2026/oct/21/epstein-attorney-accountant-lawsuit"
   },
   {
-   "ts": "2026-10-21T18:39:30+00:00",
-   "date": "Oct 21",
-   "title": "New Mexico sues Epstein attorney and accountant, accusing them of facilitating his sex trafficking",
-   "source": "The Hill",
-   "url": "https://thehill.com/regulation/court-battles/6163570-new-mexico-sues-epstein-associates/"
-  },
-  {
    "ts": "2026-10-21T18:29:25+00:00",
    "date": "Oct 21",
    "title": "Epstein’s Right-Hand Men Hit With Explosive New Lawsuit",
@@ -23,7 +16,7 @@
    "url": "https://www.thedailybeast.com/jeffrey-epsteins-right-hand-men-hit-with-explosive-new-lawsuit"
   },
   {
-   "ts": "2026-10-21T16:07:07-04:00",
+   "ts": "2026-10-21T16:07:00-04:00",
    "date": "Oct 21",
    "title": "New Mexico AG accuses Epstein's lawyer, accountant of concealing crimes",
    "source": "CBS News",
@@ -56,6 +49,13 @@
    "title": "US lawmakers unveil bill to hold Wall Street’s ‘Epstein-connected’ bosses to account",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/business/2026/oct/15/new-bill-wall-street-bosses-epstein-connections"
+  },
+  {
+   "ts": "2026-10-09T11:39:06+00:00",
+   "date": "Oct 9",
+   "title": "How the Epstein Files forced the Nobel Peace Prize to reckon with impartiality.",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/09/world/europe/epstein-files-thorbjorn-jagland-committee.html"
   }
  ]
 }
