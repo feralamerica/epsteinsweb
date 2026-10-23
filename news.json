@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-23T17:13+00:00",
+ "updated": "2026-10-23T20:29+00:00",
  "items": [
+  {
+   "ts": "2026-10-23T18:42:41+00:00",
+   "date": "Oct 23",
+   "title": "Epstein-linked billionaire Glenn Dubin stepped down from Mount Sinai board earlier this year",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/oct/23/billionaire-glenn-dubin-mount-sinai-board-epstein-links"
+  },
   {
    "ts": "2026-10-23T17:10:57+00:00",
    "date": "Oct 23",
@@ -35,13 +42,6 @@
    "title": "Case against Leon Black dismissed after plaintiff said she was ‘medically incapable of continuing’",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/16/leon-black-civil-rape-lawsuit-dismissed-epstein"
-  },
-  {
-   "ts": "2026-10-15T13:30:11+00:00",
-   "date": "Oct 15",
-   "title": "US lawmakers unveil bill to hold Wall Street’s ‘Epstein-connected’ bosses to account",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/business/2026/oct/15/new-bill-wall-street-bosses-epstein-connections"
   }
  ]
 }
