@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-23T06:04+00:00",
+ "updated": "2026-10-23T11:45+00:00",
  "items": [
+  {
+   "ts": "2026-10-23T09:30:45+00:00",
+   "date": "Oct 23",
+   "title": "The Epstein Files Produce an Unlikely Weapon for the Houthi Messaging Wars",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/23/world/middleeast/houthis-saudi-arabia-propaganda-epstein.html"
+  },
   {
    "ts": "2026-10-22T22:45:44+00:00",
    "date": "Oct 22",
@@ -35,13 +42,6 @@
    "title": "US lawmakers unveil bill to hold Wall Street’s ‘Epstein-connected’ bosses to account",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/business/2026/oct/15/new-bill-wall-street-bosses-epstein-connections"
-  },
-  {
-   "ts": "2026-10-09T11:39:06+00:00",
-   "date": "Oct 9",
-   "title": "How the Epstein Files forced the Nobel Peace Prize to reckon with impartiality.",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/09/world/europe/epstein-files-thorbjorn-jagland-committee.html"
   }
  ]
 }
