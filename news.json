@@ -1,12 +1,19 @@
 {
- "updated": "2026-10-24T09:35+00:00",
+ "updated": "2026-10-24T14:01+00:00",
  "items": [
   {
-   "ts": "2026-10-24T09:02:27+00:00",
+   "ts": "2026-10-24T13:48:56+00:00",
    "date": "Oct 24",
    "title": "She Was Punched After Heckling Trump. No One Has Been Charged.",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html"
+  },
+  {
+   "ts": "2026-10-24T12:00:32+00:00",
+   "date": "Oct 24",
+   "title": "Epstein files take back seat in midterms but experts say issue has not gone away",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/oct/24/epstein-files-midterms"
   },
   {
    "ts": "2026-10-23T18:42:41+00:00",
@@ -35,13 +42,6 @@
    "title": "Epstein’s attorney and accountant accused of ‘facilitating and concealing’ his crimes in lawsuit",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/21/epstein-attorney-accountant-lawsuit"
-  },
-  {
-   "ts": "2026-10-16T18:45:47+00:00",
-   "date": "Oct 16",
-   "title": "Case against Leon Black dismissed after plaintiff said she was ‘medically incapable of continuing’",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/us-news/2026/oct/16/leon-black-civil-rape-lawsuit-dismissed-epstein"
   }
  ]
 }
