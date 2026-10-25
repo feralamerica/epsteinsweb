@@ -1,13 +1,6 @@
 {
- "updated": "2026-10-25T16:28+00:00",
+ "updated": "2026-10-25T19:41+00:00",
  "items": [
-  {
-   "ts": "2026-10-24T18:08:58+00:00",
-   "date": "Oct 24",
-   "title": "She Planned to Protest Trump. She Didn’t Plan on Getting Punched.",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html"
-  },
   {
    "ts": "2026-10-24T12:00:32+00:00",
    "date": "Oct 24",
@@ -35,6 +28,13 @@
    "title": "The Epstein Files Produce an Unlikely Weapon for the Houthi Messaging Wars",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/23/world/middleeast/houthis-saudi-arabia-propaganda-epstein.html"
+  },
+  {
+   "ts": "2026-10-22T22:45:44+00:00",
+   "date": "Oct 22",
+   "title": "Bard College Hires Forensic Firm to Investigate a Damning Epstein Email",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/22/us/bard-college-forensic-cybersecurity-epstein-email.html"
   },
   {
    "ts": "2026-10-21T18:40:35+00:00",
