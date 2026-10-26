@@ -1,33 +1,12 @@
 {
- "updated": "2026-10-26T19:22+00:00",
+ "updated": "2026-10-26T23:10+00:00",
  "items": [
-  {
-   "ts": "2026-10-26T17:15:26+00:00",
-   "date": "Oct 26",
-   "title": "House Democrats call for special counsel to investigate Trump's ties to Epstein",
-   "source": "The Hill",
-   "url": "https://thehill.com/homenews/house/6172897-house-democrats-trump-epstein-special-counsel/"
-  },
   {
    "ts": "2026-10-26T16:29:04+00:00",
    "date": "Oct 26",
    "title": "House Democrats Call for Special Counsel to Scrutinize Trump’s Ties to Epstein",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/26/us/democrats-special-counsel-trump-epstein.html"
-  },
-  {
-   "ts": "2026-10-26T15:40:27+00:00",
-   "date": "Oct 26",
-   "title": "House Democrats call on DOJ to name special counsel in Epstein case",
-   "source": "NBC News",
-   "url": "https://www.nbcnews.com/politics/congress/house-democrats-call-doj-name-special-counsel-epstein-case-rcna605269"
-  },
-  {
-   "ts": "2026-10-26T11:41:13+00:00",
-   "date": "Oct 26",
-   "title": "Dems Plot to Make Trump’s Worst Epstein Nightmare Come True",
-   "source": "The Daily Beast",
-   "url": "https://www.thedailybeast.com/dems-plot-to-make-trumps-worst-epstein-nightmare-come-true"
   },
   {
    "ts": "2026-10-26T05:45:00-04:00",
@@ -56,6 +35,20 @@
    "title": "Bard Names Marvin Krislov as President, as Former Leader Fends Off Epstein Allegations",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/23/us/bard-college-president-marvin-krislov.html"
+  },
+  {
+   "ts": "2026-10-23T12:18:37+00:00",
+   "date": "Oct 23",
+   "title": "The Epstein Files Produce an Unlikely Weapon for the Houthi Messaging Wars",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/23/world/middleeast/houthis-saudi-arabia-propaganda-epstein.html"
+  },
+  {
+   "ts": "2026-10-21T18:40:35+00:00",
+   "date": "Oct 21",
+   "title": "Epstein’s attorney and accountant accused of ‘facilitating and concealing’ his crimes in lawsuit",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/oct/21/epstein-attorney-accountant-lawsuit"
   }
  ]
 }
