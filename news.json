@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-28T05:49+00:00",
+ "updated": "2026-10-28T13:03+00:00",
  "items": [
+  {
+   "ts": "2026-10-28T06:00:00-04:00",
+   "date": "Oct 28",
+   "title": "Analysis raises questions about pages missing from the Epstein files",
+   "source": "CBS News",
+   "url": "https://www.cbsnews.com/video/analysis-raises-questions-pages-missing-epstein-files/"
+  },
+  {
+   "ts": "2026-10-28T06:00:00-04:00",
+   "date": "Oct 28",
+   "title": "Classified material missing from Epstein files, documents suggest",
+   "source": "CBS News",
+   "url": "https://www.cbsnews.com/news/epstein-files-classified-material-missing-documents-suggest/"
+  },
   {
    "ts": "2026-10-27T15:09:15+00:00",
    "date": "Oct 27",
@@ -42,20 +56,6 @@
    "title": "Why did an Epstein-linked billionaire step down from one of America’s most famous hospitals?",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/23/billionaire-glenn-dubin-mount-sinai-board-epstein-links"
-  },
-  {
-   "ts": "2026-10-23T17:10:58+00:00",
-   "date": "Oct 23",
-   "title": "Bard Names Marvin Krislov as President, as Former Leader Fends Off Epstein Allegations",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/23/us/bard-college-president-marvin-krislov.html"
-  },
-  {
-   "ts": "2026-10-23T12:18:37+00:00",
-   "date": "Oct 23",
-   "title": "The Epstein Files Produce an Unlikely Weapon for the Houthi Messaging Wars",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/23/world/middleeast/houthis-saudi-arabia-propaganda-epstein.html"
   }
  ]
 }
