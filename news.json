@@ -1,13 +1,6 @@
 {
- "updated": "2026-10-29T10:04+00:00",
+ "updated": "2026-10-29T16:56+00:00",
  "items": [
-  {
-   "ts": "2026-10-29T03:21:05+00:00",
-   "date": "Oct 29",
-   "title": "Trump Unravels After Protester’s Epstein Plane Taunt",
-   "source": "The Daily Beast",
-   "url": "https://www.thedailybeast.com/trump-unravels-after-protesters-jeffrey-epstein-plane-taunt"
-  },
   {
    "ts": "2026-10-28T18:41:28+00:00",
    "date": "Oct 28",
@@ -56,6 +49,13 @@
    "title": "Why did an Epstein-linked billionaire step down from one of America’s most famous hospitals?",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/23/billionaire-glenn-dubin-mount-sinai-board-epstein-links"
+  },
+  {
+   "ts": "2026-10-23T17:10:58+00:00",
+   "date": "Oct 23",
+   "title": "Bard Names Marvin Krislov as President, as Former Leader Fends Off Epstein Allegations",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/23/us/bard-college-president-marvin-krislov.html"
   }
  ]
 }
