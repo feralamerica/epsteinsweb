@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-29T21:49+00:00",
+ "updated": "2026-10-30T01:58+00:00",
  "items": [
+  {
+   "ts": "2026-10-30T01:00:49+00:00",
+   "date": "Oct 30",
+   "title": "The Papers: 'No welfare cuts before election' and 'Police probe Epstein's Balmoral stay'",
+   "source": "BBC News",
+   "url": "https://www.bbc.co.uk/news/articles/c6kg5p2l5d2jo?at_medium=RSS&at_campaign=rss"
+  },
   {
    "ts": "2026-10-29T18:47:54+00:00",
    "date": "Oct 29",
@@ -49,13 +56,6 @@
    "title": "Epstein files take back seat in midterms but experts say issue has not gone away",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/24/epstein-files-midterms"
-  },
-  {
-   "ts": "2026-10-23T18:42:41+00:00",
-   "date": "Oct 23",
-   "title": "Why did an Epstein-linked billionaire step down from one of America’s most famous hospitals?",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/us-news/2026/oct/23/billionaire-glenn-dubin-mount-sinai-board-epstein-links"
   }
  ]
 }
