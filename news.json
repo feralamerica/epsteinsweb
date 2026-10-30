@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-30T15:58+00:00",
+ "updated": "2026-10-30T20:50+00:00",
  "items": [
+  {
+   "ts": "2026-10-30T18:51:14+00:00",
+   "date": "Oct 30",
+   "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
+  },
   {
    "ts": "2026-10-30T15:39:49+00:00",
    "date": "Oct 30",
@@ -9,18 +16,18 @@
    "url": "https://www.bbc.co.uk/news/articles/cqglwp088532o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "ts": "2026-10-30T15:30:41+00:00",
-   "date": "Oct 30",
-   "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
-  },
-  {
    "ts": "2026-10-30T12:11:16+00:00",
    "date": "Oct 30",
    "title": "Police Scotland investigate Jeffrey Epstein and Ghislaine Maxwell’s visit to Balmoral",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/uk-news/2026/oct/30/police-jeffrey-epstein-balmoral-former-prince-andrew"
+  },
+  {
+   "ts": "2026-10-30T06:14:00+00:00",
+   "date": "Oct 30",
+   "title": "Police investigating Andrew's Balmoral stays with Epstein and Maxwell",
+   "source": "Sky News",
+   "url": "https://news.sky.com/story/police-investigating-andrews-balmoral-stays-with-jeffrey-epstein-and-ghislaine-maxwell-13603777"
   },
   {
    "ts": "2026-10-29T18:47:54+00:00",
@@ -49,13 +56,6 @@
    "title": "The Epstein files are a sledgehammer for the US midterms | Katie Phang",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/commentisfree/2026/oct/26/epstein-files-midterms-sledgehammer"
-  },
-  {
-   "ts": "2026-10-26T16:29:04+00:00",
-   "date": "Oct 26",
-   "title": "House Democrats Call for Special Counsel to Scrutinize Trump’s Ties to Epstein",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/26/us/democrats-special-counsel-trump-epstein.html"
   }
  ]
 }
