@@ -1,12 +1,26 @@
 {
- "updated": "2026-10-30T08:42+00:00",
+ "updated": "2026-10-30T15:58+00:00",
  "items": [
   {
-   "ts": "2026-10-30T05:50:05+00:00",
+   "ts": "2026-10-30T15:39:49+00:00",
    "date": "Oct 30",
-   "title": "The Papers: 'No welfare cuts before election' and 'Police probe Epstein's Balmoral stay'",
+   "title": "Police Scotland carrying out 'active inquiries' into Andrew and Epstein Balmoral visits",
    "source": "BBC News",
-   "url": "https://www.bbc.co.uk/news/articles/c6kg5p2l5d2jo?at_medium=RSS&at_campaign=rss"
+   "url": "https://www.bbc.co.uk/news/articles/cqglwp088532o?at_medium=RSS&at_campaign=rss"
+  },
+  {
+   "ts": "2026-10-30T15:30:41+00:00",
+   "date": "Oct 30",
+   "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
+  },
+  {
+   "ts": "2026-10-30T12:11:16+00:00",
+   "date": "Oct 30",
+   "title": "Police Scotland investigate Jeffrey Epstein and Ghislaine Maxwell’s visit to Balmoral",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/uk-news/2026/oct/30/police-jeffrey-epstein-balmoral-former-prince-andrew"
   },
   {
    "ts": "2026-10-29T18:47:54+00:00",
@@ -42,20 +56,6 @@
    "title": "House Democrats Call for Special Counsel to Scrutinize Trump’s Ties to Epstein",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/26/us/democrats-special-counsel-trump-epstein.html"
-  },
-  {
-   "ts": "2026-10-26T05:45:00-04:00",
-   "date": "Oct 26",
-   "title": "The Epstein election?",
-   "source": "Politico",
-   "url": "https://www.politico.com/video/2026/10/26/the-epstein-election-2211771"
-  },
-  {
-   "ts": "2026-10-24T12:00:32+00:00",
-   "date": "Oct 24",
-   "title": "Epstein files take back seat in midterms but experts say issue has not gone away",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/us-news/2026/oct/24/epstein-files-midterms"
   }
  ]
 }
