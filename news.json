@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-31T13:40+00:00",
+ "updated": "2026-10-31T18:36+00:00",
  "items": [
+  {
+   "ts": "2026-10-31T15:00:45+00:00",
+   "date": "Oct 31",
+   "title": "Ads accusing Republican candidates of protecting Epstein fill airwaves in final midterm push",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/oct/31/political-ads-midterms-epstein-republican-candidate"
+  },
   {
    "ts": "2026-10-30T18:51:14+00:00",
    "date": "Oct 30",
@@ -49,13 +56,6 @@
    "title": "House Democrats Call for Special Counsel to Scrutinize Trump’s Ties to Epstein",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/26/us/democrats-special-counsel-trump-epstein.html"
-  },
-  {
-   "ts": "2026-10-26T05:45:00-04:00",
-   "date": "Oct 26",
-   "title": "The Epstein election?",
-   "source": "Politico",
-   "url": "https://www.politico.com/video/2026/10/26/the-epstein-election-2211771"
   }
  ]
 }
