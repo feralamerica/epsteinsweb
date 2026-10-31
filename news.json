@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T07:01+00:00",
+ "updated": "2026-10-31T13:40+00:00",
  "items": [
   {
    "ts": "2026-10-30T18:51:14+00:00",
@@ -9,11 +9,11 @@
    "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
   },
   {
-   "ts": "2026-10-30T15:39:49+00:00",
+   "ts": "2026-10-30T16:56:45+00:00",
    "date": "Oct 30",
-   "title": "Police Scotland carrying out 'active inquiries' into Andrew and Epstein Balmoral visits",
-   "source": "BBC News",
-   "url": "https://www.bbc.co.uk/news/articles/cqglwp088532o?at_medium=RSS&at_campaign=rss"
+   "title": "Andrew Hit With Epstein Probe at His Mother’s Beloved Castle",
+   "source": "The Daily Beast",
+   "url": "https://www.thedailybeast.com/former-prince-andrew-hit-with-epstein-probe-at-his-mothers-beloved-castle"
   },
   {
    "ts": "2026-10-30T12:11:16+00:00",
@@ -37,25 +37,25 @@
    "url": "https://www.nytimes.com/2026/10/29/us/politics/epstein-victim-ashley-moody-ad.html"
   },
   {
-   "ts": "2026-10-29T15:39:45+00:00",
-   "date": "Oct 29",
-   "title": "Rock Legend Trolls Trump With Brutal Epstein Song",
-   "source": "The Daily Beast",
-   "url": "https://www.thedailybeast.com/obsessed/bryan-adams-trolls-trump-with-brutal-epstein-song"
-  },
-  {
-   "ts": "2026-10-29T03:21:05+00:00",
-   "date": "Oct 29",
-   "title": "Trump Unravels After Protester’s Epstein Plane Taunt",
-   "source": "The Daily Beast",
-   "url": "https://www.thedailybeast.com/trump-unravels-after-protesters-jeffrey-epstein-plane-taunt"
-  },
-  {
    "ts": "2026-10-27T15:09:15+00:00",
    "date": "Oct 27",
    "title": "The Epstein files are a sledgehammer for the US midterms | Katie Phang",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/commentisfree/2026/oct/26/epstein-files-midterms-sledgehammer"
+  },
+  {
+   "ts": "2026-10-26T16:29:04+00:00",
+   "date": "Oct 26",
+   "title": "House Democrats Call for Special Counsel to Scrutinize Trump’s Ties to Epstein",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/10/26/us/democrats-special-counsel-trump-epstein.html"
+  },
+  {
+   "ts": "2026-10-26T05:45:00-04:00",
+   "date": "Oct 26",
+   "title": "The Epstein election?",
+   "source": "Politico",
+   "url": "https://www.politico.com/video/2026/10/26/the-epstein-election-2211771"
   }
  ]
 }
