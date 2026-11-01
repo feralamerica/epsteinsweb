@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-31T22:31+00:00",
+ "updated": "2026-11-01T02:16+00:00",
  "items": [
+  {
+   "ts": "2026-11-01T00:41:24+00:00",
+   "date": "Nov 1",
+   "title": "Judge dismisses Trump's lawsuit against Wall Street Journal over Epstein birthday book",
+   "source": "BBC News",
+   "url": "https://www.bbc.co.uk/news/articles/cwr5yj2lj9myo?at_medium=RSS&at_campaign=rss"
+  },
   {
    "ts": "2026-10-31T21:09:34+00:00",
    "date": "Oct 31",
@@ -23,6 +30,13 @@
    "url": "https://www.theguardian.com/us-news/2026/oct/31/judge-dismisses-trump-lawsuit-wall-street-journal-epstein"
   },
   {
+   "ts": "2026-10-31T20:11:01+00:00",
+   "date": "Oct 31",
+   "title": "Judge Tosses Trump Defamation Lawsuit Over Epstein Letter",
+   "source": "The Daily Beast",
+   "url": "https://www.thedailybeast.com/judge-tosses-trump-defamation-lawsuit-over-epstein-letter"
+  },
+  {
    "ts": "2026-10-31T17:32:54-04:00",
    "date": "Oct 31",
    "title": "Judge dismisses Trump suit against Wall Street Journal over Epstein birthday letter",
@@ -42,20 +56,6 @@
    "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
-  },
-  {
-   "ts": "2026-10-30T06:14:00+00:00",
-   "date": "Oct 30",
-   "title": "Police investigating Andrew's Balmoral stays with Epstein and Maxwell",
-   "source": "Sky News",
-   "url": "https://news.sky.com/story/police-investigating-andrews-balmoral-stays-with-jeffrey-epstein-and-ghislaine-maxwell-13603777"
-  },
-  {
-   "ts": "2026-10-29T18:47:54+00:00",
-   "date": "Oct 29",
-   "title": "As Midterm Ads Focus on Epstein, a Florida Senator Is the Latest Target",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/29/us/politics/epstein-victim-ashley-moody-ad.html"
   }
  ]
 }
