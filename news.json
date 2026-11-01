@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-01T09:19+00:00",
+ "updated": "2026-11-01T16:06+00:00",
  "items": [
   {
-   "ts": "2026-11-01T00:41:24+00:00",
+   "ts": "2026-11-01T14:16:37+00:00",
    "date": "Nov 1",
-   "title": "Judge dismisses Trump's lawsuit against Wall Street Journal over Epstein birthday book",
-   "source": "BBC News",
-   "url": "https://www.bbc.co.uk/news/articles/cwr5yj2lj9myo?at_medium=RSS&at_campaign=rss"
+   "title": "What a Decade of Pizzagate Has Done to America",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
+  },
+  {
+   "ts": "2026-11-01T04:20:19-04:00",
+   "date": "Nov 1",
+   "title": "'Grasping at straws': Judge dismisses Trump suit against Wall Street Journal over Epstein letter",
+   "source": "NPR",
+   "url": "https://www.npr.org/2026/11/01/nx-s1-6025342/judge-dismisses-trump-suit-against-wall-street-journal-epstein-letter"
   },
   {
    "ts": "2026-10-31T21:09:34+00:00",
@@ -49,13 +56,6 @@
    "title": "Ads accusing Republican candidates of protecting Epstein fill airwaves in final midterm push",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/31/political-ads-midterms-epstein-republican-candidate"
-  },
-  {
-   "ts": "2026-10-30T18:51:14+00:00",
-   "date": "Oct 30",
-   "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
   }
  ]
 }
