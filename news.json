@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:27+00:00",
+ "updated": "2026-11-04T06:33+00:00",
  "items": [
   {
    "ts": "2026-11-03T18:24:42+00:00",
@@ -7,13 +7,6 @@
    "title": "What a Decade of Pizzagate Has Done to America",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
-  },
-  {
-   "ts": "2026-11-03T14:00:45+00:00",
-   "date": "Nov 3",
-   "title": "The Joy of Six: Glenn Maxwell’s greatest innings for Australia",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/sport/2026/nov/03/the-joy-of-six-glenn-maxwell-australia-cricket-greatest-innings"
   },
   {
    "ts": "2026-10-31T21:01:29+00:00",
@@ -30,6 +23,13 @@
    "url": "https://www.theguardian.com/us-news/2026/oct/31/judge-dismisses-trump-lawsuit-wall-street-journal-epstein"
   },
   {
+   "ts": "2026-10-31T20:11:01+00:00",
+   "date": "Oct 31",
+   "title": "Judge Tosses Trump Defamation Lawsuit Over Epstein Letter",
+   "source": "The Daily Beast",
+   "url": "https://www.thedailybeast.com/judge-tosses-trump-defamation-lawsuit-over-epstein-letter"
+  },
+  {
    "ts": "2026-10-31T15:00:45+00:00",
    "date": "Oct 31",
    "title": "Ads accusing Republican candidates of protecting Epstein fill airwaves in final midterm push",
@@ -42,6 +42,13 @@
    "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
+  },
+  {
+   "ts": "2026-10-27T15:09:15+00:00",
+   "date": "Oct 27",
+   "title": "The Epstein files are a sledgehammer for the US midterms | Katie Phang",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/commentisfree/2026/oct/26/epstein-files-midterms-sledgehammer"
   }
  ]
 }
