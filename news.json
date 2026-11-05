@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-05T11:02+00:00",
+ "updated": "2026-11-05T18:47+00:00",
  "items": [
   {
-   "ts": "2026-11-05T02:03:35+00:00",
+   "ts": "2026-11-05T17:52:27+00:00",
    "date": "Nov 5",
-   "title": "Billionaire Leon Black sues Rep. Robert Garcia, alleging defamation over Epstein comments",
-   "source": "NBC News",
-   "url": "https://www.nbcnews.com/politics/congress/leon-black-sues-robert-garcia-alleging-defamation-epstein-comments-rcna607565"
+   "title": "Dems Make Don Jr. and Epstein Investigation Targets Number One",
+   "source": "The Daily Beast",
+   "url": "https://www.thedailybeast.com/dems-make-don-jr-and-epstein-investigation-targets-number-one"
+  },
+  {
+   "ts": "2026-11-05T16:44:08+00:00",
+   "date": "Nov 5",
+   "title": "Leon Black sues US congressman Robert Garcia for $7.5m over Epstein comments",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/nov/05/leon-black-sues-congressman-robert-garcia-epstein"
   },
   {
    "ts": "2026-11-03T18:24:42+00:00",
@@ -42,13 +49,6 @@
    "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
-  },
-  {
-   "ts": "2026-10-27T15:09:15+00:00",
-   "date": "Oct 27",
-   "title": "The Epstein files are a sledgehammer for the US midterms | Katie Phang",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/commentisfree/2026/oct/26/epstein-files-midterms-sledgehammer"
   }
  ]
 }
