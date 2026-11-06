@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-06T15:07+00:00",
+ "updated": "2026-11-06T20:55+00:00",
  "items": [
   {
-   "ts": "2026-11-05T17:52:27+00:00",
-   "date": "Nov 5",
-   "title": "Dems Make Don Jr. and Epstein Investigation Targets Number One",
-   "source": "The Daily Beast",
-   "url": "https://www.thedailybeast.com/dems-make-don-jr-and-epstein-investigation-targets-number-one"
+   "ts": "2026-11-06T20:54:06+00:00",
+   "date": "Nov 6",
+   "title": "Trump Appeals Dismissal of $10 Billion Libel Suit Against Wall Street Journal",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/06/business/media/trump-wall-street-journal.html"
+  },
+  {
+   "ts": "2026-11-06T19:58:49+00:00",
+   "date": "Nov 6",
+   "title": "Ohio State Will Not Remove Wexner Name From Buildings Over Epstein Ties",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/06/us/ohio-state-wexner-buildings-epstein.html"
   },
   {
    "ts": "2026-11-05T16:44:08+00:00",
@@ -23,13 +30,6 @@
    "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
   },
   {
-   "ts": "2026-10-31T21:01:29+00:00",
-   "date": "Oct 31",
-   "title": "Judge Tosses Trump’s $10 Billion Suit Against The Wall Street Journal",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/31/business/media/trump-wsj-defamation-suit-10-billion.html"
-  },
-  {
    "ts": "2026-10-31T20:31:39+00:00",
    "date": "Oct 31",
    "title": "Judge dismisses Trump lawsuit against Wall Street Journal over Epstein birthday letter",
@@ -42,13 +42,6 @@
    "title": "Ads accusing Republican candidates of protecting Epstein fill airwaves in final midterm push",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/oct/31/political-ads-midterms-epstein-republican-candidate"
-  },
-  {
-   "ts": "2026-10-30T18:51:14+00:00",
-   "date": "Oct 30",
-   "title": "Police Investigate Former Prince Andrew and Epstein’s Time at Balmoral, Royal Estate in Scotland",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html"
   }
  ]
 }
