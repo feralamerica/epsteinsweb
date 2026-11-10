@@ -1,19 +1,33 @@
 {
- "updated": "2026-11-10T17:54+00:00",
+ "updated": "2026-11-10T23:27+00:00",
  "items": [
   {
-   "ts": "2026-11-10T12:15:26-05:00",
+   "ts": "2026-11-10T20:36:58+00:00",
    "date": "Nov 10",
-   "title": "House panel rebukes DOJ's handling of Epstein case",
-   "source": "ABC News",
-   "url": "https://abcnews.com/US/house-oversight-panel-recommends-doj-renew-probe-jeffrey/story?id=138015976"
+   "title": "US federal authorities could have prevented Epstein crimes, report finds",
+   "source": "BBC News",
+   "url": "https://www.bbc.co.uk/news/articles/cq5ynyn8zyr8o?at_medium=RSS&at_campaign=rss"
   },
   {
-   "ts": "2026-11-10T12:09:05-05:00",
+   "ts": "2026-11-10T19:21:00+00:00",
    "date": "Nov 10",
-   "title": "House finds \"decades-long failures\" as Epstein preyed on victims",
-   "source": "CBS News",
-   "url": "https://www.cbsnews.com/news/jeffrey-epstein-house-oversight-committee-report/"
+   "title": "House GOP report on Jeffrey Epstein rips Justice Department, urges further investigation",
+   "source": "NBC News",
+   "url": "https://www.nbcnews.com/politics/congress/house-republican-report-epstein-justice-department-investigation-trump-rcna608548"
+  },
+  {
+   "ts": "2026-11-10T18:44:17+00:00",
+   "date": "Nov 10",
+   "title": "House Republicans urge DoJ to further investigate ‘key witnesses’ in Epstein case",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/nov/10/house-republicans-epstein-investigation"
+  },
+  {
+   "ts": "2026-11-10T16:43:31-05:00",
+   "date": "Nov 10",
+   "title": "House GOP report critical of Epstein investigation",
+   "source": "NPR",
+   "url": "https://www.npr.org/2026/11/10/nx-s1-6035872/house-gop-report-critical-of-epstein-investigation"
   },
   {
    "ts": "2026-11-08T13:00:41+00:00",
@@ -42,20 +56,6 @@
    "title": "Leon Black sues US congressman Robert Garcia for $7.5m over Epstein comments",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/nov/05/leon-black-sues-congressman-robert-garcia-epstein"
-  },
-  {
-   "ts": "2026-11-03T18:24:42+00:00",
-   "date": "Nov 3",
-   "title": "What a Decade of Pizzagate Has Done to America",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
-  },
-  {
-   "ts": "2026-10-31T20:31:39+00:00",
-   "date": "Oct 31",
-   "title": "Judge dismisses Trump lawsuit against Wall Street Journal over Epstein birthday letter",
-   "source": "The Guardian",
-   "url": "https://www.theguardian.com/us-news/2026/oct/31/judge-dismisses-trump-lawsuit-wall-street-journal-epstein"
   }
  ]
 }
