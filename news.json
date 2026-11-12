@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-11T21:59+00:00",
+ "updated": "2026-11-12T03:05+00:00",
  "items": [
   {
-   "ts": "2026-11-11T21:25:39+00:00",
+   "ts": "2026-11-11T17:40:43-05:00",
    "date": "Nov 11",
-   "title": "Massie secures signatures to force vote on second Epstein files petition",
-   "source": "The Hill",
-   "url": "https://thehill.com/homenews/house/6214408-massie-epstein-files-discharge-petition/"
+   "title": "4 key findings in the Jeffrey Epstein report from GOP-led House Oversight panel",
+   "source": "PBS News",
+   "url": "https://www.pbs.org/newshour/politics/4-key-findings-in-the-jeffrey-epstein-report-from-gop-led-house-oversight-panel"
   },
   {
    "ts": "2026-11-11T16:37:02-05:00",
@@ -14,13 +14,6 @@
    "title": "Discharge petition on 2nd Epstein files bill secures 218 signatures",
    "source": "ABC News",
    "url": "https://abcnews.com/US/discharge-petition-2nd-epstein-files-bill-secures-218/story?id=138057235"
-  },
-  {
-   "ts": "2026-11-11T14:10:00-05:00",
-   "date": "Nov 11",
-   "title": "Petition for new Epstein files bill gets enough support for vote",
-   "source": "CBS News",
-   "url": "https://www.cbsnews.com/news/epstein-files-bill-discharge-petition-thomas-massie/"
   },
   {
    "ts": "2026-11-10T18:44:17+00:00",
@@ -56,6 +49,13 @@
    "title": "Leon Black sues US congressman Robert Garcia for $7.5m over Epstein comments",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/nov/05/leon-black-sues-congressman-robert-garcia-epstein"
+  },
+  {
+   "ts": "2026-11-03T18:24:42+00:00",
+   "date": "Nov 3",
+   "title": "What a Decade of Pizzagate Has Done to America",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
   }
  ]
 }
