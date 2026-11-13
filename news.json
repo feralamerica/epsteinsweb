@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-13T08:04+00:00",
+ "updated": "2026-11-13T16:29+00:00",
  "items": [
+  {
+   "ts": "2026-11-13T13:17:17+00:00",
+   "date": "Nov 13",
+   "title": "A Restaurant Hosted Ramaswamy After His Attack Ad. It’s Paying a Price.",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/13/us/medina-ohio-boycott-restaurant-ramaswamy.html"
+  },
   {
    "ts": "2026-11-10T18:44:17+00:00",
    "date": "Nov 10",
@@ -35,13 +42,6 @@
    "title": "Leon Black sues US congressman Robert Garcia for $7.5m over Epstein comments",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/nov/05/leon-black-sues-congressman-robert-garcia-epstein"
-  },
-  {
-   "ts": "2026-11-03T18:24:42+00:00",
-   "date": "Nov 3",
-   "title": "What a Decade of Pizzagate Has Done to America",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/11/01/opinion/pizzagate-conspiracy-epstein.html"
   }
  ]
 }
