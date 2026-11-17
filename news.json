@@ -1,26 +1,19 @@
 {
- "updated": "2026-11-17T03:56+00:00",
+ "updated": "2026-11-17T13:31+00:00",
  "items": [
+  {
+   "ts": "2026-11-17T13:13:55+00:00",
+   "date": "Nov 17",
+   "title": "Challenging Consensus, Scientist Says Epstein Autopsy Photos Show Homicide",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/16/us/jeffrey-epstein-autopsy-michael-freeman.html"
+  },
   {
    "ts": "2026-11-16T21:46:43+00:00",
    "date": "Nov 16",
    "title": "Bombshell Report Raises New Questions About Epstein’s Death",
    "source": "The Daily Beast",
    "url": "https://www.thedailybeast.com/bombshell-report-raises-new-questions-about-epsteins-death"
-  },
-  {
-   "ts": "2026-11-16T20:33:57+00:00",
-   "date": "Nov 16",
-   "title": "Forensic expert says his analysis of autopsy photos suggests Epstein was killed",
-   "source": "BBC News",
-   "url": "https://www.bbc.co.uk/news/articles/c5n4exg1kkmyo?at_medium=RSS&at_campaign=rss"
-  },
-  {
-   "ts": "2026-11-16T20:08:10+00:00",
-   "date": "Nov 16",
-   "title": "Challenging Consensus, Scientist Says Epstein Autopsy Photos Show Homicide",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/11/16/us/jeffrey-epstein-autopsy-michael-freeman.html"
   },
   {
    "ts": "2026-11-16T19:57:11+00:00",
@@ -56,6 +49,13 @@
    "title": "‘We feel the love’: Epstein survivors overwhelmed by messages of support at pop-up art exhibition",
    "source": "The Guardian",
    "url": "https://www.theguardian.com/us-news/2026/nov/08/jeffrey-epstein-survivors-exhibition"
+  },
+  {
+   "ts": "2026-11-05T16:44:08+00:00",
+   "date": "Nov 5",
+   "title": "Leon Black sues US congressman Robert Garcia for $7.5m over Epstein comments",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/us-news/2026/nov/05/leon-black-sues-congressman-robert-garcia-epstein"
   }
  ]
 }
