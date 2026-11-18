@@ -1,6 +1,20 @@
 {
- "updated": "2026-11-18T14:07+00:00",
+ "updated": "2026-11-18T22:01+00:00",
  "items": [
+  {
+   "ts": "2026-11-18T15:04:10+00:00",
+   "date": "Nov 18",
+   "title": "Tom Cruise Leads Toasts for Steven Spielberg at MoMa Film Gala",
+   "source": "The New York Times",
+   "url": "https://www.nytimes.com/2026/11/13/style/steven-spielberg-moma-colbert-tom-cruise.html"
+  },
+  {
+   "ts": "2026-11-18T14:16:47-05:00",
+   "date": "Nov 18",
+   "title": "Epstein's death may not have been suicide, new analysis suggests",
+   "source": "CBS News",
+   "url": "https://www.cbsnews.com/news/jeffrey-epstein-death-suicide-forensics-expert-analysis/"
+  },
   {
    "ts": "2026-11-18T12:50:51+00:00",
    "date": "Nov 18",
@@ -14,13 +28,6 @@
    "title": "Challenging Consensus, Scientist Says Epstein Autopsy Photos Show Homicide",
    "source": "The New York Times",
    "url": "https://www.nytimes.com/2026/11/16/us/jeffrey-epstein-autopsy-michael-freeman.html"
-  },
-  {
-   "ts": "2026-11-16T19:57:11+00:00",
-   "date": "Nov 16",
-   "title": "Tom Cruise Leads Toasts for Steven Spielberg at MoMa Film Gala",
-   "source": "The New York Times",
-   "url": "https://www.nytimes.com/2026/11/13/style/steven-spielberg-moma-colbert-tom-cruise.html"
   },
   {
    "ts": "2026-11-15T19:18:59+00:00",
